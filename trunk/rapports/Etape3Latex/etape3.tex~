@@ -1,0 +1,38 @@
+\documentclass[a4paper,10pt]{report}
+\usepackage[utf8]{inputenc}
+\usepackage[francais]{babel}
+\usepackage[top=1.5cm, bottom=1.5cm, left=1cm, right=1cm]{geometry}
+\usepackage{graphicx}
+
+% Title Page
+\title{OMGL4 - Etape 3 : expression des besoins, analyse et conception des autres cas dutilisation}
+\author{MAILLET Arnaud (chef de projet), VARGAS Christophe, ARDAUD Guillaume}
+
+
+\begin{document}
+\maketitle
+\newpage
+\null
+\newpage
+\tableofcontents
+\newpage
+\null
+\newpage
+
+\centering
+
+\chapter*{Nouveau numéro périodique}
+\addcontentsline{toc}{chapter}{Nouveau numéro périodique}
+\section*{Diagramme de séquence haut niveau}
+\addcontentsline{toc}{section}{Diagramme de séquence haut niveau}
+
+Auteur : Arnaud MAILLET
+Relecteur : xx
+
+\bigskip
+\includegraphics[height=200mm]{NouvPerHautNiveau.png.png}
+
+\newpage
+
+
+\end{document}
