@@ -1,0 +1,14 @@
+Création d'un nouveau périodique (scénario principal)
+
+-Le gestionnaire veut créer un nouveau périodique.
+-Le système demande le numéro ISSN et le nom du périodique.
+-Le gestionnaire saisit le numéro ISSN et le nom du périodique.
+-Le système créé le périodique.
+-Le système confirme la création du périodique.
+
+
+Erreurs:
+********
+
+- Si l'ISSN saisit existe déjà, un message d'erreur est affiché et la 
+saisie invalidée.
