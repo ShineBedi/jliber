@@ -1,0 +1,160 @@
+\documentclass[a4paper,10pt]{report}
+\usepackage[utf8]{inputenc}
+\usepackage[francais]{babel}
+\usepackage[top=1.5cm, bottom=1.5cm, left=1cm, right=1cm]{geometry}
+\usepackage{graphicx}
+
+% Title Page
+\title{OMGL4 - Etape 1 et 2 : rétro-conception de l'application existante}
+\author{MAILLET Arnaud (chef de projet), VARGAS Christophe, ARDAUD Guillaume}
+
+
+\begin{document}
+\maketitle
+\newpage
+\null
+\newpage
+\tableofcontents
+\newpage
+\null
+\newpage
+
+\centering
+
+\chapter*{Etape 1}
+\addcontentsline{toc}{chapter}{Etape 1}
+\section*{Diagramme détaillé du modèle (niveau Conception)}
+\addcontentsline{toc}{section}{Diagramme détaillé du modèle (niveau Conception)}
+
+Auteur : Christophe VARGAS
+Relecteur : Guillaume ARDAUD
+
+\bigskip
+\includegraphics[height=200mm]{etape1.png}
+
+\chapter*{Etape 2}
+\addcontentsline{toc}{chapter}{Etape 2}
+
+\section*{Consulter lecteur}
+\addcontentsline{toc}{section}{Consulter lecteur}
+
+Auteur : Arnaud MAILLET
+Relecteur : Christophe VARGAS
+
+\subsection*{DS Conception MVC}
+\addcontentsline{toc}{subsection}{DS Conception MVC}
+
+\bigskip
+\includegraphics[height=180mm]{ConsLectMVC.png}
+\newpage
+
+\subsection*{DS Conception}
+\addcontentsline{toc}{subsection}{DS Conception}
+\bigskip
+\includegraphics[height=200mm]{ConsLectNormal.png}
+\newpage
+
+
+\section*{Consulter ouvrage}
+\addcontentsline{toc}{section}{Consulter ouvrage}
+
+Auteur : Christophe VARGAS
+Relecteur : Arnaud MAILLET
+
+\subsection*{DS Conception MVC}
+\addcontentsline{toc}{subsection}{DS Conception MVC}
+
+\bigskip
+\includegraphics[height=200mm]{ConsOuvMVC.png}
+\newpage
+
+\subsection*{DS Conception}
+\addcontentsline{toc}{subsection}{DS Conception}
+
+\bigskip
+\includegraphics[height=200mm]{ConsOuvNormal.png}
+\newpage
+
+
+\section*{Nouvel ouvrage}
+\addcontentsline{toc}{section}{Nouvel ouvrage}
+
+Auteur : Arnaud MAILLET
+Relecteur : Christophe VARGAS
+
+\subsection*{DS Conception MVC}
+\addcontentsline{toc}{subsection}{DS Conception MVC}
+
+\bigskip
+\includegraphics[height=200mm]{NouvOuvMVC.png}
+\newpage
+
+\subsection*{DS Conception}
+\addcontentsline{toc}{subsection}{DS Conception}
+
+\bigskip
+\includegraphics[height=200mm]{NouvOuvNormal.png}
+\newpage
+
+\section*{Nouvel exemplaire}
+\addcontentsline{toc}{section}{Nouvel exemplaire}
+
+Auteur : Arnaud MAILLET
+Relecteur : Christophe VARGAS
+
+\subsection*{DS Conception MVC}
+\addcontentsline{toc}{subsection}{DS Conception MVC}
+
+\bigskip
+\includegraphics[height=200mm]{NouvExempMVC.png}
+\newpage
+
+\subsection*{DS Conception}
+\addcontentsline{toc}{subsection}{DS Conception}
+
+\bigskip
+\includegraphics[height=200mm]{NouvExempNormal.png}
+\newpage
+
+
+\section*{Rendre exemplaire empruntable}
+\addcontentsline{toc}{section}{Rendre exemplaire empruntable}
+
+Auteur : Christophe VARGAS
+Relecteur : Arnaud MAILLET
+
+\subsection*{DS Conception MVC}
+\addcontentsline{toc}{subsection}{DS Conception MVC}
+
+\bigskip
+\includegraphics[height=200mm]{RendreExEmpruntableMVC.png}
+\newpage
+
+\subsection*{DS Conception}
+\addcontentsline{toc}{subsection}{DS Conception}
+
+\bigskip
+\includegraphics[height=200mm]{RendreExEmpruntableNormal.png}
+\newpage
+
+\section*{Diagramme de classe}
+\addcontentsline{toc}{section}{Diagramme de classe}
+
+Auteur : Arnaud MAILLET
+Relecteur : Guillaume ARDAUD
+\bigskip
+\newpage
+
+
+\section*{Diagramme d'états-transitions de la classe exemplaire}
+\addcontentsline{toc}{section}{Diagramme d'états-transitions de la classe exemplaire}
+
+Auteur : Guillaume ARDAUD
+Relecteur : Arnaud MAILLET
+
+\bigskip
+\includegraphics[height=200mm]{ETExemplaire.png}
+\newpage
+
+
+\end{document}
