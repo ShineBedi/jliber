@@ -5,7 +5,7 @@
 \usepackage{graphicx}
 
 % Title Page
-\title{OMGL4 - Etape 3 : expression des besoins, analyse et conception des autres cas dutilisation}
+\title{OMGL4 - Etape 3 : expression des besoins, analyse et conception des autres cas d'utilisation}
 \author{MAILLET Arnaud (chef de projet), VARGAS Christophe, ARDAUD Guillaume}
 
 
@@ -30,9 +30,27 @@ Auteur : Arnaud MAILLET
 Relecteur : xx
 
 \bigskip
-\includegraphics[height=200mm]{NouvPerHautNiveau.png.png}
+
+\begin{flushleft}
+- La documentaliste demande l'enregistrement pour un nouveau numéro d'un périodique donné.\\
+- Le système demande le numéro ISSN du périodique.\\
+- La documentaliste saisit le numéro ISSN du périodique.\\
+- Le système recherche le périodique dans le système informatique et affiches ses informations propres (nom périodique).\\
+- Le système demande le numéro de parution du nouveau numéro du périodique.\\
+- La documentaliste saisit le numéro de parution du nouveau numéro du périodique.\\
+- Le système créé le numéro du périodique et affecte le numéro au periodique.\\
+- Le système demande les informations propres des articles du numéro du periodique (titre, page, auteur(s), mot(s) clé(s)).\\
+- La documentaliste saisit les informations propres des articles du numéro du périodique.\\
+- Le système confirme l'enregistrement du nouveau numéro du periodique.\\
+\end{flushleft}
+
+\bigskip
+
+\includegraphics[height=120mm]{NouvNumPerHautNiveau.png}
 
 \newpage
+
+\includegraphics[height=90mm]{UpNouvNumPer.png}
 
 
 \end{document}
