@@ -11,7 +11,5 @@ Emprunt d'un exemplaire (scénario principal)
 
 Erreurs:
 ********
-- Si l'utilisateur a déjà emprunté 5 exemplaires, le système affiche un 
-message de refus d'emprunt.
-- Si l'ouvrage désiré est hors prêt, le système affiche un message de 
-refus d'emprunt.
+- Si l'utilisateur a déjà emprunté 5 exemplaires, le système affiche un message de refus d'emprunt.
+- Si l'ouvrage désiré est hors prêt, le système affiche un message de refus d'emprunt.
