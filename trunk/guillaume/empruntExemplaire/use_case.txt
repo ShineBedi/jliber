@@ -1,0 +1,17 @@
+Emprunt d'un exemplaire (scénario principal)
+
+-Le gestionnaire veut assigner un  emprunt à un lecteur
+-Le système demande le numéro de lecteur du lecteur ainsi que l'ISBN et le numéro chronologique de l'ouvrage désiré
+- Le gestionnaire saisit le numéro de lecteur du lecteur ainsi que l'ISBN et le numéro chronologique de l'ouvrage désiré
+- Le système assigne la date du jour comme date d'emprunt, et calcule la date de retour.
+- Le système affecte l'emprunt au lecteur
+- Le système affiche un message de confirmation d'emprunt
+
+
+
+Erreurs:
+********
+- Si l'utilisateur a déjà emprunté 5 exemplaires, le système affiche un 
+message de refus d'emprunt.
+- Si l'ouvrage désiré est hors prêt, le système affiche un message de 
+refus d'emprunt.
