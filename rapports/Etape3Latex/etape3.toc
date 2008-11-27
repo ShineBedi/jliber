@@ -4,3 +4,4 @@
 \contentsline {section}{Scenario principal}{4}
 \contentsline {section}{Diagramme de s\IeC {\'e}quence haut niveau}{4}
 \contentsline {section}{Unit\IeC {\'e} de pr\IeC {\'e}sentation}{5}
+\contentsline {section}{Diagramme de s\IeC {\'e}quence d\IeC {\'e}taill\IeC {\'e} MVC}{5}
