@@ -31,26 +31,33 @@ Relecteur : xx
 
 \bigskip
 
+\section*{Scenario principal}
+\addcontentsline{toc}{section}{Scenario principal}
 \begin{flushleft}
-- La documentaliste demande l'enregistrement pour un nouveau numéro d'un périodique donné.\\
+- La documentaliste demande l'enregistrement pour une nouvelle parution d'un périodique donné.\\
 - Le système demande le numéro ISSN du périodique.\\
 - La documentaliste saisit le numéro ISSN du périodique.\\
 - Le système recherche le périodique dans le système informatique et affiches ses informations propres (nom périodique).\\
-- Le système demande le numéro de parution du nouveau numéro du périodique.\\
-- La documentaliste saisit le numéro de parution du nouveau numéro du périodique.\\
-- Le système créé le numéro du périodique et affecte le numéro au periodique.\\
-- Le système demande les informations propres des articles du numéro du periodique (titre, page, auteur(s), mot(s) clé(s)).\\
-- La documentaliste saisit les informations propres des articles du numéro du périodique.\\
-- Le système confirme l'enregistrement du nouveau numéro du periodique.\\
+- Le système demande le numéro de parution de la nouvelle parution.\\
+- La documentaliste saisit le numéro de parution de la nouvelle parution\\
+- Le système créé la nouvelle parution et lie la nouvelle parution à son periodique.\\
+- Le système demande les informations propres des articles de la parution (titre, page, auteurs, mots clés).\\
+- La documentaliste saisit les informations propres des articles de la parution.\\
+- Le système crée les articles et lie les articles à la parution du periodique.
+- Le système confirme l'enregistrement de la nouvelle parution.\\
 \end{flushleft}
 
 \bigskip
 
-\includegraphics[height=110mm]{NouvNumPerHautNiveau.png}
+\section*{Diagramme de séquence haut niveau}
+\addcontentsline{toc}{section}{Diagramme de séquence haut niveau}
+\includegraphics[height=115mm]{NouvNumPerHautNiveau.png}
 
 \newpage
 
-\includegraphics[height=100mm]{UpNouvNumPer.png}
+\section*{Unité de présentation}
+\addcontentsline{toc}{section}{Unité de présentation}
+\includegraphics[height=80mm]{UpNouvNumPer.png}
 
 
 \end{document}

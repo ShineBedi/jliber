@@ -1,3 +1,6 @@
 \select@language {french}
 \contentsline {chapter}{Nouveau num\IeC {\'e}ro p\IeC {\'e}riodique}{4}
 \contentsline {section}{Diagramme de s\IeC {\'e}quence haut niveau}{4}
+\contentsline {section}{Scenario principal}{4}
+\contentsline {section}{Diagramme de s\IeC {\'e}quence haut niveau}{4}
+\contentsline {section}{Unit\IeC {\'e} de pr\IeC {\'e}sentation}{5}

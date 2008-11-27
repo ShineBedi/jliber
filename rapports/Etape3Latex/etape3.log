@@ -1,4 +1,4 @@
-This is pdfTeXk, Version 3.141592-1.40.3 (Web2C 7.5.6) (format=pdflatex 2008.11.3)  26 NOV 2008 11:34
+This is pdfTeXk, Version 3.141592-1.40.3 (Web2C 7.5.6) (format=pdflatex 2008.11.3)  27 NOV 2008 15:51
 entering extended mode
  %&-line parsing enabled.
 **etape3.tex
@@ -285,8 +285,7 @@ Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
 \Gm@odd@mp=\dimen107
 \Gm@even@mp=\dimen108
 \Gm@dimlist=\toks17
-
-(/usr/share/texmf-texlive/tex/xelatex/xetexconfig/geometry.cfg))
+)
 (/usr/share/texmf-texlive/tex/latex/graphics/graphicx.sty
 Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
 
@@ -367,20 +366,6 @@ driver: pdftex
 
 (1in=72.27pt, 1cm=28.45pt)
 -----------------------
-
-(/usr/share/texmf/tex/context/base/supp-pdf.tex
-[Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count95
-\scratchdimen=\dimen111
-\scratchbox=\box26
-\nofMPsegments=\count96
-\nofMParguments=\count97
-\everyMPshowfont=\toks18
-\MPscratchCnt=\count98
-\MPscratchDim=\dimen112
-\MPnumerator=\count99
-\everyMPtoPDFconversion=\toks19
-)
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <12> on input line 13.
 LaTeX Font Info:    External font `cmex10' loaded for size
@@ -398,35 +383,35 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 \tf@toc=\write3
 \openout3 = `etape3.toc'.
 
+ [2
 
-[2
-
-] [3] <NouvNumPerHautNiveau.png, id=19, 814.04124pt x 618.31pt>
+] [3]
+<NouvNumPerHautNiveau.png, id=19, 822.07124pt x 618.31pt>
 File: NouvNumPerHautNiveau.png Graphic file (type png)
 
 <use NouvNumPerHautNiveau.png> [4
 
  <./NouvNumPerHautNiveau.png>]
-<UpNouvNumPer.png, id=24, 767.86874pt x 467.7475pt>
+<UpNouvNumPer.png, id=24, 707.64375pt x 436.63126pt>
 File: UpNouvNumPer.png Graphic file (type png)
  <use UpNouvNumPer.png>
-[5 <./UpNouvNumPer.png (PNG copy)>] (./etape3.aux) ) 
+[5 <./UpNouvNumPer.png>] (./etape3.aux) ) 
 Here is how much of TeX's memory you used:
- 2021 strings out of 94101
- 25351 string characters out of 1165810
- 80618 words of memory out of 1500000
- 5305 multiletter control sequences out of 10000+50000
+ 1724 strings out of 94101
+ 21302 string characters out of 1165810
+ 79211 words of memory out of 1500000
+ 5014 multiletter control sequences out of 10000+50000
  8194 words of font info for 29 fonts, out of 1200000 for 2000
  637 hyphenation exceptions out of 8191
  25i,6n,24p,216b,197s stack positions out of 5000i,500n,6000p,200000b,5000s
-</usr/share/texmf-texlive/f
-onts/type1/bluesky/cm/cmbx10.pfb></usr/share/texmf-texlive/fonts/type1/bluesky/
-cm/cmbx12.pfb></usr/share/texmf-texlive/fonts/type1/bluesky/cm/cmr10.pfb></usr/
-share/texmf-texlive/fonts/type1/bluesky/cm/cmr12.pfb></usr/share/texmf-texlive/
-fonts/type1/bluesky/cm/cmr17.pfb>
-Output written on etape3.pdf (6 pages, 1131295 bytes).
+</usr/share/texmf-texlive/fonts/type1/
+bluesky/cm/cmbx10.pfb></usr/share/texmf-texlive/fonts/type1/bluesky/cm/cmbx12.p
+fb></usr/share/texmf-texlive/fonts/type1/bluesky/cm/cmr10.pfb></usr/share/texmf
+-texlive/fonts/type1/bluesky/cm/cmr12.pfb></usr/share/texmf-texlive/fonts/type1
+/bluesky/cm/cmr17.pfb>
+Output written on etape3.pdf (6 pages, 81754 bytes).
 PDF statistics:
- 44 PDF objects out of 1000 (max. 8388607)
+ 45 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 131072)
  11 words of extra memory for PDF output out of 10000 (max. 10000000)
 
