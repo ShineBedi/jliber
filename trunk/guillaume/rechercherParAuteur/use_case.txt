@@ -1,0 +1,14 @@
+Rechercher par auteur (scénario principal)
+
+- Le gestionnaire veut effectuer une recherche par auteur.
+- Le système demande le nom de l'auteur à rechercher.
+- Le gestionnaire saisit le nom de l'auteur.
+- Le système effectue la recherche de tous les documents par l'auteur 
+spécifié.
+- Le système affiche les résultats de recherche.
+
+Erreurs:
+********
+
+- Si l'auteur n'existe pas dans la base, le système affiche un message 
+d'erreur et la recherche est interrompue.
