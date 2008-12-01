@@ -21,10 +21,84 @@
 
 \centering
 
-\chapter*{Nouveau numéro périodique}
-\addcontentsline{toc}{chapter}{Nouveau numéro périodique}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\chapter*{Nouvel ouvrage}
+\addcontentsline{toc}{chapter}{Nouvel ouvrage}
+
+Auteur : Christophe VARGAS
+Relecteur : xx
+
+\bigskip
+\section*{Scenario principal}
+\addcontentsline{toc}{section}{Scenario principal}
+\begin{flushleft}
+-
+-
+-
+-
+-
+\end{flushleft}
+
+\bigskip
+
 \section*{Diagramme de séquence haut niveau}
 \addcontentsline{toc}{section}{Diagramme de séquence haut niveau}
+\includegraphics[height=90mm]{}
+
+\newpage
+
+\section*{Unité de présentation}
+\addcontentsline{toc}{section}{Unité de présentation}
+\includegraphics[height=70mm]{}
+
+\section*{Diagramme de séquence détaillé MVC}
+\addcontentsline{toc}{section}{Diagramme de séquence détaillé MVC}
+\includegraphics[height=150mm]{}
+
+\newpage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\chapter*{Nouveau périodique}
+\addcontentsline{toc}{chapter}{Nouveau périodique}
+
+Auteur : Guillaume ARDAUD
+Relecteur : xx
+
+\bigskip
+\section*{Scenario principal}
+\addcontentsline{toc}{section}{Scenario principal}
+\begin{flushleft}
+-
+-
+-
+-
+-
+\end{flushleft}
+
+\bigskip
+
+\section*{Diagramme de séquence haut niveau}
+\addcontentsline{toc}{section}{Diagramme de séquence haut niveau}
+\includegraphics[height=90mm]{}
+
+\newpage
+
+\section*{Unité de présentation}
+\addcontentsline{toc}{section}{Unité de présentation}
+\includegraphics[height=70mm]{}
+
+\section*{Diagramme de séquence détaillé MVC}
+\addcontentsline{toc}{section}{Diagramme de séquence détaillé MVC}
+\includegraphics[height=150mm]{}
+
+\newpage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\chapter*{Nouveau numéro périodique}
+\addcontentsline{toc}{chapter}{Nouveau numéro périodique}
 
 Auteur : Arnaud MAILLET
 Relecteur : xx
@@ -40,10 +114,16 @@ Relecteur : xx
 - Le système recherche le périodique dans le système informatique et affiches ses informations propres (nom périodique).\\
 - Le système demande le numéro de parution de la nouvelle parution.\\
 - La documentaliste saisit le numéro de parution de la nouvelle parution\\
-- Si le numéro de parution n'existe pas le système créé la nouvelle parution et lie la nouvelle parution à son periodique.\\
-- Le système demande les informations propres des articles de la parution (titre, page, auteurs, mots clés).\\
+- Le système créé la nouvelle parution et lie la nouvelle parution à son periodique.\\
+- Le système demande les informations propres des articles de la parution (titre, page).\\
 - La documentaliste saisit les informations propres des articles de la parution.\\
-- Si l'article n'existe pas, le système crée article et lie l'article à la parution du periodique.
+- le système crée l'article et lie l'article à la parution du periodique.\\
+- Le système demande les auteurs de l'article.\\
+- La documentaliste saisit les auteurs de l'article.\\
+- Le système recherche les auteurs, les crée si ils n'éxistent pas et les lie à l'article.\\
+- Le système demande les mots clés de l'article.\\
+- La documentaliste saisit les mots clés de l'article.\\
+- Le système recherche les mots clés et les lie à l'article.\\
 - Le système confirme l'enregistrement de la nouvelle parution.\\
 \end{flushleft}
 
@@ -51,13 +131,129 @@ Relecteur : xx
 
 \section*{Diagramme de séquence haut niveau}
 \addcontentsline{toc}{section}{Diagramme de séquence haut niveau}
-\includegraphics[height=115mm]{NouvNumPerHautNiveau.png}
+\includegraphics[height=90mm]{NouvNumPerHautNiveau.png}
 
 \newpage
 
 \section*{Unité de présentation}
 \addcontentsline{toc}{section}{Unité de présentation}
-\includegraphics[height=80mm]{UpNouvNumPer.png}
+\includegraphics[height=70mm]{UpNouvNumPer.png}
 
+\section*{Diagramme de séquence détaillé MVC}
+\addcontentsline{toc}{section}{Diagramme de séquence détaillé MVC}
+\includegraphics[height=150mm]{NouvNumPerMVC.png}
+
+\newpage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\chapter*{Consulter périodique (avec ses numéros)}
+\addcontentsline{toc}{chapter}{Consulter périodique (avec ses numéros)}
+
+Auteur : Christophe VARGAS
+Relecteur : xx
+
+\bigskip
+\section*{Scenario principal}
+\addcontentsline{toc}{section}{Scenario principal}
+\begin{flushleft}
+-
+-
+-
+-
+-
+\end{flushleft}
+
+\bigskip
+
+\section*{Diagramme de séquence haut niveau}
+\addcontentsline{toc}{section}{Diagramme de séquence haut niveau}
+\includegraphics[height=90mm]{}
+
+\newpage
+
+\section*{Unité de présentation}
+\addcontentsline{toc}{section}{Unité de présentation}
+\includegraphics[height=70mm]{}
+
+\section*{Diagramme de séquence détaillé MVC}
+\addcontentsline{toc}{section}{Diagramme de séquence détaillé MVC}
+\includegraphics[height=150mm]{}
+
+\newpage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\chapter*{Recherche par auteur}
+\addcontentsline{toc}{chapter}{Recherche par auteur}
+
+Auteur : Guillaume ARDAUD
+Relecteur : xx
+
+\bigskip
+\section*{Scenario principal}
+\addcontentsline{toc}{section}{Scenario principal}
+\begin{flushleft}
+-
+-
+-
+-
+-
+\end{flushleft}
+
+\bigskip
+
+\section*{Diagramme de séquence haut niveau}
+\addcontentsline{toc}{section}{Diagramme de séquence haut niveau}
+\includegraphics[height=90mm]{}
+
+\newpage
+
+\section*{Unité de présentation}
+\addcontentsline{toc}{section}{Unité de présentation}
+\includegraphics[height=70mm]{}
+
+\section*{Diagramme de séquence détaillé MVC}
+\addcontentsline{toc}{section}{Diagramme de séquence détaillé MVC}
+\includegraphics[height=150mm]{}
+
+\newpage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\chapter*{Recherche par mot clé}
+\addcontentsline{toc}{chapter}{Recherche par mot clé}
+
+Auteur : Arnaud MAILLET
+Relecteur : xx
+
+\bigskip
+\section*{Scenario principal}
+\addcontentsline{toc}{section}{Scenario principal}
+\begin{flushleft}
+-
+-
+-
+-
+-
+\end{flushleft}
+
+\bigskip
+
+\section*{Diagramme de séquence haut niveau}
+\addcontentsline{toc}{section}{Diagramme de séquence haut niveau}
+\includegraphics[height=90mm]{}
+
+\newpage
+
+\section*{Unité de présentation}
+\addcontentsline{toc}{section}{Unité de présentation}
+\includegraphics[height=70mm]{}
+
+\section*{Diagramme de séquence détaillé MVC}
+\addcontentsline{toc}{section}{Diagramme de séquence détaillé MVC}
+\includegraphics[height=150mm]{}
+
+\newpage
 
 \end{document}
