@@ -1,4 +1,4 @@
-This is pdfTeXk, Version 3.141592-1.40.3 (Web2C 7.5.6) (format=pdflatex 2008.11.3)  1 DEC 2008 14:34
+This is pdfTeXk, Version 3.141592-1.40.3 (Web2C 7.5.6) (format=pdflatex 2008.11.3)  2 DEC 2008 08:30
 entering extended mode
  %&-line parsing enabled.
 **etape3.tex
@@ -406,16 +406,16 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 ] [5] [6
 
 ] [7]
-<NouvNumPerHautNiveau.png, id=33, 822.07124pt x 618.31pt>
+<NouvNumPerHautNiveau.png, id=32, 822.07124pt x 618.31pt>
 File: NouvNumPerHautNiveau.png Graphic file (type png)
 
 <use NouvNumPerHautNiveau.png> [8
 
  <./NouvNumPerHautNiveau.png>]
-<UpNouvNumPer.png, id=38, 707.64375pt x 436.63126pt>
+<UpNouvNumPer.png, id=37, 707.64375pt x 436.63126pt>
 File: UpNouvNumPer.png Graphic file (type png)
  <use UpNouvNumPer.png>
-<NouvNumPerMVC.png, id=39, 1441.385pt x 1145.27875pt>
+<NouvNumPerMVC.png, id=38, 1441.385pt x 1145.27875pt>
 File: NouvNumPerMVC.png Graphic file (type png)
  <use NouvNumPerMVC.png>
 [9 <./UpNouvNumPer.png> <./NouvNumPerMVC.png>] [10
@@ -442,10 +442,10 @@ Here is how much of TeX's memory you used:
 pfb></usr/share/texmf-texlive/fonts/type1/bluesky/cm/cmbx12.pfb></usr/share/tex
 mf-texlive/fonts/type1/bluesky/cm/cmr10.pfb></usr/share/texmf-texlive/fonts/typ
 e1/bluesky/cm/cmr12.pfb></usr/share/texmf-texlive/fonts/type1/bluesky/cm/cmr17.
-pfb></usr/share/texmf-texlive/fonts/type1/bluesky/cm/cmr8.pfb>
-Output written on etape3.pdf (20 pages, 156271 bytes).
+pfb>
+Output written on etape3.pdf (20 pages, 156421 bytes).
 PDF statistics:
- 97 PDF objects out of 1000 (max. 8388607)
+ 93 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 131072)
  16 words of extra memory for PDF output out of 10000 (max. 10000000)
 
