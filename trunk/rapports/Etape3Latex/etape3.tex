@@ -111,7 +111,7 @@ Relecteur : xx
 - La documentaliste demande l'enregistrement pour une nouvelle parution d'un périodique donné.\\
 - Le système demande le numéro ISSN du périodique.\\
 - La documentaliste saisit le numéro ISSN du périodique.\\
-- Le système recherche le périodique dans le système informatique et affiches ses informations propres (nom périodique).\\
+- Le système recherche le périodique dans le système informatique et affiche ses informations propres (nom périodique).\\
 - Le système demande le numéro de parution de la nouvelle parution.\\
 - La documentaliste saisit le numéro de parution de la nouvelle parution\\
 - Le système créé la nouvelle parution et lie la nouvelle parution à son periodique.\\
@@ -231,24 +231,27 @@ Relecteur : xx
 \section*{Scenario principal}
 \addcontentsline{toc}{section}{Scenario principal}
 \begin{flushleft}
--
--
--
--
--
+- La documentaliste demande la recherche par mot clé.\\
+- Le système demande les mots clés.\\
+- La documentaliste saisit les mots clés.\\
+- Le système recherche les mots clés et ensuite le système recherche les ouvrages et les articles correspondant à ces mots clés.\\
+- Le système affiche la liste des documents.\\
 \end{flushleft}
 
 \bigskip
 
 \section*{Diagramme de séquence haut niveau}
 \addcontentsline{toc}{section}{Diagramme de séquence haut niveau}
-%\includegraphics[height=90mm]{}
+\bigskip
+\bigskip
+\bigskip
+\includegraphics[height=100mm]{RechParMotCleHautNiveau.png}
 
 \newpage
 
 \section*{Unité de présentation}
 \addcontentsline{toc}{section}{Unité de présentation}
-%\includegraphics[height=70mm]{}
+\includegraphics[height=70mm]{UpRechParMotCle.png}
 
 \section*{Diagramme de séquence détaillé MVC}
 \addcontentsline{toc}{section}{Diagramme de séquence détaillé MVC}
