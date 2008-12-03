@@ -27,7 +27,7 @@
 \addcontentsline{toc}{chapter}{Nouvel ouvrage}
 
 Auteur : Christophe VARGAS
-Relecteur : xx
+Relecteur : Arnaud MAILLET
 
 \bigskip
 \section*{Scenario principal}
@@ -64,7 +64,7 @@ Relecteur : xx
 \addcontentsline{toc}{chapter}{Nouveau périodique}
 
 Auteur : Guillaume ARDAUD
-Relecteur : xx
+Relecteur : Christophe VARGAS
 
 \bigskip
 \section*{Scenario principal}
@@ -101,7 +101,7 @@ Relecteur : xx
 \addcontentsline{toc}{chapter}{Nouveau numéro périodique}
 
 Auteur : Arnaud MAILLET
-Relecteur : xx
+Relecteur : Guillaume ARDAUD
 
 \bigskip
 
@@ -151,7 +151,7 @@ Relecteur : xx
 \addcontentsline{toc}{chapter}{Consulter périodique (avec ses numéros)}
 
 Auteur : Christophe VARGAS
-Relecteur : xx
+Relecteur : Arnaud MAILLET
 
 \bigskip
 \section*{Scenario principal}
@@ -188,7 +188,7 @@ Relecteur : xx
 \addcontentsline{toc}{chapter}{Recherche par auteur}
 
 Auteur : Guillaume ARDAUD
-Relecteur : xx
+Relecteur : Arnaud MAILLET
 
 \bigskip
 \section*{Scenario principal}
@@ -225,7 +225,7 @@ Relecteur : xx
 \addcontentsline{toc}{chapter}{Recherche par mot clé}
 
 Auteur : Arnaud MAILLET
-Relecteur : xx
+Relecteur : Guillaume ARDAUD
 
 \bigskip
 \section*{Scenario principal}
@@ -266,7 +266,7 @@ Relecteur : xx
 \addcontentsline{toc}{chapter}{Emprunt exemplaire}
 
 Auteur : Guillaume ARDAUD
-Relecteur : xx
+Relecteur : Christophe VARGAS
 
 \bigskip
 \section*{Scenario principal}
@@ -303,34 +303,43 @@ Relecteur : xx
 \addcontentsline{toc}{chapter}{Retour exemplaire}
 
 Auteur : Arnaud MAILLET
-Relecteur : xx
+Relecteur : Christophe VARGAS
 
 \bigskip
 \section*{Scenario principal}
 \addcontentsline{toc}{section}{Scenario principal}
 \begin{flushleft}
--
--
--
--
--
+- La documentaliste demande le retour d'un exemplaire.\\
+- Le système demande le numéro du lecteur.\\
+- La documentaliste saisit le numéro du lecteur.\\
+- Le système recherche le lecteur.\\
+- Le système demande le numéro ISSN de l'ouvrage.\\
+- La documentaliste saisit le numéro ISSN de l'ouvrage.\\
+- Le système recherche l'ouvrage.\\
+- La documentaliste saisit le numéro de l'exemplaire.\\
+- Le système recherche l'exemplaire puis son emprunt, s'ils existent le système enleve le lecteur et l'exemplaire de l'emprunt.\\
+- Le système confirme le retour de l'exemplaire.\\
 \end{flushleft}
 
 \bigskip
 
 \section*{Diagramme de séquence haut niveau}
+\bigskip
+\bigskip
 \addcontentsline{toc}{section}{Diagramme de séquence haut niveau}
-%\includegraphics[height=90mm]{}
+\includegraphics[height=90mm]{RetourExemplaireHautNiveau.png}
 
 \newpage
 
 \section*{Unité de présentation}
 \addcontentsline{toc}{section}{Unité de présentation}
-%\includegraphics[height=70mm]{}
+\includegraphics[height=70mm]{UpRetourExemplaire.png}
 
 \section*{Diagramme de séquence détaillé MVC}
+\bigskip
+\bigskip
 \addcontentsline{toc}{section}{Diagramme de séquence détaillé MVC}
-%\includegraphics[height=150mm]{}
+\includegraphics[height=150mm]{RetourExemplaireMVC.png}
 
 \newpage
 \end{document}
