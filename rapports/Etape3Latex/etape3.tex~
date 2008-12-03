@@ -243,6 +243,8 @@ Relecteur : xx
 \section*{Diagramme de séquence haut niveau}
 \addcontentsline{toc}{section}{Diagramme de séquence haut niveau}
 \bigskip
+\bigskip
+\bigskip
 \includegraphics[height=100mm]{RechParMotCleHautNiveau.png}
 
 \newpage
@@ -253,7 +255,8 @@ Relecteur : xx
 
 \section*{Diagramme de séquence détaillé MVC}
 \addcontentsline{toc}{section}{Diagramme de séquence détaillé MVC}
-%\includegraphics[height=150mm]{}
+\bigskip
+\includegraphics[height=165mm]{RechParMotCleMVC.png}
 
 \newpage
 
