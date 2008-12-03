@@ -1,0 +1,13 @@
+1:La Documentaliste demande la consultation periodique .
+2:Le Système demande le numéros issn .
+3:La Documentaliste saisit l'issn .
+4:Le Système recherche Le periodique et ses parutions .
+5:Le Système affiche le nom periodique .
+6:La Système affichent les numéros de parution .
+7:Le Système demande un numero de parution .
+8:La Documentaliste saisit le numero de parution .
+9:Le Système recherche les articles correspondant avec ses auteurs et mot clés .
+10:Le Système affiche le titre , les mots clés et les auteurs .
+
+
+5':"Le numéro issn saisit n'existe pas"

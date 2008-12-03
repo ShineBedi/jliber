@@ -1,0 +1,17 @@
+1:La Documentaliste demande la création d'un nouvel ouvrage .
+2:Le Système demande le numéros isbn .
+3:La Documentaliste saisit l'isbn .
+4:Le Système recherche l'ouvrage .
+5:Le Système demande les informations sur l'ouvrage .
+6:La Documentaliste saisit le titre , le nom de l'editeur , la date du parution .
+7:Le Système crée l'ouvrage .
+8:Le Système demandent le(s) nom(s) et le prénom(s) .
+9:La Documentaliste saisit 1 ou plusieurs prénoms et noms d'auteurs.
+10:Le Système recherche l'auteur et le crée si besoin .
+11:Le Système demande le(s) motclé(s) .
+12:La Documentaliste saisit 1 ou plusieurs mot clés .
+13:Le Système recherche le(s) mot(s) clé(s) .
+
+
+
+5':"Le numéro isbn saisit n'existe pas"
