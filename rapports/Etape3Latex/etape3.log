@@ -1,4 +1,4 @@
-This is pdfTeXk, Version 3.141592-1.40.3 (Web2C 7.5.6) (format=pdflatex 2008.11.3)  3 DEC 2008 20:40
+This is pdfTeXk, Version 3.141592-1.40.3 (Web2C 7.5.6) (format=pdflatex 2008.11.3)  4 DEC 2008 15:33
 entering extended mode
  %&-line parsing enabled.
 **etape3.tex
@@ -413,26 +413,27 @@ File: RechParMotCleHautNiveau.png Graphic file (type png)
 <use RechParMotCleHautNiveau.png> [14
 
  <./RechParMotCleHautNiveau.png>]
-<UpRechParMotCle.png, id=62, 484.81125pt x 481.8pt>
+<UpRechParMotCle.png, id=62, 436.63126pt x 418.56375pt>
 File: UpRechParMotCle.png Graphic file (type png)
- <use UpRechParMotCle.png>
+
+<use UpRechParMotCle.png>
 <RechParMotCleMVC.png, id=63, 568.1225pt x 1118.1775pt>
 File: RechParMotCleMVC.png Graphic file (type png)
 
 <use RechParMotCleMVC.png> [15 <./UpRechParMotCle.png> <./RechParMotCleMVC.png>
 ] [16
 
-] [17] <RetourExemplaireHautNiveau.png, id=75, 626.34pt x 527.9725pt>
+] [17] <RetourExemplaireHautNiveau.png, id=75, 616.3025pt x 397.485pt>
 File: RetourExemplaireHautNiveau.png Graphic file (type png)
 
 <use RetourExemplaireHautNiveau.png> [18
 
  <./RetourExemplaireHautNiveau.png>]
-<UpRetourExemplaire.png, id=81, 447.6725pt x 349.305pt>
+<UpRetourExemplaire.png, id=81, 439.6425pt x 268.00125pt>
 File: UpRetourExemplaire.png Graphic file (type png)
 
 <use UpRetourExemplaire.png>
-<RetourExemplaireMVC.png, id=82, 648.4225pt x 1160.335pt>
+<RetourExemplaireMVC.png, id=82, 1049.9225pt x 1126.2075pt>
 File: RetourExemplaireMVC.png Graphic file (type png)
 
 <use RetourExemplaireMVC.png> [19 <./UpRetourExemplaire.png> <./RetourExemplair
@@ -450,7 +451,7 @@ x10.pfb></usr/share/texmf-texlive/fonts/type1/bluesky/cm/cmbx12.pfb></usr/share
 /texmf-texlive/fonts/type1/bluesky/cm/cmr10.pfb></usr/share/texmf-texlive/fonts
 /type1/bluesky/cm/cmr12.pfb></usr/share/texmf-texlive/fonts/type1/bluesky/cm/cm
 r17.pfb>
-Output written on etape3.pdf (20 pages, 528751 bytes).
+Output written on etape3.pdf (20 pages, 490104 bytes).
 PDF statistics:
  105 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 131072)
