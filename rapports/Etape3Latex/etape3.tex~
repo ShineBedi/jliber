@@ -1,4 +1,4 @@
-\documentclass[a4paper,8pt]{report}
+\documentclass[a4paper,10pt]{report}
 \usepackage[utf8]{inputenc}
 \usepackage[francais]{babel}
 \usepackage[top=1.5cm, bottom=1.5cm, left=1cm, right=1cm]{geometry}
@@ -33,28 +33,37 @@ Relecteur : Arnaud MAILLET
 \section*{Scenario principal}
 \addcontentsline{toc}{section}{Scenario principal}
 \begin{flushleft}
--
--
--
--
--
+- La documentaliste demande la création d'un nouvel ouvrage.\\
+- Le Système demande le numéro ISBN.\\
+- La documentaliste saisit l'ISBN.\\
+- Le système recherche l'ouvrage.\\
+- Le système demande les informations propres de l'ouvrage.\\
+- La documentaliste saisit le titre, le nom de l'editeur, la date de parution.\\
+- Le système crée l'ouvrage.\\
+- Le système demande les auteurs de l'ouvrage.\\
+- La documentaliste saisit les auteurs de l'ouvrage.\\
+- Le système recherche les auteurs, les crée si ils n'éxistent pas et les lie à l'ouvrage.\\
+- Le système demande les mots clés de l'ouvrage.\\
+- La documentaliste saisit les mots clés de l'ouvrage.\\
+- Le système recherche les mots clés et les lie à l'ouvrage.\\
+- Le système confirme l'enregistrement du nouvel ouvrage.\\
 \end{flushleft}
 
 \bigskip
 
 \section*{Diagramme de séquence haut niveau}
 \addcontentsline{toc}{section}{Diagramme de séquence haut niveau}
-% \includegraphics[height=90mm]{}
+\includegraphics[height=90mm]{NouvOuvrageHautNiveau.png}
 
 \newpage
 
 \section*{Unité de présentation}
 \addcontentsline{toc}{section}{Unité de présentation}
-% \includegraphics[height=70mm]{}
+\includegraphics[height=70mm]{UpNouvOuvrage.png}
 
 \section*{Diagramme de séquence détaillé MVC}
 \addcontentsline{toc}{section}{Diagramme de séquence détaillé MVC}
-% \includegraphics[height=150mm]{}
+\includegraphics[height=150mm]{NouvOuvrageMVC.png}
 
 \newpage
 
@@ -141,7 +150,7 @@ Relecteur : Guillaume ARDAUD
 
 \section*{Diagramme de séquence détaillé MVC}
 \addcontentsline{toc}{section}{Diagramme de séquence détaillé MVC}
-\includegraphics[height=150mm]{NouvNumPerMVC.png}
+\includegraphics[height=130mm]{NouvNumPerMVC.png}
 
 \newpage
 
@@ -157,24 +166,27 @@ Relecteur : Arnaud MAILLET
 \section*{Scenario principal}
 \addcontentsline{toc}{section}{Scenario principal}
 \begin{flushleft}
--
--
--
--
--
+- La documentaliste demande la consultation d'un periodique.\\
+- Le système demande le numéros ISSN.\\
+- La documentaliste saisit l'ISSN.\\
+- Le système recherche Le periodique, ses parutions et les articles des parutions.\\
+- Le système affiche le periodique, ses parutions et les articles des parutions.\\
 \end{flushleft}
 
 \bigskip
 
 \section*{Diagramme de séquence haut niveau}
 \addcontentsline{toc}{section}{Diagramme de séquence haut niveau}
-%\includegraphics[height=90mm]{}
+\bigskip
+\bigskip
+\bigskip
+\includegraphics[height=90mm]{ConsPeriodiqueHautNiveau.png}
 
 \newpage
 
 \section*{Unité de présentation}
 \addcontentsline{toc}{section}{Unité de présentation}
-%\includegraphics[height=70mm]{}
+\includegraphics[height=70mm]{UpConsPeriodique.png}
 
 \section*{Diagramme de séquence détaillé MVC}
 \addcontentsline{toc}{section}{Diagramme de séquence détaillé MVC}
