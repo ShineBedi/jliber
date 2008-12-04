@@ -1,4 +1,4 @@
-This is pdfTeXk, Version 3.141592-1.40.3 (Web2C 7.5.6) (format=pdflatex 2008.11.3)  4 DEC 2008 19:30
+This is pdfTeXk, Version 3.141592-1.40.3 (Web2C 7.5.6) (format=pdflatex 2008.11.3)  4 DEC 2008 22:07
 entering extended mode
  %&-line parsing enabled.
 **etape3.tex
@@ -386,7 +386,7 @@ LaTeX Font Info:    External font `cmex10' loaded for size
  [2
 
 ] [3]
-<NouvOuvrageHautNiveau.png, id=19, 829.0975pt x 578.16pt>
+<NouvOuvrageHautNiveau.png, id=19, 775.89874pt x 578.16pt>
 File: NouvOuvrageHautNiveau.png Graphic file (type png)
 
 <use NouvOuvrageHautNiveau.png> [4
@@ -395,77 +395,99 @@ File: NouvOuvrageHautNiveau.png Graphic file (type png)
 <UpNouvOuvrage.png, id=24, 669.50125pt x 442.65375pt>
 File: UpNouvOuvrage.png Graphic file (type png)
  <use UpNouvOuvrage.png>
-<NouvOuvrageMVC.png, id=25, 1100.11pt x 1091.07625pt>
+<NouvOuvrageMVC.png, id=25, 1100.11pt x 980.66376pt>
 File: NouvOuvrageMVC.png Graphic file (type png)
  <use NouvOuvrageMVC.png>
-[5 <./UpNouvOuvrage.png> <./NouvOuvrageMVC.png>] [6
+[5 <./UpNouvOuvrage.png> <./NouvOuvrageMVC.png>]
+<NouvPerHautNiveau.png, id=31, 522.95375pt x 427.5975pt>
+File: NouvPerHautNiveau.png Graphic file (type png)
 
-] [7]
-<NouvNumPerHautNiveau.png, id=38, 822.07124pt x 618.31pt>
+<use NouvPerHautNiveau.png> [6
+
+ <./NouvPerHautNiveau.png>]
+<UpNouvPer.png, id=37, 451.6875pt x 279.0425pt>
+File: UpNouvPer.png Graphic file (type png)
+ <use UpNouvPer.png>
+<NouvPerMVC.png, id=38, 477.785pt x 859.21pt>
+File: NouvPerMVC.png Graphic file (type png)
+ <use NouvPerMVC.png> [7 <./UpNouvPer.png> <./NouvPerMVC.png>]
+<NouvNumPerHautNiveau.png, id=44, 822.07124pt x 618.31pt>
 File: NouvNumPerHautNiveau.png Graphic file (type png)
 
 <use NouvNumPerHautNiveau.png> [8
 
  <./NouvNumPerHautNiveau.png>]
-<UpNouvNumPer.png, id=43, 707.64375pt x 436.63126pt>
+<UpNouvNumPer.png, id=49, 707.64375pt x 436.63126pt>
 File: UpNouvNumPer.png Graphic file (type png)
  <use UpNouvNumPer.png>
-<NouvNumPerMVC.png, id=44, 1551.7975pt x 1135.24126pt>
+<NouvNumPerMVC.png, id=50, 1551.7975pt x 1135.24126pt>
 File: NouvNumPerMVC.png Graphic file (type png)
  <use NouvNumPerMVC.png>
 [9 <./UpNouvNumPer.png> <./NouvNumPerMVC.png>]
-<ConsPeriodiqueHautNiveau.png, id=50, 702.625pt x 377.41pt>
+<ConsPeriodiqueHautNiveau.png, id=56, 702.625pt x 377.41pt>
 File: ConsPeriodiqueHautNiveau.png Graphic file (type png)
 
 <use ConsPeriodiqueHautNiveau.png> [10
 
  <./ConsPeriodiqueHautNiveau.png>]
-<UpConsPeriodique.png, id=55, 466.74374pt x 560.0925pt>
+<UpConsPeriodique.png, id=61, 585.18625pt x 462.72874pt>
 File: UpConsPeriodique.png Graphic file (type png)
 
 <use UpConsPeriodique.png>
-<ConsPeriodiqueMVC.png, id=56, 708.6475pt x 1093.08376pt>
+<ConsPeriodiqueMVC.png, id=62, 708.6475pt x 1093.08376pt>
 File: ConsPeriodiqueMVC.png Graphic file (type png)
 
 <use ConsPeriodiqueMVC.png> [11 <./UpConsPeriodique.png> <./ConsPeriodiqueMVC.p
-ng>] [12
+ng>] <RechParAuteurHautNiveau.png, id=68, 768.8725pt x 407.5225pt>
+File: RechParAuteurHautNiveau.png Graphic file (type png)
 
-] [13] <RechParMotCleHautNiveau.png, id=69, 772.8875pt x 407.5225pt>
+<use RechParAuteurHautNiveau.png> [12
+
+ <./RechParAuteurHautNiveau.png>]
+<UpRechParAuteur.png, id=74, 386.44376pt x 487.8225pt>
+File: UpRechParAuteur.png Graphic file (type png)
+
+<use UpRechParAuteur.png>
+<RechParAuteurMVC.png, id=75, 809.0225pt x 1351.0475pt>
+File: RechParAuteurMVC.png Graphic file (type png)
+
+<use RechParAuteurMVC.png> [13 <./UpRechParAuteur.png> <./RechParAuteurMVC.png>
+] <RechParMotCleHautNiveau.png, id=81, 772.8875pt x 407.5225pt>
 File: RechParMotCleHautNiveau.png Graphic file (type png)
 
 <use RechParMotCleHautNiveau.png> [14
 
  <./RechParMotCleHautNiveau.png>]
-<UpRechParMotCle.png, id=74, 495.8525pt x 428.60126pt>
+<UpRechParMotCle.png, id=86, 392.46625pt x 498.86375pt>
 File: UpRechParMotCle.png Graphic file (type png)
 
 <use UpRechParMotCle.png>
-<RechParMotCleMVC.png, id=75, 809.0225pt x 1429.34pt>
+<RechParMotCleMVC.png, id=87, 809.0225pt x 1429.34pt>
 File: RechParMotCleMVC.png Graphic file (type png)
 
 <use RechParMotCleMVC.png> [15 <./UpRechParMotCle.png> <./RechParMotCleMVC.png>
 ] [16
 
-] [17] <RetourExemplaireHautNiveau.png, id=87, 616.3025pt x 397.485pt>
+] [17] <RetourExemplaireHautNiveau.png, id=99, 616.3025pt x 397.485pt>
 File: RetourExemplaireHautNiveau.png Graphic file (type png)
 
 <use RetourExemplaireHautNiveau.png> [18
 
  <./RetourExemplaireHautNiveau.png>]
-<UpRetourExemplaire.png, id=93, 439.6425pt x 268.00125pt>
+<UpRetourExemplaire.png, id=105, 439.6425pt x 268.00125pt>
 File: UpRetourExemplaire.png Graphic file (type png)
 
 <use UpRetourExemplaire.png>
-<RetourExemplaireMVC.png, id=94, 1049.9225pt x 1126.2075pt>
+<RetourExemplaireMVC.png, id=106, 1049.9225pt x 1126.2075pt>
 File: RetourExemplaireMVC.png Graphic file (type png)
 
 <use RetourExemplaireMVC.png> [19 <./UpRetourExemplaire.png> <./RetourExemplair
 eMVC.png>] (./etape3.aux) ) 
 Here is how much of TeX's memory you used:
- 1789 strings out of 94101
- 22984 string characters out of 1165810
+ 1819 strings out of 94101
+ 23668 string characters out of 1165810
  83211 words of memory out of 1500000
- 5066 multiletter control sequences out of 10000+50000
+ 5090 multiletter control sequences out of 10000+50000
  8194 words of font info for 29 fonts, out of 1200000 for 2000
  637 hyphenation exceptions out of 8191
  25i,6n,24p,327b,197s stack positions out of 5000i,500n,6000p,200000b,5000s
@@ -474,9 +496,9 @@ x10.pfb></usr/share/texmf-texlive/fonts/type1/bluesky/cm/cmbx12.pfb></usr/share
 /texmf-texlive/fonts/type1/bluesky/cm/cmr10.pfb></usr/share/texmf-texlive/fonts
 /type1/bluesky/cm/cmr12.pfb></usr/share/texmf-texlive/fonts/type1/bluesky/cm/cm
 r17.pfb>
-Output written on etape3.pdf (20 pages, 1024943 bytes).
+Output written on etape3.pdf (20 pages, 2030220 bytes).
 PDF statistics:
- 117 PDF objects out of 1000 (max. 8388607)
+ 129 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 131072)
- 76 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 106 words of extra memory for PDF output out of 10000 (max. 10000000)
 
