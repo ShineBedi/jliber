@@ -33,7 +33,7 @@ Relecteur : Arnaud MAILLET
 \section*{Scenario principal}
 \addcontentsline{toc}{section}{Scenario principal}
 \begin{flushleft}
-- La documentaliste demande la création d'un nouvel ouvrage.\\
+- La documentaliste demande l'enregistrement d'un nouvel ouvrage.\\
 - Le Système demande le numéro ISBN.\\
 - La documentaliste saisit l'ISBN.\\
 - Le système recherche l'ouvrage.\\
@@ -72,35 +72,35 @@ Relecteur : Arnaud MAILLET
 \chapter*{Nouveau périodique}
 \addcontentsline{toc}{chapter}{Nouveau périodique}
 
-Auteur : Guillaume ARDAUD
+Auteur : Arnaud MAILLET
 Relecteur : Christophe VARGAS
 
 \bigskip
 \section*{Scenario principal}
 \addcontentsline{toc}{section}{Scenario principal}
 \begin{flushleft}
--
--
--
--
--
+-La documentaliste demande l'enregistrement d'un nouveau periodique.\\
+-Le système demande le numéro ISSN et le nom du périodique.\\
+-La documentaliste saisit le numéro ISSN et le nom du périodique.\\
+-Le système créé le périodique.\\
+-Le système confirme la création du périodique et affiche les informations propres du periodique.\\
 \end{flushleft}
 
 \bigskip
 
 \section*{Diagramme de séquence haut niveau}
 \addcontentsline{toc}{section}{Diagramme de séquence haut niveau}
-% \includegraphics[height=90mm]{}
+\includegraphics[height=90mm]{NouvPerHautNiveau.png}
 
 \newpage
 
 \section*{Unité de présentation}
 \addcontentsline{toc}{section}{Unité de présentation}
-% \includegraphics[height=70mm]{}
+\includegraphics[height=70mm]{UpNouvPer.png}
 
 \section*{Diagramme de séquence détaillé MVC}
 \addcontentsline{toc}{section}{Diagramme de séquence détaillé MVC}
-% \includegraphics[height=150mm]{}
+\includegraphics[height=150mm]{NouvPerMVC.png}
 
 \newpage
 
@@ -199,35 +199,35 @@ Relecteur : Arnaud MAILLET
 \chapter*{Recherche par auteur}
 \addcontentsline{toc}{chapter}{Recherche par auteur}
 
-Auteur : Guillaume ARDAUD
-Relecteur : Arnaud MAILLET
+Auteur : Arnaud MAILLET
+Relecteur : Christophe VARGAS
 
 \bigskip
 \section*{Scenario principal}
 \addcontentsline{toc}{section}{Scenario principal}
 \begin{flushleft}
--
--
--
--
--
+- La documentaliste demande la recherche par auteur.\\
+- Le système demande l'auteur.\\
+- La documentaliste saisit le nom et le prénom de l'auteur.\\
+- Le système recherche l'auteur et ensuite le système recherche les ouvrages et les articles correspondant à cet auteur.\\
+- Le système affiche la liste des documents.\\
 \end{flushleft}
 
 \bigskip
 
 \section*{Diagramme de séquence haut niveau}
 \addcontentsline{toc}{section}{Diagramme de séquence haut niveau}
-%\includegraphics[height=90mm]{}
+\includegraphics[height=90mm]{RechParAuteurHautNiveau.png}
 
 \newpage
 
 \section*{Unité de présentation}
 \addcontentsline{toc}{section}{Unité de présentation}
-%\includegraphics[height=70mm]{}
+\includegraphics[height=70mm]{UpRechParAuteur.png}
 
 \section*{Diagramme de séquence détaillé MVC}
 \addcontentsline{toc}{section}{Diagramme de séquence détaillé MVC}
-%\includegraphics[height=150mm]{}
+\includegraphics[height=150mm]{RechParAuteurMVC.png}
 
 \newpage
 
@@ -244,9 +244,9 @@ Relecteur : Guillaume ARDAUD
 \addcontentsline{toc}{section}{Scenario principal}
 \begin{flushleft}
 - La documentaliste demande la recherche par mot clé.\\
-- Le système demande les mots clés.\\
-- La documentaliste saisit les mots clés.\\
-- Le système recherche les mots clés et ensuite le système recherche les ouvrages et les articles correspondant à ces mots clés.\\
+- Le système demande le mot clé.\\
+- La documentaliste saisit le mot clé.\\
+- Le système recherche le mots clé et ensuite le système recherche les ouvrages et les articles correspondant à ce mot clé.\\
 - Le système affiche la liste des documents.\\
 \end{flushleft}
 
