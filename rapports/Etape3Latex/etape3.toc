@@ -39,3 +39,5 @@
 \contentsline {section}{Diagramme de s\IeC {\'e}quence haut niveau}{18}
 \contentsline {section}{Unit\IeC {\'e} de pr\IeC {\'e}sentation}{19}
 \contentsline {section}{Diagramme de s\IeC {\'e}quence d\IeC {\'e}taill\IeC {\'e} MVC}{19}
+\contentsline {chapter}{Diagramme de classes et diagrammes d'\IeC {\'e}tats}{20}
+\contentsline {section}{Diagramme de classes partiel}{20}

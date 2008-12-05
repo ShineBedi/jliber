@@ -227,7 +227,7 @@ Relecteur : Christophe VARGAS
 
 \section*{Diagramme de séquence détaillé MVC}
 \addcontentsline{toc}{section}{Diagramme de séquence détaillé MVC}
-%\includegraphics[height=150mm]{}
+\includegraphics[height=150mm]{RechParAuteurMVC.png}
 
 \newpage
 
@@ -277,35 +277,38 @@ Relecteur : Guillaume ARDAUD
 \chapter*{Emprunt exemplaire}
 \addcontentsline{toc}{chapter}{Emprunt exemplaire}
 
-Auteur : Guillaume ARDAUD
+Auteur : Arnaud MAILLET
 Relecteur : Christophe VARGAS
 
 \bigskip
 \section*{Scenario principal}
 \addcontentsline{toc}{section}{Scenario principal}
 \begin{flushleft}
--
--
--
--
--
+- La documentaliste demande l'emprunt d'un exemplaire.\\
+- Le système demande le numéro du lecteur.\\
+- La documentaliste saisit le numéro du lecteur.\\
+- Le système recherche le lecteur et verifie si il peut emprunter.\\
+- Le système demande le numéro ISSN de l'ouvrage et le numéro de l'exemplaire.\\
+- La documentaliste saisit le numéro ISSN de l'ouvrage et le numéro de l'exemplaire.\\
+- Le système recherche l'exemplaire et vérifie qu'il est empruntable. Le système créé l'emprunt, lie le lecteur et l'exemplaire à l'emprunt et il rend l'exemplaire "emprunté".\\
+- Le système confirme l'emprunt de l'exemplaire.\\
 \end{flushleft}
 
 \bigskip
 
 \section*{Diagramme de séquence haut niveau}
 \addcontentsline{toc}{section}{Diagramme de séquence haut niveau}
-%\includegraphics[height=90mm]{}
+\includegraphics[height=90mm]{EmpruntExemplaireHautNiveau.png}
 
 \newpage
 
 \section*{Unité de présentation}
 \addcontentsline{toc}{section}{Unité de présentation}
-%\includegraphics[height=70mm]{}
+\includegraphics[height=70mm]{UpEmpruntExemplaire.png}
 
 \section*{Diagramme de séquence détaillé MVC}
 \addcontentsline{toc}{section}{Diagramme de séquence détaillé MVC}
-%\includegraphics[height=150mm]{}
+\includegraphics[height=150mm]{EmpruntExemplaireMVC.png}
 
 \newpage
 
@@ -327,7 +330,7 @@ Relecteur : Christophe VARGAS
 - Le système recherche le lecteur.\\
 - Le système demande le numéro ISSN de l'ouvrage et le numéro de l'exemplaire.\\
 - La documentaliste saisit le numéro ISSN de l'ouvrage et le numéro de l'exemplaire.\\
-- Le système recherche l'exemplaire puis son emprunt, s'ils existent le système enleve le lecteur, l'exemplaire de l'emprunt et détruit l'emprunt.\\
+- Le système recherche l'exemplaire puis son emprunt, s'ils existent le système enleve le lecteur et l'exemplaire de l'emprunt. Il rend l'exemplaire empruntable et détruit l'emprunt.\\
 - Le système confirme le retour de l'exemplaire.\\
 \end{flushleft}
 
@@ -352,4 +355,34 @@ Relecteur : Christophe VARGAS
 \includegraphics[height=150mm]{RetourExemplaireMVC.png}
 
 \newpage
+
+\chapter*{Diagramme de classes et diagrammes d'états}
+\addcontentsline{toc}{chapter}{Diagramme de classes et diagrammes d'états}
+
+Auteur : Arnaud MAILLET
+Relecteur : Christophe VARGAS
+
+\bigskip
+
+\section*{Diagrammes d'état des classes}
+\addcontentsline{toc}{section}{Diagrammes d'état des classes}
+
+\subsection*{Classe Lecteur}
+\addcontentsline{toc}{subsection}{Classe Lecteur}
+\bigskip
+\includegraphics[height=80mm]{ETLecteur.png}
+
+\subsection*{Classe Exemplaire}
+\bigskip
+\addcontentsline{toc}{subsection}{Classe Exemplaire}
+
+\newpage
+\section*{Diagramme de classes partiel}
+\addcontentsline{toc}{section}{Diagramme de classes partiel}
+\bigskip
+\bigskip
+\begin{flushleft}
+A cause d'un manque de temps le diagramme de classes n'est pas complet, il n'y a pas toutes les opérations utilisées dans les diagrammes de séquences détaillés. Mais il reste quand meme le principal : les classes, les attributs, les associations et les qualifications.\\
+\end{flushleft}
+\includegraphics[height=200mm]{diagrammeDeClassePartiel.png}
 \end{document}
