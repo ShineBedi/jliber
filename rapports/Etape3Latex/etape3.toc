@@ -1,43 +1,47 @@
 \select@language {french}
-\contentsline {chapter}{Nouvel ouvrage}{4}
-\contentsline {section}{Scenario principal}{4}
-\contentsline {section}{Diagramme de s\IeC {\'e}quence haut niveau}{4}
-\contentsline {section}{Unit\IeC {\'e} de pr\IeC {\'e}sentation}{5}
-\contentsline {section}{Diagramme de s\IeC {\'e}quence d\IeC {\'e}taill\IeC {\'e} MVC}{5}
-\contentsline {chapter}{Nouveau p\IeC {\'e}riodique}{6}
-\contentsline {section}{Scenario principal}{6}
-\contentsline {section}{Diagramme de s\IeC {\'e}quence haut niveau}{6}
-\contentsline {section}{Unit\IeC {\'e} de pr\IeC {\'e}sentation}{7}
-\contentsline {section}{Diagramme de s\IeC {\'e}quence d\IeC {\'e}taill\IeC {\'e} MVC}{7}
-\contentsline {chapter}{Nouveau num\IeC {\'e}ro p\IeC {\'e}riodique}{8}
-\contentsline {section}{Scenario principal}{8}
-\contentsline {section}{Diagramme de s\IeC {\'e}quence haut niveau}{8}
-\contentsline {section}{Unit\IeC {\'e} de pr\IeC {\'e}sentation}{9}
-\contentsline {section}{Diagramme de s\IeC {\'e}quence d\IeC {\'e}taill\IeC {\'e} MVC}{9}
-\contentsline {chapter}{Consulter p\IeC {\'e}riodique (avec ses num\IeC {\'e}ros)}{10}
-\contentsline {section}{Scenario principal}{10}
-\contentsline {section}{Diagramme de s\IeC {\'e}quence haut niveau}{10}
-\contentsline {section}{Unit\IeC {\'e} de pr\IeC {\'e}sentation}{11}
-\contentsline {section}{Diagramme de s\IeC {\'e}quence d\IeC {\'e}taill\IeC {\'e} MVC}{11}
-\contentsline {chapter}{Recherche par auteur}{12}
-\contentsline {section}{Scenario principal}{12}
-\contentsline {section}{Diagramme de s\IeC {\'e}quence haut niveau}{12}
-\contentsline {section}{Unit\IeC {\'e} de pr\IeC {\'e}sentation}{13}
-\contentsline {section}{Diagramme de s\IeC {\'e}quence d\IeC {\'e}taill\IeC {\'e} MVC}{13}
-\contentsline {chapter}{Recherche par mot cl\IeC {\'e}}{14}
-\contentsline {section}{Scenario principal}{14}
-\contentsline {section}{Diagramme de s\IeC {\'e}quence haut niveau}{14}
-\contentsline {section}{Unit\IeC {\'e} de pr\IeC {\'e}sentation}{15}
-\contentsline {section}{Diagramme de s\IeC {\'e}quence d\IeC {\'e}taill\IeC {\'e} MVC}{15}
-\contentsline {chapter}{Emprunt exemplaire}{16}
-\contentsline {section}{Scenario principal}{16}
-\contentsline {section}{Diagramme de s\IeC {\'e}quence haut niveau}{16}
-\contentsline {section}{Unit\IeC {\'e} de pr\IeC {\'e}sentation}{17}
-\contentsline {section}{Diagramme de s\IeC {\'e}quence d\IeC {\'e}taill\IeC {\'e} MVC}{17}
-\contentsline {chapter}{Retour exemplaire}{18}
-\contentsline {section}{Scenario principal}{18}
-\contentsline {section}{Diagramme de s\IeC {\'e}quence haut niveau}{18}
-\contentsline {section}{Unit\IeC {\'e} de pr\IeC {\'e}sentation}{19}
-\contentsline {section}{Diagramme de s\IeC {\'e}quence d\IeC {\'e}taill\IeC {\'e} MVC}{19}
-\contentsline {chapter}{Diagramme de classes et diagrammes d'\IeC {\'e}tats}{20}
-\contentsline {section}{Diagramme de classes partiel}{20}
+\contentsline {chapter}{Nouvel ouvrage}{5}
+\contentsline {section}{Scenario principal}{5}
+\contentsline {section}{Diagramme de s\IeC {\'e}quence haut niveau}{5}
+\contentsline {section}{Unit\IeC {\'e} de pr\IeC {\'e}sentation}{6}
+\contentsline {section}{Diagramme de s\IeC {\'e}quence d\IeC {\'e}taill\IeC {\'e} MVC}{6}
+\contentsline {chapter}{Nouveau p\IeC {\'e}riodique}{7}
+\contentsline {section}{Scenario principal}{7}
+\contentsline {section}{Diagramme de s\IeC {\'e}quence haut niveau}{7}
+\contentsline {section}{Unit\IeC {\'e} de pr\IeC {\'e}sentation}{8}
+\contentsline {section}{Diagramme de s\IeC {\'e}quence d\IeC {\'e}taill\IeC {\'e} MVC}{8}
+\contentsline {chapter}{Nouveau num\IeC {\'e}ro p\IeC {\'e}riodique}{9}
+\contentsline {section}{Scenario principal}{9}
+\contentsline {section}{Diagramme de s\IeC {\'e}quence haut niveau}{9}
+\contentsline {section}{Unit\IeC {\'e} de pr\IeC {\'e}sentation}{10}
+\contentsline {section}{Diagramme de s\IeC {\'e}quence d\IeC {\'e}taill\IeC {\'e} MVC}{10}
+\contentsline {chapter}{Consulter p\IeC {\'e}riodique (avec ses num\IeC {\'e}ros)}{11}
+\contentsline {section}{Scenario principal}{11}
+\contentsline {section}{Diagramme de s\IeC {\'e}quence haut niveau}{11}
+\contentsline {section}{Unit\IeC {\'e} de pr\IeC {\'e}sentation}{12}
+\contentsline {section}{Diagramme de s\IeC {\'e}quence d\IeC {\'e}taill\IeC {\'e} MVC}{12}
+\contentsline {chapter}{Recherche par auteur}{13}
+\contentsline {section}{Scenario principal}{13}
+\contentsline {section}{Diagramme de s\IeC {\'e}quence haut niveau}{13}
+\contentsline {section}{Unit\IeC {\'e} de pr\IeC {\'e}sentation}{14}
+\contentsline {section}{Diagramme de s\IeC {\'e}quence d\IeC {\'e}taill\IeC {\'e} MVC}{14}
+\contentsline {chapter}{Recherche par mot cl\IeC {\'e}}{15}
+\contentsline {section}{Scenario principal}{15}
+\contentsline {section}{Diagramme de s\IeC {\'e}quence haut niveau}{15}
+\contentsline {section}{Unit\IeC {\'e} de pr\IeC {\'e}sentation}{16}
+\contentsline {section}{Diagramme de s\IeC {\'e}quence d\IeC {\'e}taill\IeC {\'e} MVC}{16}
+\contentsline {chapter}{Emprunt exemplaire}{17}
+\contentsline {section}{Scenario principal}{17}
+\contentsline {section}{Diagramme de s\IeC {\'e}quence haut niveau}{17}
+\contentsline {section}{Unit\IeC {\'e} de pr\IeC {\'e}sentation}{18}
+\contentsline {section}{Diagramme de s\IeC {\'e}quence d\IeC {\'e}taill\IeC {\'e} MVC}{18}
+\contentsline {chapter}{Retour exemplaire}{19}
+\contentsline {section}{Scenario principal}{19}
+\contentsline {section}{Diagramme de s\IeC {\'e}quence haut niveau}{19}
+\contentsline {section}{Unit\IeC {\'e} de pr\IeC {\'e}sentation}{20}
+\contentsline {section}{Diagramme de s\IeC {\'e}quence d\IeC {\'e}taill\IeC {\'e} MVC}{20}
+\contentsline {chapter}{Autres}{21}
+\contentsline {section}{Diagrammes d'\IeC {\'e}tat des classes}{21}
+\contentsline {subsection}{Classe Lecteur}{21}
+\contentsline {subsection}{Classe Exemplaire}{21}
+\contentsline {section}{Diagramme de classes partiel}{22}
+\contentsline {section}{Diagramme de classes g\IeC {\'e}n\IeC {\'e}ralis\IeC {\'e}}{23}
