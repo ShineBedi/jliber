@@ -356,8 +356,8 @@ Relecteur : Christophe VARGAS
 
 \newpage
 
-\chapter*{Diagramme de classes et diagrammes d'états}
-\addcontentsline{toc}{chapter}{Diagramme de classes et diagrammes d'états}
+\chapter*{Autres}
+\addcontentsline{toc}{chapter}{Autres}
 
 Auteur : Arnaud MAILLET
 Relecteur : Christophe VARGAS
@@ -370,13 +370,14 @@ Relecteur : Christophe VARGAS
 \subsection*{Classe Lecteur}
 \addcontentsline{toc}{subsection}{Classe Lecteur}
 \bigskip
-\includegraphics[height=80mm]{ETLecteur.png}
+\includegraphics[height=70mm]{ETLecteur.png}
 
 \subsection*{Classe Exemplaire}
-\bigskip
 \addcontentsline{toc}{subsection}{Classe Exemplaire}
-
+\bigskip
+\includegraphics[height=70mm]{ETExemplaire.png}
 \newpage
+
 \section*{Diagramme de classes partiel}
 \addcontentsline{toc}{section}{Diagramme de classes partiel}
 \bigskip
@@ -384,5 +385,18 @@ Relecteur : Christophe VARGAS
 \begin{flushleft}
 A cause d'un manque de temps le diagramme de classes n'est pas complet, il n'y a pas toutes les opérations utilisées dans les diagrammes de séquences détaillés. Mais il reste quand meme le principal : les classes, les attributs, les associations et les qualifications.\\
 \end{flushleft}
-\includegraphics[height=200mm]{diagrammeDeClassePartiel.png}
+\includegraphics[height=220mm]{diagrammeDeClassePartiel.png}
+\end{document}
+\newpage
+
+\section*{Diagramme de classes généralisé}
+\addcontentsline{toc}{section}{Diagramme de classes généralisé}
+\bigskip
+\bigskip
+\begin{flushleft}
+Pour généraliser il faudrait créer une classe Document et une classe Index.
+
+A cause d'un manque de temps le diagramme de classes n'est pas complet, il n'y a pas toutes les opérations utilisées dans les diagrammes de séquences détaillés. Mais il reste quand meme le principal : les classes, les attributs, les associations et les qualifications.\\
+\end{flushleft}
+\includegraphics[height=220mm]{diagrammeDeClassePartiel.png}
 \end{document}
