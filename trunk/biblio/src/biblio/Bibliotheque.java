@@ -87,6 +87,10 @@ public Ouvrage unOuvrage(String isbn) {
     return (Ouvrage) ouvrages.get(isbn);
 } // Fin un Ouvrage
 
+public Periodique unPeriodique(string issn) {
+	return (Periodique) periodiques.get(issn);
+} // Fin un Periodique
+
 private void lierOuvrage(Ouvrage ouv, String isbn) {
     ouvrages.put(isbn, ouv);
 } // Fin lierOuvrage
