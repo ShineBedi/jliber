@@ -386,7 +386,6 @@ Relecteur : Christophe VARGAS
 A cause d'un manque de temps le diagramme de classes n'est pas complet, il n'y a pas toutes les opérations utilisées dans les diagrammes de séquences détaillés. Mais il reste quand meme le principal : les classes, les attributs, les associations et les qualifications.\\
 \end{flushleft}
 \includegraphics[height=220mm]{diagrammeDeClassePartiel.png}
-\end{document}
 \newpage
 
 \section*{Diagramme de classes généralisé}
@@ -398,5 +397,6 @@ Pour généraliser il faudrait créer une classe Document et une classe Index.
 
 A cause d'un manque de temps le diagramme de classes n'est pas complet, il n'y a pas toutes les opérations utilisées dans les diagrammes de séquences détaillés. Mais il reste quand meme le principal : les classes, les attributs, les associations et les qualifications.\\
 \end{flushleft}
-\includegraphics[height=220mm]{diagrammeDeClassePartiel.png}
+\includegraphics[height=220mm]{diagrammeDeClasseGeneralise.png}
+
 \end{document}
