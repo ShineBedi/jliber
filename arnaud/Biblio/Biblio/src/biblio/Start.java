@@ -32,12 +32,13 @@ try  {
 }
 
     // Creation de l'instance menu de MenuBiblio
-    MenuBiblio  menu = new MenuBiblio(bib);
+    //MenuBiblio  menu = new MenuBiblio(bib);
 
     // Appel au Menu Principal
-    menu.menuPrincipal();
-
+    //menu.menuPrincipal();
+    Menu menu = new Menu();
 // Sauvegarde des objets de l'application
+     menu.setVisible(true);
 {
 try  {
   FileOutputStream f = new FileOutputStream(nomfich);
