@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<Form version="1.3" maxVersion="1.5" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
+  <NonVisualComponents>
+    <Menu class="javax.swing.JMenuBar" name="jMenuBar1">
+      <SubComponents>
+        <Menu class="javax.swing.JMenu" name="fichier_menu">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Fichier"/>
+          </Properties>
+          <SubComponents>
+            <MenuItem class="javax.swing.JMenuItem" name="quitter_fichier_button">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Quitter"/>
+              </Properties>
+            </MenuItem>
+          </SubComponents>
+        </Menu>
+        <Menu class="javax.swing.JMenu" name="lecteur_menu">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Lecteur"/>
+          </Properties>
+          <SubComponents>
+            <MenuItem class="javax.swing.JMenuItem" name="consulter_lecteur_button">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Consulter"/>
+              </Properties>
+            </MenuItem>
+            <MenuItem class="javax.swing.JMenuItem" name="nouveau_lecteur_button">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Nouveau"/>
+              </Properties>
+            </MenuItem>
+          </SubComponents>
+        </Menu>
+        <Menu class="javax.swing.JMenu" name="ouvrage_menu">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Ouvrage"/>
+          </Properties>
+          <SubComponents>
+            <MenuItem class="javax.swing.JMenuItem" name="nouvel_ouvrage_button">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Nouvel"/>
+              </Properties>
+            </MenuItem>
+            <MenuItem class="javax.swing.JMenuItem" name="consulter_ouvrage_button">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Consulter"/>
+              </Properties>
+            </MenuItem>
+            <Menu class="javax.swing.JMenu" name="exemplaire_menu">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Exemplaire"/>
+              </Properties>
+              <SubComponents>
+                <MenuItem class="javax.swing.JMenuItem" name="nouvel_exemplaire_button">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="Nouvel"/>
+                  </Properties>
+                </MenuItem>
+                <Menu class="javax.swing.JMenu" name="statut_menu">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="Statut"/>
+                  </Properties>
+                  <SubComponents>
+                    <MenuItem class="javax.swing.JMenuItem" name="rendre_indisponible_button">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="Rendre indisponible"/>
+                      </Properties>
+                    </MenuItem>
+                    <MenuItem class="javax.swing.JMenuItem" name="rendre_consultable_button">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="Rendre consultable"/>
+                      </Properties>
+                    </MenuItem>
+                    <MenuItem class="javax.swing.JMenuItem" name="rendre_empruntable_button">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="Rendre empruntable"/>
+                      </Properties>
+                    </MenuItem>
+                  </SubComponents>
+                </Menu>
+                <MenuItem class="javax.swing.JMenuItem" name="emprunt_exemplaire_button">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="Emprunt"/>
+                  </Properties>
+                </MenuItem>
+                <MenuItem class="javax.swing.JMenuItem" name="retour_exemplaire_button">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="Retour"/>
+                  </Properties>
+                </MenuItem>
+              </SubComponents>
+            </Menu>
+          </SubComponents>
+        </Menu>
+        <Menu class="javax.swing.JMenu" name="periodique_menu">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Periodique"/>
+          </Properties>
+          <SubComponents>
+            <MenuItem class="javax.swing.JMenuItem" name="nouveau_periodique_button">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Nouveau"/>
+              </Properties>
+            </MenuItem>
+            <MenuItem class="javax.swing.JMenuItem" name="consulter_periodique_button">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Consulter"/>
+              </Properties>
+            </MenuItem>
+            <Menu class="javax.swing.JMenu" name="parution_menu">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Parution"/>
+              </Properties>
+              <SubComponents>
+                <MenuItem class="javax.swing.JMenuItem" name="jMenuItem1">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="Nouvelle"/>
+                  </Properties>
+                </MenuItem>
+              </SubComponents>
+            </Menu>
+          </SubComponents>
+        </Menu>
+        <Menu class="javax.swing.JMenu" name="recherche_menu">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Recherche"/>
+          </Properties>
+          <SubComponents>
+            <MenuItem class="javax.swing.JMenuItem" name="recherche_par_auteur_button">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Par auteur"/>
+              </Properties>
+            </MenuItem>
+            <MenuItem class="javax.swing.JMenuItem" name="recherche_par_motcle_button">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Par mot-cl&#xe9;"/>
+              </Properties>
+            </MenuItem>
+          </SubComponents>
+        </Menu>
+      </SubComponents>
+    </Menu>
+  </NonVisualComponents>
+  <Properties>
+    <Property name="defaultCloseOperation" type="int" value="3"/>
+  </Properties>
+  <SyntheticProperties>
+    <SyntheticProperty name="menuBar" type="java.lang.String" value="jMenuBar1"/>
+    <SyntheticProperty name="formSizePolicy" type="int" value="1"/>
+  </SyntheticProperties>
+  <AuxValues>
+    <AuxValue name="FormSettings_autoResourcing" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_autoSetComponentName" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_generateMnemonicsCode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_i18nAutoMode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_layoutCodeTarget" type="java.lang.Integer" value="1"/>
+    <AuxValue name="FormSettings_listenerGenerationStyle" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_variablesLocal" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_variablesModifier" type="java.lang.Integer" value="2"/>
+  </AuxValues>
+
+  <Layout>
+    <DimensionLayout dim="0">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <EmptySpace min="0" pref="536" max="32767" attributes="0"/>
+      </Group>
+    </DimensionLayout>
+    <DimensionLayout dim="1">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <EmptySpace min="0" pref="288" max="32767" attributes="0"/>
+      </Group>
+    </DimensionLayout>
+  </Layout>
+</Form>
