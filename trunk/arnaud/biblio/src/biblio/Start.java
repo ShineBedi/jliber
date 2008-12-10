@@ -32,10 +32,10 @@ try  {
 }
 
     // Creation de l'instance menu de MenuBiblio
-    MenuBiblio  menu = new MenuBiblio(bib);
+    MenuGUI menu = new MenuGUI();
 
     // Appel au Menu Principal
-    menu.menuPrincipal();
+    menu.menuPrincipale(bib);
 
 // Sauvegarde des objets de l'application
 {

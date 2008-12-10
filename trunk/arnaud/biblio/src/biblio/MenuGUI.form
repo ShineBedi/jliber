@@ -21,14 +21,14 @@
             <Property name="text" type="java.lang.String" value="Lecteur"/>
           </Properties>
           <SubComponents>
-            <MenuItem class="javax.swing.JMenuItem" name="consulter_lecteur_button">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Consulter"/>
-              </Properties>
-            </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="nouveau_lecteur_button">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Nouveau"/>
+              </Properties>
+            </MenuItem>
+            <MenuItem class="javax.swing.JMenuItem" name="consulter_lecteur_button">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Consulter"/>
               </Properties>
             </MenuItem>
           </SubComponents>
@@ -114,7 +114,7 @@
                 <Property name="text" type="java.lang.String" value="Parution"/>
               </Properties>
               <SubComponents>
-                <MenuItem class="javax.swing.JMenuItem" name="jMenuItem1">
+                <MenuItem class="javax.swing.JMenuItem" name="nouvelle_parution_button">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Nouvelle"/>
                   </Properties>
