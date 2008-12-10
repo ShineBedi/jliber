@@ -17,7 +17,9 @@ public class MenuGUI extends javax.swing.JFrame {
     /** Creates new form MenuGUI */
     public MenuGUI() {
         initComponents();
+        this.setLocationRelativeTo(this.getParent());
     }
+    
     
     public void menuPrincipale(Bibliotheque bib) {
         bibliotheque = bib;
@@ -70,6 +72,11 @@ public class MenuGUI extends javax.swing.JFrame {
         lecteur_menu.setText("Lecteur");
 
         nouveau_lecteur_button.setText("Nouveau");
+        nouveau_lecteur_button.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                nouveau_lecteur_buttonMousePressed(evt);
+            }
+        });
         lecteur_menu.add(nouveau_lecteur_button);
 
         consulter_lecteur_button.setText("Consulter");
@@ -155,6 +162,13 @@ public class MenuGUI extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void nouveau_lecteur_buttonMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_nouveau_lecteur_buttonMousePressed
+        // TODO add your handling code here:
+         CtrNouvLecteurGUI ctrNvLectGUI = new CtrNouvLecteurGUI(this, true);
+         ctrNvLectGUI.menuPrincipale(bibliotheque);
+         ctrNvLectGUI = null;   // suppression du controleur
+    }//GEN-LAST:event_nouveau_lecteur_buttonMousePressed
     
     /**
      * @param args the command line arguments
