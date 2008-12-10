@@ -24,8 +24,8 @@ public class CtrNouvPeriodique {
     String nom = IO.lireChaine();
     
     Periodique per = biblio.unPeriodique(issn);
-    if ( ! per ){
-      per = biblio.nouveauPeriodique(issn,nom);
+    if (  per != null ){
+      per = biblio.nouveauPeriodique(issn,nom );
       VuePeriodique(per);
     }
     
