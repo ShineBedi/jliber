@@ -12,9 +12,16 @@ package biblio;
  */
 public class MenuGUI extends javax.swing.JFrame {
     
+    private Bibliotheque bibliotheque;
+    
     /** Creates new form MenuGUI */
     public MenuGUI() {
         initComponents();
+    }
+    
+    public void menuPrincipale(Bibliotheque bib) {
+        bibliotheque = bib;
+        this.setVisible(true);
     }
     
     /** This method is called from within the constructor to
@@ -29,8 +36,8 @@ public class MenuGUI extends javax.swing.JFrame {
         fichier_menu = new javax.swing.JMenu();
         quitter_fichier_button = new javax.swing.JMenuItem();
         lecteur_menu = new javax.swing.JMenu();
-        consulter_lecteur_button = new javax.swing.JMenuItem();
         nouveau_lecteur_button = new javax.swing.JMenuItem();
+        consulter_lecteur_button = new javax.swing.JMenuItem();
         ouvrage_menu = new javax.swing.JMenu();
         nouvel_ouvrage_button = new javax.swing.JMenuItem();
         consulter_ouvrage_button = new javax.swing.JMenuItem();
@@ -46,7 +53,7 @@ public class MenuGUI extends javax.swing.JFrame {
         nouveau_periodique_button = new javax.swing.JMenuItem();
         consulter_periodique_button = new javax.swing.JMenuItem();
         parution_menu = new javax.swing.JMenu();
-        jMenuItem1 = new javax.swing.JMenuItem();
+        nouvelle_parution_button = new javax.swing.JMenuItem();
         recherche_menu = new javax.swing.JMenu();
         recherche_par_auteur_button = new javax.swing.JMenuItem();
         recherche_par_motcle_button = new javax.swing.JMenuItem();
@@ -62,11 +69,11 @@ public class MenuGUI extends javax.swing.JFrame {
 
         lecteur_menu.setText("Lecteur");
 
-        consulter_lecteur_button.setText("Consulter");
-        lecteur_menu.add(consulter_lecteur_button);
-
         nouveau_lecteur_button.setText("Nouveau");
         lecteur_menu.add(nouveau_lecteur_button);
+
+        consulter_lecteur_button.setText("Consulter");
+        lecteur_menu.add(consulter_lecteur_button);
 
         jMenuBar1.add(lecteur_menu);
 
@@ -116,8 +123,8 @@ public class MenuGUI extends javax.swing.JFrame {
 
         parution_menu.setText("Parution");
 
-        jMenuItem1.setText("Nouvelle");
-        parution_menu.add(jMenuItem1);
+        nouvelle_parution_button.setText("Nouvelle");
+        parution_menu.add(nouvelle_parution_button);
 
         periodique_menu.add(parution_menu);
 
@@ -168,12 +175,12 @@ public class MenuGUI extends javax.swing.JFrame {
     private javax.swing.JMenu exemplaire_menu;
     private javax.swing.JMenu fichier_menu;
     private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenu lecteur_menu;
     private javax.swing.JMenuItem nouveau_lecteur_button;
     private javax.swing.JMenuItem nouveau_periodique_button;
     private javax.swing.JMenuItem nouvel_exemplaire_button;
     private javax.swing.JMenuItem nouvel_ouvrage_button;
+    private javax.swing.JMenuItem nouvelle_parution_button;
     private javax.swing.JMenu ouvrage_menu;
     private javax.swing.JMenu parution_menu;
     private javax.swing.JMenu periodique_menu;
