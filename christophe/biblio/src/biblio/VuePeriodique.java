@@ -19,7 +19,7 @@ public class VuePeriodique
    this.lierPeriodique(per);
 
    // pour MVC :: la vue s'ajoute comme observateur de l'objet emprunt
-   perio.addObserver(this);
+   per.addObserver(this);
 
    this.afficherTout();
  } // Fin Constructeur
@@ -44,9 +44,9 @@ public class VuePeriodique
 
    System.out.println();
    System.out.println("                 --------------------------------- ");
-   System.out.println("                 -          EXEMPLAIRE           - ");
+   System.out.println("                 -          PERIODIQUE           - ");
    System.out.println("                 --------------------------------- ");
-   System.out.println("                 Exemplaire :                     ");
+   System.out.println("                 Periodique :                     ");
    System.out.println("                    - ISSN = " + perio.issn());
    System.out.println("                    - Nom = " + perio.nom());
    System.out.println("                 --------------------------------- ");
