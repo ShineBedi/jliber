@@ -5,17 +5,19 @@
  */
 
 package biblio;
+import javax.swing.*;
 
 /**
  *
  * @author  scriptoff
  */
-public class PeriodiqueInterfaceSaisie extends javax.swing.JDialog {
+public class PeriodiqueInterface extends javax.swing.JDialog {
     
     /** Creates new form PeriodiqueInterface */
-    public PeriodiqueInterfaceSaisie(java.awt.Frame parent, boolean modal) {
+    public PeriodiqueInterface(java.awt.Frame parent, boolean modal , Bibliotheque _biblio ) {
         super(parent, modal);
         initComponents();
+        biblio = _biblio ;
     }
     
     /** This method is called from within the constructor to
@@ -28,9 +30,9 @@ public class PeriodiqueInterfaceSaisie extends javax.swing.JDialog {
 
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
+        text_field_issn = new javax.swing.JTextField();
+        text_field_nom = new javax.swing.JTextField();
+        bouton_ajouter = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -38,14 +40,12 @@ public class PeriodiqueInterfaceSaisie extends javax.swing.JDialog {
 
         jLabel2.setText("Nom:");
 
-        jTextField2.addActionListener(new java.awt.event.ActionListener() {
+        bouton_ajouter.setText("Ajouter");
+        bouton_ajouter.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField2ActionPerformed(evt);
+                bouton_ajouterActionPerformed(evt);
             }
         });
-
-        jButton1.setText("Ajouter");
-        jButton1.setAutoscrolls(true);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -60,11 +60,11 @@ public class PeriodiqueInterfaceSaisie extends javax.swing.JDialog {
                             .addComponent(jLabel2))
                         .addGap(137, 137, 137)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jTextField2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 271, Short.MAX_VALUE)
-                            .addComponent(jTextField1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 271, Short.MAX_VALUE))
+                            .addComponent(text_field_nom, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 271, Short.MAX_VALUE)
+                            .addComponent(text_field_issn, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 271, Short.MAX_VALUE))
                         .addGap(96, 96, 96))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(bouton_ajouter, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addContainerGap())))
         );
         layout.setVerticalGroup(
@@ -73,46 +73,67 @@ public class PeriodiqueInterfaceSaisie extends javax.swing.JDialog {
                 .addGap(36, 36, 36)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(text_field_issn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(27, 27, 27)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(8, 8, 8)
-                .addComponent(jButton1)
-                .addContainerGap(22, Short.MAX_VALUE))
+                    .addComponent(text_field_nom, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(bouton_ajouter)
+                .addContainerGap(18, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField2ActionPerformed
+    private void bouton_ajouterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bouton_ajouterActionPerformed
+        String issn =  text_field_issn.getText();
+        String nom =  text_field_nom.getText();
+        Periodique per = biblio.unPeriodique(issn);
+        if (  per != null ){
+            per = biblio.nouveauPeriodique(issn,nom );
+            JOptionPane.showMessageDialog(this, "Le Periodique a été crée");
+        }
+        else {
+            JOptionPane.showMessageDialog(this,
+            "Le Periodique existe déja",
+            "Erreur unicité",
+            JOptionPane.ERROR_MESSAGE);
+        }
+    }//GEN-LAST:event_bouton_ajouterActionPerformed
     
     /**
      * @param args the command line arguments
      */
     public static void main(String args[]) {
+        try {
+	    // Set System L&F
+        UIManager.setLookAndFeel(
+            UIManager.getSystemLookAndFeelClassName());
+    } 
+    catch (Exception e) {
+       System.out.println("Java sucks , C++ rocks");
+    }
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                PeriodiqueInterfaceSaisie dialog = new PeriodiqueInterfaceSaisie(new javax.swing.JFrame(), true);
+                PeriodiqueInterface dialog = new PeriodiqueInterface(new javax.swing.JFrame(), true);
                 dialog.addWindowListener(new java.awt.event.WindowAdapter() {
                     public void windowClosing(java.awt.event.WindowEvent e) {
                         System.exit(0);
                     }
                 });
                 dialog.setVisible(true);
+                dialog.setLocationRelativeTo(null);
             }
         });
     }
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton bouton_ajouter;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
+    private javax.swing.JTextField text_field_issn;
+    private javax.swing.JTextField text_field_nom;
     // End of variables declaration//GEN-END:variables
-    
+    private Bibliotheque biblio ;
 }
