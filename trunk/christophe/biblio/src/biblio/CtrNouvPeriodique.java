@@ -26,7 +26,9 @@ public class CtrNouvPeriodique {
     Periodique per = biblio.unPeriodique(issn);
     if (  per != null ){
       per = biblio.nouveauPeriodique(issn,nom );
-      VuePeriodique(per);
+      VuePeriodique vPer = new  VuePeriodique(per);
+      vPer.elimineObserveur();
+      vPer = null ;
     }
     
     

@@ -5,11 +5,16 @@
 
 package biblio;
 
+import java.io.*;
+//import java.lang.*;
+import java.util.*;
 /**
  *
  * @author vargasch
  */
-public class Periodique {
+public class Periodique  extends Observable        // pour MVC
+        implements Serializable
+{
   String _issn ;
   String _nom  ;
   public Periodique( String issn , String nom ){

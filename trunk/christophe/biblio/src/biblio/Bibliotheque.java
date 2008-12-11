@@ -59,9 +59,9 @@ public Ouvrage nouvelOuvrage(String isbn, String tit, String aut,
         return ouv;
 } // Fin nouvelOuvrage
 //****************************
-public Ouvrage nouvelPeriodique(String issn, String nom) {
+public Periodique nouveauPeriodique(String issn, String nom) {
         // Création de l'objet ouv
-        Periodique per = new Periodoque(issn, nom);
+        Periodique per = new Periodique(issn, nom);
 
         this.lierPeriodique(per, issn);
         return per;
@@ -97,7 +97,7 @@ public Ouvrage unOuvrage(String isbn) {
 } // Fin un Ouvrage
 
 public Periodique unPeriodique(String issn) {
-    return (Ouvrage) periodiques.get(issn);
+    return (Periodique) periodiques.get(issn);
 } 
 
 /*
