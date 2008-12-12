@@ -40,6 +40,7 @@ public class CtrNouvPeriodiqueGUI extends javax.swing.JDialog {
         text_field_issn = new javax.swing.JTextField();
         text_field_nom = new javax.swing.JTextField();
         bouton_ajouter = new javax.swing.JButton();
+        bouton_annuller = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -51,6 +52,13 @@ public class CtrNouvPeriodiqueGUI extends javax.swing.JDialog {
         bouton_ajouter.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 bouton_ajouterActionPerformed(evt);
+            }
+        });
+
+        bouton_annuller.setText("Annuler");
+        bouton_annuller.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bouton_annullerActionPerformed(evt);
             }
         });
 
@@ -71,6 +79,8 @@ public class CtrNouvPeriodiqueGUI extends javax.swing.JDialog {
                             .addComponent(text_field_issn, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 271, Short.MAX_VALUE))
                         .addGap(96, 96, 96))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(bouton_annuller, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
                         .addComponent(bouton_ajouter, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addContainerGap())))
         );
@@ -86,7 +96,9 @@ public class CtrNouvPeriodiqueGUI extends javax.swing.JDialog {
                     .addComponent(jLabel2)
                     .addComponent(text_field_nom, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(bouton_ajouter)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(bouton_ajouter)
+                    .addComponent(bouton_annuller))
                 .addContainerGap(18, Short.MAX_VALUE))
         );
 
@@ -111,6 +123,10 @@ public class CtrNouvPeriodiqueGUI extends javax.swing.JDialog {
             JOptionPane.ERROR_MESSAGE);
         }
     }//GEN-LAST:event_bouton_ajouterActionPerformed
+
+    private void bouton_annullerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bouton_annullerActionPerformed
+    this.dispose();
+}//GEN-LAST:event_bouton_annullerActionPerformed
     
     /**
      * @param args the command line arguments
@@ -140,6 +156,7 @@ public class CtrNouvPeriodiqueGUI extends javax.swing.JDialog {
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton bouton_ajouter;
+    private javax.swing.JButton bouton_annuller;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JTextField text_field_issn;

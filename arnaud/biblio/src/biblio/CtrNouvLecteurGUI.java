@@ -153,7 +153,8 @@ public class CtrNouvLecteurGUI extends javax.swing.JDialog {
 
     private void annuler_buttonMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_annuler_buttonMousePressed
         // TODO add your handling code here:
-        this.setVisible(false);
+				this.dispose();// setVisible == fuite de memoire 
+        //this.setVisible(false);
     }//GEN-LAST:event_annuler_buttonMousePressed
     
     /**

@@ -37,6 +37,8 @@
                       <EmptySpace min="-2" pref="96" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="1" attributes="0">
+                      <Component id="bouton_annuller" min="-2" pref="79" max="-2" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Component id="bouton_ajouter" min="-2" pref="79" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                   </Group>
@@ -58,7 +60,10 @@
                   <Component id="text_field_nom" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
-              <Component id="bouton_ajouter" min="-2" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="bouton_ajouter" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="bouton_annuller" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
               <EmptySpace pref="18" max="32767" attributes="0"/>
           </Group>
       </Group>
@@ -85,6 +90,14 @@
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bouton_ajouterActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="bouton_annuller">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Annuler"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bouton_annullerActionPerformed"/>
       </Events>
     </Component>
   </SubComponents>
