@@ -62,7 +62,7 @@ public class VuePeriodiqueGUI extends javax.swing.JDialog implements Observer {
 
         text_field_nom.setEditable(false);
 
-        bouton_ajouter.setText("Ajouter");
+        bouton_ajouter.setText("OK");
         bouton_ajouter.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 bouton_ajouterActionPerformed(evt);
@@ -109,7 +109,7 @@ public class VuePeriodiqueGUI extends javax.swing.JDialog implements Observer {
     }// </editor-fold>//GEN-END:initComponents
 
     private void bouton_ajouterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bouton_ajouterActionPerformed
-        this.setVisible(false);
+        this.dispose();
     }//GEN-LAST:event_bouton_ajouterActionPerformed
     
     /**
@@ -126,7 +126,7 @@ public class VuePeriodiqueGUI extends javax.swing.JDialog implements Observer {
     }
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                CtrNouvPeriodiqueGUI dialog = new CtrNouvPeriodiqueGUI(new javax.swing.JFrame(), true);
+                VuePeriodiqueGUI dialog = new VuePeriodiqueGUI(new javax.swing.JFrame(), true);
                 dialog.addWindowListener(new java.awt.event.WindowAdapter() {
                     public void windowClosing(java.awt.event.WindowEvent e) {
                         System.exit(0);

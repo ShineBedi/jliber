@@ -184,7 +184,8 @@ public class VueLecteurGUI extends javax.swing.JDialog implements Observer {
 
     private void terminer_buttonMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_terminer_buttonMousePressed
         // TODO add your handling code here:
-        this.setVisible(false);
+        this.dispose();// setVisible == fuite de memoire 
+        //this.setVisible(false);
     }//GEN-LAST:event_terminer_buttonMousePressed
 
     /**
