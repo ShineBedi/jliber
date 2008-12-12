@@ -6,20 +6,38 @@
 
 package biblio;
 import javax.swing.*;
-
+import java.util.*;
 /**
  *
  * @author  scriptoff
  */
-public class PeriodiqueInterface extends javax.swing.JDialog {
+public class VuePeriodiqueGUI extends javax.swing.JDialog implements Observer {
     
     /** Creates new form PeriodiqueInterface */
-    public PeriodiqueInterface(java.awt.Frame parent, boolean modal , Bibliotheque _biblio ) {
+    public VuePeriodiqueGUI(java.awt.Frame parent, boolean modal ) {
         super(parent, modal);
         initComponents();
-        biblio = _biblio ;
+        this.setLocationRelativeTo(this.getParent());
     }
     
+    public void menuPrincipale(Periodique _per) {
+        per = _per;
+        per.addObserver(this);
+        this.afficherTout();
+        this.setVisible(true);
+    }
+     public void update(Observable obs, Object o) {
+        // maj de la vue
+        this.afficherTout();
+    }
+    public void elimineObserveur() {
+        per.deleteObserver(this);
+    }
+    private void afficherTout()  {
+       text_field_issn.setText(per.issn());
+       text_field_nom.setText(per.nom());
+    }
+
     /** This method is called from within the constructor to
      * initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is
@@ -39,6 +57,10 @@ public class PeriodiqueInterface extends javax.swing.JDialog {
         jLabel1.setText("ISSN:");
 
         jLabel2.setText("Nom:");
+
+        text_field_issn.setEditable(false);
+
+        text_field_nom.setEditable(false);
 
         bouton_ajouter.setText("Ajouter");
         bouton_ajouter.addActionListener(new java.awt.event.ActionListener() {
@@ -87,19 +109,7 @@ public class PeriodiqueInterface extends javax.swing.JDialog {
     }// </editor-fold>//GEN-END:initComponents
 
     private void bouton_ajouterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bouton_ajouterActionPerformed
-        String issn =  text_field_issn.getText();
-        String nom =  text_field_nom.getText();
-        Periodique per = biblio.unPeriodique(issn);
-        if (  per != null ){
-            per = biblio.nouveauPeriodique(issn,nom );
-            JOptionPane.showMessageDialog(this, "Le Periodique a été crée");
-        }
-        else {
-            JOptionPane.showMessageDialog(this,
-            "Le Periodique existe déja",
-            "Erreur unicité",
-            JOptionPane.ERROR_MESSAGE);
-        }
+        this.setVisible(false);
     }//GEN-LAST:event_bouton_ajouterActionPerformed
     
     /**
@@ -116,7 +126,7 @@ public class PeriodiqueInterface extends javax.swing.JDialog {
     }
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                PeriodiqueInterface dialog = new PeriodiqueInterface(new javax.swing.JFrame(), true);
+                CtrNouvPeriodiqueGUI dialog = new CtrNouvPeriodiqueGUI(new javax.swing.JFrame(), true);
                 dialog.addWindowListener(new java.awt.event.WindowAdapter() {
                     public void windowClosing(java.awt.event.WindowEvent e) {
                         System.exit(0);
@@ -135,5 +145,5 @@ public class PeriodiqueInterface extends javax.swing.JDialog {
     private javax.swing.JTextField text_field_issn;
     private javax.swing.JTextField text_field_nom;
     // End of variables declaration//GEN-END:variables
-    private Bibliotheque biblio ;
+    private Periodique per ;
 }

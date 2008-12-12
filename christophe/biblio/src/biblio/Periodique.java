@@ -15,8 +15,8 @@ import java.util.*;
 public class Periodique  extends Observable        // pour MVC
         implements Serializable
 {
-  String _issn ;
-  String _nom  ;
+  private String _issn ;
+  private String _nom  ;
   public Periodique( String issn , String nom ){
     _nom = nom ;
     _issn = issn ;
