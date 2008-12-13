@@ -108,7 +108,7 @@ public class CtrConsLecteurGUI extends javax.swing.JDialog {
 
     private void annuler_buttonMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_annuler_buttonMousePressed
         // TODO add your handling code here:
-        this.setVisible(false);
+        this.dispose();
     }//GEN-LAST:event_annuler_buttonMousePressed
 
     private void valider_buttonMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_valider_buttonMousePressed
@@ -118,7 +118,7 @@ public class CtrConsLecteurGUI extends javax.swing.JDialog {
           int numero_int = Integer.parseInt(numero);
           Lecteur lect = biblio.unLecteur(numero_int);
           if (lect != null) {
-            this.setVisible(false);
+            this.dispose();
             // Création de la vue
             VueLecteurGUI vLectGUI = new VueLecteurGUI(parent_frame, true);
             vLectGUI.menuPrincipal(lect);

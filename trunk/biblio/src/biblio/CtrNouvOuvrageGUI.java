@@ -190,7 +190,7 @@ public class CtrNouvOuvrageGUI extends javax.swing.JDialog {
 
     private void annuler_buttonMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_annuler_buttonMousePressed
         // TODO add your handling code here:
-        this.setVisible(false);
+        this.dispose();
 }//GEN-LAST:event_annuler_buttonMousePressed
 
     private void valider_buttonMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_valider_buttonMousePressed
@@ -211,7 +211,7 @@ public class CtrNouvOuvrageGUI extends javax.swing.JDialog {
                 java.util.GregorianCalendar dateEdition = new java.util.GregorianCalendar(year, month-1, day);
                  // Demande d'ajout d'un nouvel ouvrage
                 ouv = biblio.nouvelOuvrage(isbn, titre, auteur, editeur, dateEdition);
-                this.setVisible(false);
+                this.dispose();
                 // Création de la vue
                 VueOuvrageGUI vOuvGUI = new VueOuvrageGUI(parent_frame, true);
                 vOuvGUI.menuPrincipal(ouv);

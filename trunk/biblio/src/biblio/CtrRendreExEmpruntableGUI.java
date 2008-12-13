@@ -140,7 +140,7 @@ public class CtrRendreExEmpruntableGUI extends javax.swing.JDialog {
 
     private void annuler_buttonMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_annuler_buttonMousePressed
         // TODO add your handling code here:
-        this.setVisible(false);
+        this.dispose();
 }//GEN-LAST:event_annuler_buttonMousePressed
 
     private void valider_buttonMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_valider_buttonMousePressed
@@ -162,7 +162,7 @@ public class CtrRendreExEmpruntableGUI extends javax.swing.JDialog {
                     if ( exemp.estNonDisponible() )
                     {
                         biblio.modifStatutExemplaire(exemp,exemp.empruntable);
-                        this.setVisible(false);
+                        this.dispose();
                         VueOuvrageGUI vOuvGUI = new VueOuvrageGUI(parent_frame, true);
                         vOuvGUI.menuPrincipal(ouv);
                         vOuvGUI.elimineObserveur();
