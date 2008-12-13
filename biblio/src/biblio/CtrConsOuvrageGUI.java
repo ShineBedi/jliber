@@ -106,7 +106,7 @@ public class CtrConsOuvrageGUI extends javax.swing.JDialog {
 
     private void annuler_buttonMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_annuler_buttonMousePressed
         // TODO add your handling code here:
-        this.setVisible(false);
+        this.dispose();
 }//GEN-LAST:event_annuler_buttonMousePressed
 
     private void valider_buttonMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_valider_buttonMousePressed
@@ -115,7 +115,7 @@ public class CtrConsOuvrageGUI extends javax.swing.JDialog {
             String isbn = isbn_textfield.getText();
             Ouvrage ouv = biblio.unOuvrage(isbn);
             if (ouv != null) {
-                this.setVisible(false);
+                this.dispose();
                 // Création de la vue
                 VueOuvrageGUI vOuvGUI = new VueOuvrageGUI(parent_frame, true);
                 vOuvGUI.menuPrincipal(ouv);

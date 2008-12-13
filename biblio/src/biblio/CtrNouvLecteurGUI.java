@@ -143,7 +143,7 @@ public class CtrNouvLecteurGUI extends javax.swing.JDialog {
           int age =  Integer.parseInt(age_spin.getValue().toString());
 
           Lecteur lect = biblio.nouveauLecteur(nom,prenom,adresse,age);
-          this.setVisible(false);
+          this.dispose();
           // Création de la vue
           VueLecteurGUI vLectGUI = new VueLecteurGUI(parent_frame, true);
           vLectGUI.menuPrincipal(lect);
@@ -157,7 +157,7 @@ public class CtrNouvLecteurGUI extends javax.swing.JDialog {
 
     private void annuler_buttonMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_annuler_buttonMousePressed
         // TODO add your handling code here:
-        this.setVisible(false);
+        this.dispose();
     }//GEN-LAST:event_annuler_buttonMousePressed
     
     /**
