@@ -81,6 +81,7 @@ public class VueLecteurGUI extends javax.swing.JDialog implements Observer {
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Lecteur");
         setBackground(java.awt.Color.white);
+        setResizable(false);
 
         numero_label.setText("Numero :");
 
@@ -144,7 +145,7 @@ public class VueLecteurGUI extends javax.swing.JDialog implements Observer {
                                     .addGroup(layout.createSequentialGroup()
                                         .addComponent(age_textfield, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addGap(216, 216, 216))
-                                    .addComponent(scroller)))))
+                                    .addComponent(scroller, javax.swing.GroupLayout.DEFAULT_SIZE, 262, Short.MAX_VALUE)))))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(148, 148, 148)
                         .addComponent(terminer_button)))

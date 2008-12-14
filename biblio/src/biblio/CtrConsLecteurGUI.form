@@ -4,6 +4,7 @@
   <Properties>
     <Property name="defaultCloseOperation" type="int" value="2"/>
     <Property name="title" type="java.lang.String" value="Consulter un lecteur"/>
+    <Property name="resizable" type="boolean" value="false"/>
   </Properties>
   <SyntheticProperties>
     <SyntheticProperty name="formSizePolicy" type="int" value="1"/>
@@ -28,7 +29,7 @@
               <Component id="jLabel1" min="-2" pref="115" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
               <Component id="numero_textfield" min="-2" pref="112" max="-2" attributes="0"/>
-              <EmptySpace max="32767" attributes="0"/>
+              <EmptySpace pref="37" max="32767" attributes="0"/>
           </Group>
           <Group type="102" alignment="1" attributes="0">
               <EmptySpace pref="60" max="32767" attributes="0"/>
