@@ -4,6 +4,7 @@
   <Properties>
     <Property name="defaultCloseOperation" type="int" value="2"/>
     <Property name="title" type="java.lang.String" value="Ajout d&apos;un ouvrage"/>
+    <Property name="resizable" type="boolean" value="false"/>
   </Properties>
   <SyntheticProperties>
     <SyntheticProperty name="formSizePolicy" type="int" value="1"/>
@@ -26,14 +27,14 @@
           <Group type="102" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="auteur_label" pref="179" max="32767" attributes="1"/>
-                  <Component id="titre_label" pref="179" max="32767" attributes="1"/>
-                  <Component id="isbn_label" pref="179" max="32767" attributes="1"/>
+                  <Component id="auteur_label" pref="181" max="32767" attributes="1"/>
+                  <Component id="titre_label" pref="181" max="32767" attributes="1"/>
+                  <Component id="isbn_label" pref="181" max="32767" attributes="1"/>
                   <Group type="102" attributes="0">
-                      <Component id="exemplaires_label" pref="179" max="32767" attributes="0"/>
+                      <Component id="exemplaires_label" pref="181" max="32767" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                   </Group>
-                  <Component id="editeur_label" alignment="0" pref="179" max="32767" attributes="1"/>
+                  <Component id="editeur_label" alignment="0" pref="181" max="32767" attributes="1"/>
                   <Group type="102" alignment="0" attributes="0">
                       <Group type="103" groupAlignment="1" max="-2" attributes="0">
                           <Component id="date_label" alignment="0" max="32767" attributes="1"/>

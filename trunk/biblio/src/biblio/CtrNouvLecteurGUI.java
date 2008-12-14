@@ -51,6 +51,7 @@ public class CtrNouvLecteurGUI extends javax.swing.JDialog {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Ajout d'un nouveau lecteur");
+        setResizable(false);
 
         nom_label.setText("Nom :");
 
@@ -96,7 +97,7 @@ public class CtrNouvLecteurGUI extends javax.swing.JDialog {
                                 .addComponent(prenom_label, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(nom_label, javax.swing.GroupLayout.DEFAULT_SIZE, 110, Short.MAX_VALUE)
                                 .addComponent(adresse_label, javax.swing.GroupLayout.DEFAULT_SIZE, 122, Short.MAX_VALUE))
-                            .addComponent(age_label, javax.swing.GroupLayout.DEFAULT_SIZE, 125, Short.MAX_VALUE))
+                            .addComponent(age_label, javax.swing.GroupLayout.DEFAULT_SIZE, 231, Short.MAX_VALUE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                             .addComponent(age_spin, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)

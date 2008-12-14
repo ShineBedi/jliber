@@ -56,6 +56,7 @@ public class CtrNouvExemplaireGUI extends javax.swing.JDialog {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Ajouter un exemplaire");
+        setResizable(false);
 
         isbn_label.setText("Numero ISBN :");
 

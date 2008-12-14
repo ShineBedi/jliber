@@ -62,6 +62,7 @@ public class CtrNouvOuvrageGUI extends javax.swing.JDialog {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Ajout d'un ouvrage");
+        setResizable(false);
 
         annuler_button.setText("Annuler");
         annuler_button.addMouseListener(new java.awt.event.MouseAdapter() {
