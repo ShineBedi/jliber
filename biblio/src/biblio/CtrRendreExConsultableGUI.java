@@ -52,6 +52,7 @@ public class CtrRendreExConsultableGUI extends javax.swing.JDialog {
         verifierNum_button = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("Rendre un exemplaire consultable");
         setResizable(false);
 
         isbn_label.setText("Numero ISBN :");

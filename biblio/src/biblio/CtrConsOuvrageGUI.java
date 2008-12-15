@@ -48,6 +48,7 @@ public class CtrConsOuvrageGUI extends javax.swing.JDialog {
         valider_button = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("Consulter un ouvrage");
         setResizable(false);
 
         isbn_label.setText("Numero ISBN :");
@@ -80,7 +81,7 @@ public class CtrConsOuvrageGUI extends javax.swing.JDialog {
                 .addComponent(isbn_textfield, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(37, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(60, Short.MAX_VALUE)
+                .addContainerGap(81, Short.MAX_VALUE)
                 .addComponent(annuler_button)
                 .addGap(18, 18, 18)
                 .addComponent(valider_button)

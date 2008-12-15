@@ -49,6 +49,8 @@ private java.awt.Frame parent_frame;
         verifier_button = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("Ajout d'une parution");
+        setResizable(false);
 
         issn_label.setText("Numero ISSN :");
 
