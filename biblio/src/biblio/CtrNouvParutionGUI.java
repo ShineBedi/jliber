@@ -305,10 +305,19 @@ private java.awt.Frame parent_frame;
 
     private void ajouter_article_buttonMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ajouter_article_buttonMousePressed
         // TODO add your handling code here:
+        article_jtable.addRowSelectionInterval(article_jtable.getRowCount()-1,article_jtable.getRowCount()-1);
+        article_jtable.doLayout();
     }//GEN-LAST:event_ajouter_article_buttonMousePressed
 
     private void supprimer_article_buttonMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_supprimer_article_buttonMousePressed
         // TODO add your handling code here:
+        int selectedRow;
+
+        selectedRow=article_jtable.getSelectedRow();
+
+        if (selectedRow!=-1){
+            article_jtable.removeRowSelectionInterval(selectedRow,selectedRow);
+        }
     }//GEN-LAST:event_supprimer_article_buttonMousePressed
 
     /**
