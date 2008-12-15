@@ -1,8 +1,3 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
-
 package biblio;
 
 import java.io.*;
@@ -10,21 +5,69 @@ import java.io.*;
 import java.util.*;
 /**
  *
- * @author vargasch
+ * @author vargasch ardaudg
  */
-public class Periodique  extends Observable        // pour MVC
-        implements Serializable
-{
-  private String _issn ;
-  private String _nom  ;
+public class Periodique
+        extends Observable        // pour MVC
+        implements Serializable{
+
+// *************************
+//        Attributs
+// *************************
+  private String issn ;
+  private String nom  ;
+  private Hashtable parutions;
+
+// ***********************************
+//          Constructeur
+// ***********************************
   public Periodique( String issn , String nom ){
-    _nom = nom ;
-    _issn = issn ;
-  }
-  public String issn() {
-    return _issn ;
-  }
-  public String nom(){
-    return _nom ;
-  }
+    this.nom = nom ;
+    this.issn = issn ;
+
+    this.parutions = new Hashtable();
 }
+//Fin constructeur
+
+
+
+//**********************************************
+// Méthodes d'Acces aux attributs de la classe
+//**********************************************
+  public String issn() {return issn ;}
+  public String nom(){return nom ;}
+
+  /*public Parution uneParution(int numeroParution) {
+       return (Parution) parutions.get(new Integer(numeroParution));
+} // Fin uneParution*/
+
+public Enumeration enumParutions() {return parutions.elements();}
+
+public int nbParutions() {return parutions.size();}
+
+//**********************************************
+//   Methodes de traitement
+//**********************************************
+/*
+  public void ajouterParution(int numeroParution) {
+    // Creation de la parution
+    Parution paru = new Parution(numeroParution, this);
+    // liaison de la parution au périodique
+    this.lierParution(paru, numeroParution);
+} // Fin ajouterParution
+*/
+
+//**********************************************
+//   Prédicats / Invariants
+//**********************************************
+
+// ***********************************
+//   Méthodes privées
+// ***********************************
+/*
+ private void lierParution(Parution paru, int numero) {
+    parutions.put(new Integer(numero), paru);
+} // Fin lierExemplaire
+ */
+
+}  // Fin Classe Periodique
