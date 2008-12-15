@@ -26,7 +26,7 @@ public Bibliotheque() {
         lecteurs = new Hashtable();
         ouvrages = new Hashtable();
         emprunts = new Set1();
-
+        periodiques = new Hashtable();
         derNumLecteur = 0;
         try {
             jbInit();
