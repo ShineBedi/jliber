@@ -97,11 +97,8 @@ public Ouvrage unOuvrage(String isbn) {
 public Periodique unPeriodique(String issn) {
     return (Periodique) periodiques.get(issn);
 } // Fin unPeriodique
-/*
-public Periodique unPeriodique(string issn) {
-	return (Periodique) periodiques.get(issn);
-} // Fin un Periodique
-*/
+
+
 
 private void lierOuvrage(Ouvrage ouv, String isbn) {
     ouvrages.put(isbn, ouv);
