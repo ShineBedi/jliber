@@ -16,6 +16,7 @@ public class Bibliotheque
     // Attributs d'Association
     private Hashtable lecteurs;
     private Hashtable ouvrages;
+    private Hashtable periodiques;
     private Set1 emprunts;
 
 // ***************************
@@ -46,7 +47,14 @@ public Lecteur nouveauLecteur(String no, String pr, String ad, int ag) {
 
         return lect;
 } // Fin  nouveauLecteur
+//****************************
+public Periodique nouveauPeriodique(String issn, String nom) {
+        // Création de l'objet ouv
+        Periodique per = new Periodique(issn, nom);
 
+        this.lierPeriodique(per, issn);
+        return per;
+} // Fin nouveauperiodique
 //****************************
 public Ouvrage nouvelOuvrage(String isbn, String tit, String aut,
                                String ed, GregorianCalendar dateE) {
@@ -86,7 +94,9 @@ private void lierLecteur(Lecteur lec, int numero) {
 public Ouvrage unOuvrage(String isbn) {
     return (Ouvrage) ouvrages.get(isbn);
 } // Fin un Ouvrage
-
+public Periodique unPeriodique(String issn) {
+    return (Periodique) periodiques.get(issn);
+} // Fin unPeriodique
 /*
 public Periodique unPeriodique(string issn) {
 	return (Periodique) periodiques.get(issn);
@@ -96,7 +106,9 @@ public Periodique unPeriodique(string issn) {
 private void lierOuvrage(Ouvrage ouv, String isbn) {
     ouvrages.put(isbn, ouv);
 } // Fin lierOuvrage
-
+private void lierPeriodique(Periodique per, String issn) {
+    periodiques.put(issn, per);
+} // Fin lierPeriodique
 
 private int genererNumLecteur() {
     derNumLecteur = derNumLecteur + 1;
