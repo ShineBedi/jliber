@@ -23,10 +23,12 @@ private java.awt.Frame parent_frame;
     /** Creates new form CtrNouvParutionGUI */
     public CtrNouvParutionGUI(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
+        parent_frame = parent;
         initComponents();
+        this.setLocationRelativeTo(this.getParent());
     }
 
-   public void menuPrincipal(Bibliotheque bib) {
+    public void menuPrincipal(Bibliotheque bib) {
         biblio = bib;
         this.setVisible(true);
     }

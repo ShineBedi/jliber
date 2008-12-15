@@ -182,8 +182,8 @@ public class MenuGUI extends javax.swing.JFrame {
 
         nouvelle_parution_button.setText("Nouvelle");
         nouvelle_parution_button.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                nouvelle_parution_buttonMouseClicked(evt);
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                nouvelle_parution_buttonMousePressed(evt);
             }
         });
         parution_menu.add(nouvelle_parution_button);
@@ -279,12 +279,12 @@ public class MenuGUI extends javax.swing.JFrame {
         ctrRendreExNonDispGUI = null;   // suppression du controleur
     }//GEN-LAST:event_rendre_indisponible_buttonMousePressed
 
-    private void nouvelle_parution_buttonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_nouvelle_parution_buttonMouseClicked
+    private void nouvelle_parution_buttonMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_nouvelle_parution_buttonMousePressed
         // TODO add your handling code here:
         CtrNouvParutionGUI ctrNouvParutionGUI = new CtrNouvParutionGUI(this, true);
         ctrNouvParutionGUI.menuPrincipal(bibliotheque);
-        ctrNouvParutionGUI = null;
-    }//GEN-LAST:event_nouvelle_parution_buttonMouseClicked
+        ctrNouvParutionGUI = null;   // suppression du controleur
+    }//GEN-LAST:event_nouvelle_parution_buttonMousePressed
     
     /**
      * @param args the command line arguments
