@@ -1,4 +1,5 @@
 package biblio;
+import java.awt.Color;
 
 /*
  * To change this template, choose Tools | Templates
@@ -47,22 +48,23 @@ private java.awt.Frame parent_frame;
         valider_button = new javax.swing.JButton();
         issn_textfield = new javax.swing.JTextField();
         rechercher_button = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
+        nom_periodique_label = new javax.swing.JLabel();
         nom_periodique_textfield = new javax.swing.JTextField();
-        jLabel2 = new javax.swing.JLabel();
+        id_parution_label = new javax.swing.JLabel();
         id_parution_textfield = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jList1 = new javax.swing.JList();
+        mot_cle_jlist = new javax.swing.JList();
         jScrollPane2 = new javax.swing.JScrollPane();
-        jList2 = new javax.swing.JList();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
+        auteur_jlist = new javax.swing.JList();
+        mots_cles_label = new javax.swing.JLabel();
+        auteur_label = new javax.swing.JLabel();
         ajouter_motcle_button = new javax.swing.JButton();
         ajouter_auteur_button = new javax.swing.JButton();
-        jLabel5 = new javax.swing.JLabel();
+        article_label = new javax.swing.JLabel();
         jScrollPane3 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        article_jtable = new javax.swing.JTable();
         ajouter_article_button = new javax.swing.JButton();
+        supprimer_article_button = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Ajout d'une parution");
@@ -86,23 +88,22 @@ private java.awt.Frame parent_frame;
         });
 
         rechercher_button.setText("Rechercher");
-        rechercher_button.setActionCommand("Rechercher");
         rechercher_button.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 rechercher_buttonMousePressed(evt);
             }
         });
 
-        jLabel1.setText("Nom du périodique:");
+        nom_periodique_label.setText("Nom du périodique:");
 
-        nom_periodique_textfield.setBackground(new java.awt.Color(1, 1, 1));
+        nom_periodique_textfield.setBackground(new java.awt.Color(254, 254, 254));
         nom_periodique_textfield.setEditable(false);
         nom_periodique_textfield.setForeground(new java.awt.Color(254, 254, 254));
         nom_periodique_textfield.setText("(recherchez un ISSN)");
         nom_periodique_textfield.setToolTipText("Nom du périodique ayant l'ISSN spécifié.");
         nom_periodique_textfield.setEnabled(false);
 
-        jLabel2.setText("Identifiant de parution:");
+        id_parution_label.setText("Identifiant de parution:");
 
         id_parution_textfield.setToolTipText("Entrez ici l'identifiant de parution du périodique spécifié.");
         id_parution_textfield.setEnabled(false);
@@ -112,28 +113,38 @@ private java.awt.Frame parent_frame;
             }
         });
 
-        jList1.setEnabled(false);
-        jScrollPane1.setViewportView(jList1);
+        mot_cle_jlist.setEnabled(false);
+        jScrollPane1.setViewportView(mot_cle_jlist);
 
-        jList2.setEnabled(false);
-        jList2.setFocusable(false);
-        jScrollPane2.setViewportView(jList2);
+        auteur_jlist.setEnabled(false);
+        auteur_jlist.setFocusable(false);
+        jScrollPane2.setViewportView(auteur_jlist);
 
-        jLabel3.setText("Mots clés:");
+        mots_cles_label.setText("Mots clés:");
 
-        jLabel4.setText("Auteurs:");
+        auteur_label.setText("Auteurs:");
 
         ajouter_motcle_button.setIcon(new javax.swing.ImageIcon(getClass().getResource("/biblio/plus_icon.gif"))); // NOI18N
         ajouter_motcle_button.setText("Ajouter");
         ajouter_motcle_button.setEnabled(false);
+        ajouter_motcle_button.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                ajouter_motcle_buttonMousePressed(evt);
+            }
+        });
 
         ajouter_auteur_button.setIcon(new javax.swing.ImageIcon(getClass().getResource("/biblio/plus_icon.gif"))); // NOI18N
         ajouter_auteur_button.setText("Ajouter");
         ajouter_auteur_button.setEnabled(false);
+        ajouter_auteur_button.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                ajouter_auteur_buttonMousePressed(evt);
+            }
+        });
 
-        jLabel5.setText("Article");
+        article_label.setText("Article");
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        article_jtable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {"OpenBSD", "14"},
                 {"Rootkit", "28"}
@@ -142,10 +153,23 @@ private java.awt.Frame parent_frame;
                 "Titre", "Page"
             }
         ));
-        jScrollPane3.setViewportView(jTable1);
+        jScrollPane3.setViewportView(article_jtable);
 
         ajouter_article_button.setIcon(new javax.swing.ImageIcon(getClass().getResource("/biblio/plus_icon.gif"))); // NOI18N
         ajouter_article_button.setText("Ajouter");
+        ajouter_article_button.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                ajouter_article_buttonMousePressed(evt);
+            }
+        });
+
+        supprimer_article_button.setIcon(new javax.swing.ImageIcon(getClass().getResource("/biblio/minus_icon.png"))); // NOI18N
+        supprimer_article_button.setText("Supprimer");
+        supprimer_article_button.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                supprimer_article_buttonMousePressed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -158,9 +182,9 @@ private java.awt.Frame parent_frame;
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(issn_label, javax.swing.GroupLayout.DEFAULT_SIZE, 265, Short.MAX_VALUE)
-                                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 265, Short.MAX_VALUE)
-                                    .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 265, Short.MAX_VALUE))
+                                    .addComponent(issn_label, javax.swing.GroupLayout.DEFAULT_SIZE, 286, Short.MAX_VALUE)
+                                    .addComponent(nom_periodique_label, javax.swing.GroupLayout.DEFAULT_SIZE, 286, Short.MAX_VALUE)
+                                    .addComponent(id_parution_label, javax.swing.GroupLayout.DEFAULT_SIZE, 286, Short.MAX_VALUE))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(id_parution_textfield)
@@ -175,20 +199,26 @@ private java.awt.Frame parent_frame;
                         .addContainerGap())
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(ajouter_article_button)
-                            .addComponent(jLabel5, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jScrollPane3, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 222, Short.MAX_VALUE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(supprimer_article_button)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(ajouter_article_button))
+                            .addComponent(article_label, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 242, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jLabel4))
-                            .addComponent(ajouter_auteur_button, javax.swing.GroupLayout.Alignment.TRAILING))
-                        .addGap(49, 49, 49)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(6, 6, 6)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(ajouter_auteur_button)
+                                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(auteur_label))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(ajouter_motcle_button, javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel3))
+                            .addComponent(mots_cles_label))
                         .addGap(21, 21, 21))))
         );
         layout.setVerticalGroup(
@@ -200,18 +230,19 @@ private java.awt.Frame parent_frame;
                     .addComponent(issn_textfield, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(nom_periodique_label, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(nom_periodique_textfield, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(id_parution_textfield, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(id_parution_label, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(42, 42, 42)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel4)
-                    .addComponent(jLabel3)
-                    .addComponent(jLabel5))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(mots_cles_label)
+                        .addComponent(article_label))
+                    .addComponent(auteur_label))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jScrollPane1)
@@ -219,17 +250,19 @@ private java.awt.Frame parent_frame;
                         .addComponent(ajouter_motcle_button))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jScrollPane3, javax.swing.GroupLayout.Alignment.LEADING, 0, 0, Short.MAX_VALUE)
+                            .addComponent(jScrollPane3, 0, 0, Short.MAX_VALUE)
                             .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(ajouter_auteur_button)
-                            .addComponent(ajouter_article_button))))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(ajouter_article_button)
+                                .addComponent(supprimer_article_button))
+                            .addComponent(ajouter_auteur_button))))
                 .addGap(32, 32, 32)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(valider_button, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(annuler_button, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(20, Short.MAX_VALUE))
+                .addContainerGap(25, Short.MAX_VALUE))
         );
 
         pack();
@@ -248,13 +281,35 @@ private java.awt.Frame parent_frame;
     private void rechercher_buttonMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_rechercher_buttonMousePressed
         // TODO add your handling code here:
         String issn = issn_textfield.getText();
-        // Vérification la non existence de l'ouvrage / ISBN
+        Periodique period = null;//biblio.unPeriodique(issn);
+        if (period == null) {
+            nom_periodique_textfield.setDisabledTextColor(Color.red);
+            nom_periodique_textfield.setText("L'ISSN spécifié n'existe pas.");
+        } else {
+            nom_periodique_textfield.setText("Le monde");
+        }
 
 }//GEN-LAST:event_rechercher_buttonMousePressed
 
     private void id_parution_textfieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_id_parution_textfieldActionPerformed
         // TODO add your handling code here:
 }//GEN-LAST:event_id_parution_textfieldActionPerformed
+
+    private void ajouter_motcle_buttonMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ajouter_motcle_buttonMousePressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ajouter_motcle_buttonMousePressed
+
+    private void ajouter_auteur_buttonMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ajouter_auteur_buttonMousePressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ajouter_auteur_buttonMousePressed
+
+    private void ajouter_article_buttonMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ajouter_article_buttonMousePressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ajouter_article_buttonMousePressed
+
+    private void supprimer_article_buttonMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_supprimer_article_buttonMousePressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_supprimer_article_buttonMousePressed
 
     /**
     * @param args the command line arguments
@@ -278,22 +333,23 @@ private java.awt.Frame parent_frame;
     private javax.swing.JButton ajouter_auteur_button;
     private javax.swing.JButton ajouter_motcle_button;
     private javax.swing.JButton annuler_button;
+    private javax.swing.JTable article_jtable;
+    private javax.swing.JLabel article_label;
+    private javax.swing.JList auteur_jlist;
+    private javax.swing.JLabel auteur_label;
+    private javax.swing.JLabel id_parution_label;
     private javax.swing.JTextField id_parution_textfield;
     private javax.swing.JLabel issn_label;
     private javax.swing.JTextField issn_textfield;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JList jList1;
-    private javax.swing.JList jList2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
-    private javax.swing.JTable jTable1;
+    private javax.swing.JList mot_cle_jlist;
+    private javax.swing.JLabel mots_cles_label;
+    private javax.swing.JLabel nom_periodique_label;
     private javax.swing.JTextField nom_periodique_textfield;
     private javax.swing.JButton rechercher_button;
+    private javax.swing.JButton supprimer_article_button;
     private javax.swing.JButton valider_button;
     // End of variables declaration//GEN-END:variables
 
