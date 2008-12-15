@@ -181,6 +181,11 @@ public class MenuGUI extends javax.swing.JFrame {
         parution_menu.setText("Parution");
 
         nouvelle_parution_button.setText("Nouvelle");
+        nouvelle_parution_button.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                nouvelle_parution_buttonMouseClicked(evt);
+            }
+        });
         parution_menu.add(nouvelle_parution_button);
 
         periodique_menu.add(parution_menu);
@@ -273,6 +278,13 @@ public class MenuGUI extends javax.swing.JFrame {
         ctrRendreExNonDispGUI.menuPrincipal(bibliotheque);
         ctrRendreExNonDispGUI = null;   // suppression du controleur
     }//GEN-LAST:event_rendre_indisponible_buttonMousePressed
+
+    private void nouvelle_parution_buttonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_nouvelle_parution_buttonMouseClicked
+        // TODO add your handling code here:
+        CtrNouvParutionGUI ctrNouvParutionGUI = new CtrNouvParutionGUI(this, true);
+        ctrNouvParutionGUI.menuPrincipal(bibliotheque);
+        ctrNouvParutionGUI = null;
+    }//GEN-LAST:event_nouvelle_parution_buttonMouseClicked
     
     /**
      * @param args the command line arguments
