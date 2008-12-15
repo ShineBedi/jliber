@@ -10,7 +10,7 @@
  */
 
 package biblio;
-
+import javax.swing.*;
 /**
  *
  * @author ksz
@@ -123,10 +123,16 @@ public class CtrConsOuvrageGUI extends javax.swing.JDialog {
                 vOuvGUI.elimineObserveur();
                 vOuvGUI = null;  // suppression de la vue
             } else  {
-                javax.swing.JOptionPane.showMessageDialog(null, "Erreur : Ouvrage inconnu");
+            JOptionPane.showMessageDialog(this,
+            "L'ouvrage saisie n'est pas dans la base",
+            "Erreur : ouvrage inconnu",
+            JOptionPane.ERROR_MESSAGE);
             }
         } catch(java.lang.NumberFormatException Ex) {
-            javax.swing.JOptionPane.showMessageDialog(null, "Erreur de saisie dans les champs obligatoires");
+           JOptionPane.showMessageDialog(this,
+            "Erreur de saisie dans les champs obligatoires",
+            "Erreur : Conversion",
+            JOptionPane.ERROR_MESSAGE);
         }
 }//GEN-LAST:event_valider_buttonMousePressed
 

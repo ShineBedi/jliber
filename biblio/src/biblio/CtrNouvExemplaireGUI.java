@@ -10,7 +10,7 @@
  */
 
 package biblio;
-
+import javax.swing.* ;
 /**
  *
  * @author ksz
@@ -154,7 +154,10 @@ public class CtrNouvExemplaireGUI extends javax.swing.JDialog {
         // Vérification la non existence de l'ouvrage / ISBN
         Ouvrage ouv = biblio.unOuvrage(isbn);
         if (ouv == null) {
-            javax.swing.JOptionPane.showMessageDialog(null, "Cet ouvrage n'existe pas dans la base");
+            JOptionPane.showMessageDialog(this,
+            "L'ouvrage saisie n'est pas dans la base",
+            "Erreur : ouvrage inconnu",
+            JOptionPane.ERROR_MESSAGE);
         } else {
             javax.swing.JOptionPane.showMessageDialog(null, "Cet ouvrage éxiste dans la base on peut donc ajouter un exemplaire");
         }

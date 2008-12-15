@@ -19,7 +19,6 @@ try  {
     ObjectInputStream in = new ObjectInputStream(f);
 
     bib = (Bibliotheque) in.readObject();
-
     System.out.println();
     System.out.println(" $$$ Restauration du fichier "+nomfich+" realisée");
     System.out.println();

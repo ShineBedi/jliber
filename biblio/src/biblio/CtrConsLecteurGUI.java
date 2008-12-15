@@ -14,6 +14,7 @@ package biblio;
 
 import java.util.*;
 import java.lang.*;
+import javax.swing.*;
 /**
  *
  * @author ksz
@@ -128,10 +129,16 @@ public class CtrConsLecteurGUI extends javax.swing.JDialog {
             vLectGUI.elimineObserveur();
             vLectGUI = null;  // suppression de la vue
           } else  {
-              javax.swing.JOptionPane.showMessageDialog(null, "Erreur : lecteur inconnu");
+            JOptionPane.showMessageDialog(this,
+            "Le lecteur saisie n'est pas dans la base",
+            "Erreur : lecteur inconnu",
+            JOptionPane.ERROR_MESSAGE);
           }
       } catch(java.lang.NumberFormatException Ex) {
-            javax.swing.JOptionPane.showMessageDialog(null, "Erreur de saisie dans les champs obligatoires");
+            JOptionPane.showMessageDialog(this,
+            "Erreur de saisie dans les champs obligatoires",
+            "Erreur : Conversion",
+            JOptionPane.ERROR_MESSAGE);
       }
     }//GEN-LAST:event_valider_buttonMousePressed
 
