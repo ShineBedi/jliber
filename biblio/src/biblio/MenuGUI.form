@@ -146,7 +146,7 @@
                     <Property name="text" type="java.lang.String" value="Nouvelle"/>
                   </Properties>
                   <Events>
-                    <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="nouvelle_parution_buttonMouseClicked"/>
+                    <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="nouvelle_parution_buttonMousePressed"/>
                   </Events>
                 </MenuItem>
               </SubComponents>
