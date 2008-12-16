@@ -84,6 +84,8 @@ public class CtrNouvLecteurGUI extends javax.swing.JDialog {
         adresse_textarea.setRows(5);
         jScrollPane1.setViewportView(adresse_textarea);
 
+        age_spin.setModel(new javax.swing.SpinnerNumberModel(0, 0, 130, 1));
+
         nom_check_jlabel.setText(" ");
 
         prenom_check_jlabel.setText(" ");
@@ -112,7 +114,7 @@ public class CtrNouvLecteurGUI extends javax.swing.JDialog {
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addComponent(adresse_label, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(adresse_label, javax.swing.GroupLayout.DEFAULT_SIZE, 66, Short.MAX_VALUE)
                                 .addGap(66, 66, 66))
                             .addComponent(age_label, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
