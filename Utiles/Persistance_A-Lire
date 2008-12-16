@@ -1,0 +1,26 @@
+
+*******************************  PERSISTANCE ******************************
+
+Principe :
+La classe Start.java sauvegarde en fin d'exécution 
+l'instance de la classe application ("Appli" par exemple).
+Toutes les instances liées à "Appli" sont sauvegardées 
+dans un fichier texte ("Fsauve.txt").
+
+Au lancement, Start.java recrée les objets sauvegardés. 
+
+
+Mise en oeuvre :
+- la classe "Appli" et toutes les classes associées (directement ou
+indirectement) doivent implementer l'interface "Serializable" :
+
+	public class C implements Serializable {
+
+- à noter qu'il suffit qu'une super-classe implémente l'interface Serializable
+pour que ses sous-classes en héritent.
+
+- pour la séquence de code (la + simple): voir Start.java
+
+Note :
+A la première utilisation, le fichier "Fsauve.txt" n'existe pas 
+d'où un message d'erreur (sans importance).
