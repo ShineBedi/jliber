@@ -11,6 +11,7 @@
 
 package biblio;
 import javax.swing.*;
+import java.awt.Color;
 /**
  *
  * @author ksz
@@ -46,6 +47,7 @@ public class CtrConsOuvrageGUI extends javax.swing.JDialog {
         isbn_textfield = new javax.swing.JTextField();
         annuler_button = new javax.swing.JButton();
         valider_button = new javax.swing.JButton();
+        isbn_notif_label = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Consulter un ouvrage");
@@ -53,9 +55,10 @@ public class CtrConsOuvrageGUI extends javax.swing.JDialog {
 
         isbn_label.setText("Numero ISBN :");
 
+        annuler_button.setIcon(new javax.swing.ImageIcon(getClass().getResource("/biblio/cancel.png"))); // NOI18N
         annuler_button.setText("Annuler");
         annuler_button.setFocusable(false);
-        annuler_button.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        annuler_button.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
         annuler_button.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         annuler_button.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
@@ -63,6 +66,7 @@ public class CtrConsOuvrageGUI extends javax.swing.JDialog {
             }
         });
 
+        valider_button.setIcon(new javax.swing.ImageIcon(getClass().getResource("/biblio/tick.png"))); // NOI18N
         valider_button.setText("Valider");
         valider_button.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
@@ -70,35 +74,40 @@ public class CtrConsOuvrageGUI extends javax.swing.JDialog {
             }
         });
 
+        isbn_notif_label.setText(" ");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(isbn_label, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(isbn_textfield, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(37, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(81, Short.MAX_VALUE)
-                .addComponent(annuler_button)
-                .addGap(18, 18, 18)
-                .addComponent(valider_button)
-                .addGap(66, 66, 66))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(annuler_button)
+                        .addGap(18, 18, 18)
+                        .addComponent(valider_button))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(isbn_label, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(isbn_textfield, javax.swing.GroupLayout.DEFAULT_SIZE, 220, Short.MAX_VALUE))
+                    .addComponent(isbn_notif_label))
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(22, 22, 22)
+                .addGap(43, 43, 43)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(isbn_label)
                     .addComponent(isbn_textfield, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(isbn_notif_label)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 15, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(annuler_button)
                     .addComponent(valider_button))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
         );
 
         pack();
@@ -123,16 +132,12 @@ public class CtrConsOuvrageGUI extends javax.swing.JDialog {
                 vOuvGUI.elimineObserveur();
                 vOuvGUI = null;  // suppression de la vue
             } else  {
-            JOptionPane.showMessageDialog(this,
-            "L'ouvrage saisie n'est pas dans la base",
-            "Erreur : ouvrage inconnu",
-            JOptionPane.ERROR_MESSAGE);
+               isbn_notif_label.setForeground(Color.red);
+               isbn_notif_label.setText("L'ouvrage n'existe pas dans la base.");
             }
         } catch(java.lang.NumberFormatException Ex) {
-           JOptionPane.showMessageDialog(this,
-            "Erreur de saisie dans les champs obligatoires",
-            "Erreur : Conversion",
-            JOptionPane.ERROR_MESSAGE);
+           isbn_notif_label.setForeground(Color.red);
+           isbn_notif_label.setText("Saisissez un ISBN.");
         }
 }//GEN-LAST:event_valider_buttonMousePressed
 
@@ -156,6 +161,7 @@ public class CtrConsOuvrageGUI extends javax.swing.JDialog {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton annuler_button;
     private javax.swing.JLabel isbn_label;
+    private javax.swing.JLabel isbn_notif_label;
     private javax.swing.JTextField isbn_textfield;
     private javax.swing.JButton valider_button;
     // End of variables declaration//GEN-END:variables
