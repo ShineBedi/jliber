@@ -75,6 +75,7 @@ private java.awt.Frame parent_frame;
 
         issn_label.setText("Numero ISSN :");
 
+        annuler_button.setIcon(new javax.swing.ImageIcon(getClass().getResource("/biblio/cancel.png"))); // NOI18N
         annuler_button.setText("Annuler");
         annuler_button.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
@@ -82,6 +83,7 @@ private java.awt.Frame parent_frame;
             }
         });
 
+        valider_button.setIcon(new javax.swing.ImageIcon(getClass().getResource("/biblio/tick.png"))); // NOI18N
         valider_button.setText("Valider");
         valider_button.setEnabled(false);
         valider_button.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -90,6 +92,7 @@ private java.awt.Frame parent_frame;
             }
         });
 
+        rechercher_button.setIcon(new javax.swing.ImageIcon(getClass().getResource("/biblio/find.png"))); // NOI18N
         rechercher_button.setText("Rechercher");
         rechercher_button.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
@@ -178,8 +181,10 @@ private java.awt.Frame parent_frame;
             }
         });
 
+        creer_parution_button.setIcon(new javax.swing.ImageIcon(getClass().getResource("/biblio/arrow_right.png"))); // NOI18N
         creer_parution_button.setText("Créer");
         creer_parution_button.setEnabled(false);
+        creer_parution_button.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
         creer_parution_button.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 creer_parution_buttonMousePressed(evt);
@@ -202,9 +207,9 @@ private java.awt.Frame parent_frame;
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(issn_label, javax.swing.GroupLayout.DEFAULT_SIZE, 286, Short.MAX_VALUE)
-                                    .addComponent(nom_periodique_label, javax.swing.GroupLayout.DEFAULT_SIZE, 286, Short.MAX_VALUE)
-                                    .addComponent(id_parution_label, javax.swing.GroupLayout.DEFAULT_SIZE, 286, Short.MAX_VALUE))
+                                    .addComponent(issn_label, javax.swing.GroupLayout.DEFAULT_SIZE, 280, Short.MAX_VALUE)
+                                    .addComponent(nom_periodique_label, javax.swing.GroupLayout.DEFAULT_SIZE, 280, Short.MAX_VALUE)
+                                    .addComponent(id_parution_label, javax.swing.GroupLayout.DEFAULT_SIZE, 280, Short.MAX_VALUE))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(id_parution_textfield)
@@ -213,7 +218,7 @@ private java.awt.Frame parent_frame;
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(creer_parution_button)
-                                    .addComponent(rechercher_button, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addComponent(rechercher_button)))
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(annuler_button, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
@@ -285,7 +290,7 @@ private java.awt.Frame parent_frame;
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(valider_button, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(annuler_button, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(25, Short.MAX_VALUE))
+                .addContainerGap(23, Short.MAX_VALUE))
         );
 
         pack();
