@@ -18,6 +18,7 @@ public class Bibliotheque
     private Hashtable ouvrages;
     private Hashtable periodiques;
     private Set1 emprunts;
+    private Hashtable auteurs;
 
 // ***************************
 //      Constructeur
@@ -25,8 +26,9 @@ public class Bibliotheque
 public Bibliotheque() {
         lecteurs = new Hashtable();
         ouvrages = new Hashtable();
+        periodiques = new Hashtable();
         emprunts = new Set1();
-        periodiques = new Hashtable(1);
+        auteurs = new Hashtable();
         derNumLecteur = 0;
         try {
             jbInit();
@@ -95,7 +97,6 @@ public Ouvrage unOuvrage(String isbn) {
     return (Ouvrage) ouvrages.get(isbn);
 } // Fin un Ouvrage
 public Periodique unPeriodique(String issn) {
-    System.out.println(periodiques == null);
     return (Periodique) periodiques.get(issn);
 } // Fin unPeriodique
 
