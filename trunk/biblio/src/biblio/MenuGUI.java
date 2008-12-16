@@ -293,7 +293,7 @@ public class MenuGUI extends javax.swing.JFrame {
     {
         Object[] options = {"Oui","Non" , "Annuler"};
         int reponse = JOptionPane.showOptionDialog(this,
-        "Voulez vous sauvegarder",
+        "Voulez vous sauvegarder ?",
         "Sauvegarde",
         JOptionPane.YES_NO_CANCEL_OPTION,
         JOptionPane.QUESTION_MESSAGE,
