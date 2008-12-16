@@ -60,7 +60,7 @@
                       <Component id="valider_button" min="-2" pref="92" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="1" attributes="0">
-                      <Component id="isbn_textfield" pref="175" max="32767" attributes="1"/>
+                      <Component id="isbn_textfield" pref="185" max="32767" attributes="1"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Component id="verifier_button" min="-2" pref="101" max="-2" attributes="0"/>
                   </Group>
@@ -107,7 +107,7 @@
                   <Component id="year_textfield" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="sep_label1" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace pref="65" max="32767" attributes="0"/>
+              <EmptySpace pref="63" max="32767" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="valider_button" alignment="3" min="-2" pref="29" max="-2" attributes="0"/>
                   <Component id="annuler_button" alignment="3" min="-2" pref="29" max="-2" attributes="0"/>
@@ -120,6 +120,9 @@
   <SubComponents>
     <Component class="javax.swing.JButton" name="annuler_button">
       <Properties>
+        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+          <Image iconType="3" name="/biblio/cancel.png"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="Annuler"/>
       </Properties>
       <Events>
@@ -128,6 +131,9 @@
     </Component>
     <Component class="javax.swing.JButton" name="valider_button">
       <Properties>
+        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+          <Image iconType="3" name="/biblio/tick.png"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="Valider"/>
         <Property name="enabled" type="boolean" value="false"/>
       </Properties>
@@ -185,6 +191,9 @@
     </Component>
     <Component class="javax.swing.JButton" name="verifier_button">
       <Properties>
+        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+          <Image iconType="3" name="/biblio/find.png"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="V&#xe9;rifier"/>
       </Properties>
       <Events>
