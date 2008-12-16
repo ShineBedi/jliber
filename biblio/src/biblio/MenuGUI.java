@@ -401,7 +401,7 @@ public class MenuGUI extends javax.swing.JFrame {
         }catch(Exception e){
             //TODO : faire une boite de dialogue
         }
-        
+        backup();
         
         
     }//GEN-LAST:event_restaurer_fichier_buttonMousePressed
