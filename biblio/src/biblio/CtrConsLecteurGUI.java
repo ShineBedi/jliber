@@ -15,6 +15,7 @@ package biblio;
 import java.util.*;
 import java.lang.*;
 import javax.swing.*;
+import java.awt.Color;
 /**
  *
  * @author ksz
@@ -50,6 +51,7 @@ public class CtrConsLecteurGUI extends javax.swing.JDialog {
         numero_textfield = new javax.swing.JTextField();
         annuler_button = new javax.swing.JButton();
         valider_button = new javax.swing.JButton();
+        notif_jlabel = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Consulter un lecteur");
@@ -75,21 +77,26 @@ public class CtrConsLecteurGUI extends javax.swing.JDialog {
             }
         });
 
+        notif_jlabel.setText(" ");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(annuler_button)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(valider_button))
-                    .addComponent(numero_textfield))
-                .addContainerGap())
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addComponent(annuler_button)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(valider_button))
+                            .addComponent(numero_textfield)))
+                    .addComponent(notif_jlabel))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -98,7 +105,9 @@ public class CtrConsLecteurGUI extends javax.swing.JDialog {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
                     .addComponent(numero_textfield, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 40, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(notif_jlabel)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 17, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(valider_button)
                     .addComponent(annuler_button, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -123,16 +132,13 @@ public class CtrConsLecteurGUI extends javax.swing.JDialog {
             vLectGUI.elimineObserveur();
             vLectGUI = null;  // suppression de la vue
           } else  {
-            JOptionPane.showMessageDialog(this,
-            "Le lecteur saisie n'est pas dans la base",
-            "Erreur : lecteur inconnu",
-            JOptionPane.ERROR_MESSAGE);
+            notif_jlabel.setForeground(Color.red);
+            notif_jlabel.setText("Le lecteur n'existe pas dans la base.");
+
           }
       } catch(java.lang.NumberFormatException Ex) {
-            JOptionPane.showMessageDialog(this,
-            "Erreur de saisie dans les champs obligatoires",
-            "Erreur : Conversion",
-            JOptionPane.ERROR_MESSAGE);
+          notif_jlabel.setForeground(Color.red);
+          notif_jlabel.setText("Saisissez un numéro de lecteur.");
       }
     }//GEN-LAST:event_valider_buttonMousePressed
 
@@ -161,6 +167,7 @@ public class CtrConsLecteurGUI extends javax.swing.JDialog {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton annuler_button;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel notif_jlabel;
     private javax.swing.JTextField numero_textfield;
     private javax.swing.JButton valider_button;
     // End of variables declaration//GEN-END:variables
