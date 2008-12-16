@@ -5,10 +5,11 @@
  */
 
 package biblio;
-
+import java.io.*;
+import javax.swing.*;
 /**
  *
- * @author  mailleta
+ * @author  mailleta vargasch
  */
 public class MenuGUI extends javax.swing.JFrame {
     
@@ -66,10 +67,15 @@ public class MenuGUI extends javax.swing.JFrame {
         recherche_par_auteur_button = new javax.swing.JMenuItem();
         recherche_par_motcle_button = new javax.swing.JMenuItem();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
         setTitle("Gestion Bibliothèque");
         setBackground(new java.awt.Color(244, 236, 236));
         setResizable(false);
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowClosing(java.awt.event.WindowEvent evt) {
+                formWindowClosing(evt);
+            }
+        });
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/biblio/biblio.png"))); // NOI18N
 
@@ -237,10 +243,45 @@ public class MenuGUI extends javax.swing.JFrame {
          ctrConsLectGUI.menuPrincipal(bibliotheque);
          ctrConsLectGUI = null;   // suppression du controleur
     }//GEN-LAST:event_consulter_lecteur_buttonMousePressed
+    boolean demanderEtSauvegarder()
+    {
+        Object[] options = {"Oui","Non" , "Annuler"};
+        int reponse = JOptionPane.showOptionDialog(this,
+        "Voulez vous sauvegarder",
+        "Sauvegarde",
+        JOptionPane.YES_NO_CANCEL_OPTION,
+        JOptionPane.QUESTION_MESSAGE,
+        null,     //do not use a custom Icon
+        options,  //the titles of buttons
+        options[0]); //default button title
+        if (reponse == JOptionPane.YES_OPTION)
+        {
+            String nomfich = "Fsauve.txt";
+            try  {
+                FileOutputStream f = new FileOutputStream(nomfich);
+                ObjectOutputStream out = new ObjectOutputStream(f);
 
+                out.writeObject(bibliotheque);
+
+                System.out.println();
+                System.out.println(" $$$ Sauvegarde dans le fichier "+nomfich+" realisee");
+                System.out.println();
+            }
+            catch (Exception e)  {
+                System.out.println(" *** ");
+                System.out.println(" *** Start :Pbs de Sauvegarde dans le fichier "+nomfich);
+                System.out.println(" *** ");
+            
+            }
+        }
+        else if (reponse == JOptionPane.CANCEL_OPTION){
+            return false ;
+        }
+        return true ;
+    }
     private void quitter_fichier_buttonMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_quitter_fichier_buttonMousePressed
         // TODO add your handling code here:
-         System.exit(0);
+        if(demanderEtSauvegarder())System.exit(0);
     }//GEN-LAST:event_quitter_fichier_buttonMousePressed
 
     private void nouvel_ouvrage_buttonMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_nouvel_ouvrage_buttonMousePressed
@@ -297,6 +338,10 @@ public class MenuGUI extends javax.swing.JFrame {
         ctr.menuPrincipal(bibliotheque);
         ctr = null;
     }//GEN-LAST:event_nouveau_periodique_buttonMousePressed
+
+    private void formWindowClosing(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosing
+       if(demanderEtSauvegarder())System.exit(0);
+    }//GEN-LAST:event_formWindowClosing
     
     /**
      * @param args the command line arguments

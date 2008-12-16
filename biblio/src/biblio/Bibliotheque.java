@@ -12,11 +12,11 @@ public class Bibliotheque
 //       Attributs
 // **************************
     private int derNumLecteur;
-
+    private static final long serialVersionUID = 42L;
     // Attributs d'Association
-    private Hashtable lecteurs;
-    private Hashtable ouvrages;
-    private Hashtable periodiques;
+    private Hashtable<Integer,Lecteur> lecteurs;
+    private Hashtable<String,Ouvrage> ouvrages;
+    private Hashtable<String,Periodique> periodiques;
     private Set1 emprunts;
     private Hashtable auteurs;
 
@@ -99,8 +99,6 @@ public Ouvrage unOuvrage(String isbn) {
 public Periodique unPeriodique(String issn) {
     return (Periodique) periodiques.get(issn);
 } // Fin unPeriodique
-
-
 
 private void lierOuvrage(Ouvrage ouv, String isbn) {
     ouvrages.put(isbn, ouv);
