@@ -1,5 +1,7 @@
 package biblio;
+import java.util.Vector;
 import java.awt.Color;
+import javax.swing.table.DefaultTableModel;
 
 /*
  * To change this template, choose Tools | Templates
@@ -65,6 +67,7 @@ private java.awt.Frame parent_frame;
         article_jtable = new javax.swing.JTable();
         ajouter_article_button = new javax.swing.JButton();
         supprimer_article_button = new javax.swing.JButton();
+        creer_parution_button = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Ajout d'une parution");
@@ -97,7 +100,6 @@ private java.awt.Frame parent_frame;
         nom_periodique_label.setText("Nom du périodique:");
 
         nom_periodique_textfield.setBackground(new java.awt.Color(254, 254, 254));
-        nom_periodique_textfield.setEditable(false);
         nom_periodique_textfield.setForeground(new java.awt.Color(254, 254, 254));
         nom_periodique_textfield.setText("(recherchez un ISSN)");
         nom_periodique_textfield.setToolTipText("Nom du périodique ayant l'ISSN spécifié.");
@@ -127,11 +129,6 @@ private java.awt.Frame parent_frame;
         ajouter_motcle_button.setIcon(new javax.swing.ImageIcon(getClass().getResource("/biblio/plus_icon.gif"))); // NOI18N
         ajouter_motcle_button.setText("Ajouter");
         ajouter_motcle_button.setEnabled(false);
-        ajouter_motcle_button.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                ajouter_motcle_buttonMousePressed(evt);
-            }
-        });
 
         ajouter_auteur_button.setIcon(new javax.swing.ImageIcon(getClass().getResource("/biblio/plus_icon.gif"))); // NOI18N
         ajouter_auteur_button.setText("Ajouter");
@@ -140,23 +137,32 @@ private java.awt.Frame parent_frame;
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 ajouter_auteur_buttonMousePressed(evt);
             }
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                ajouter_auteur_buttonMouseReleased(evt);
+            }
         });
 
-        article_label.setText("Article");
+        article_label.setText("Articles:");
 
         article_jtable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {"OpenBSD", "14"},
-                {"Rootkit", "28"}
+
             },
             new String [] {
                 "Titre", "Page"
             }
         ));
+        article_jtable.setEnabled(false);
+        article_jtable.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                article_jtableMouseReleased(evt);
+            }
+        });
         jScrollPane3.setViewportView(article_jtable);
 
         ajouter_article_button.setIcon(new javax.swing.ImageIcon(getClass().getResource("/biblio/plus_icon.gif"))); // NOI18N
         ajouter_article_button.setText("Ajouter");
+        ajouter_article_button.setEnabled(false);
         ajouter_article_button.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 ajouter_article_buttonMousePressed(evt);
@@ -165,9 +171,23 @@ private java.awt.Frame parent_frame;
 
         supprimer_article_button.setIcon(new javax.swing.ImageIcon(getClass().getResource("/biblio/minus_icon.png"))); // NOI18N
         supprimer_article_button.setText("Supprimer");
+        supprimer_article_button.setEnabled(false);
         supprimer_article_button.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 supprimer_article_buttonMousePressed(evt);
+            }
+        });
+
+        creer_parution_button.setText("Créer");
+        creer_parution_button.setEnabled(false);
+        creer_parution_button.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                creer_parution_buttonMousePressed(evt);
+            }
+        });
+        creer_parution_button.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                creer_parution_buttonActionPerformed(evt);
             }
         });
 
@@ -191,29 +211,32 @@ private java.awt.Frame parent_frame;
                                     .addComponent(nom_periodique_textfield)
                                     .addComponent(issn_textfield, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(rechercher_button, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(creer_parution_button)
+                                    .addComponent(rechercher_button, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(annuler_button, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
                                 .addComponent(valider_button, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addContainerGap())
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(supprimer_article_button)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(ajouter_article_button))
-                            .addComponent(article_label, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 242, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addGroup(layout.createSequentialGroup()
+                                    .addComponent(supprimer_article_button)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(ajouter_article_button))
+                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                    .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 242, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
+                            .addComponent(article_label))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(auteur_label)
                             .addGroup(layout.createSequentialGroup()
-                                .addGap(6, 6, 6)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addComponent(ajouter_auteur_button)
-                                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addComponent(auteur_label))
+                                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE))))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(ajouter_motcle_button, javax.swing.GroupLayout.Alignment.TRAILING)
@@ -235,12 +258,12 @@ private java.awt.Frame parent_frame;
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(id_parution_textfield, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(id_parution_label, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(id_parution_label, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(creer_parution_button))
                 .addGap(42, 42, 42)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(mots_cles_label)
-                        .addComponent(article_label))
+                    .addComponent(mots_cles_label)
+                    .addComponent(article_label)
                     .addComponent(auteur_label))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
@@ -249,7 +272,7 @@ private java.awt.Frame parent_frame;
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(ajouter_motcle_button))
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jScrollPane3, 0, 0, Short.MAX_VALUE)
                             .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -267,7 +290,6 @@ private java.awt.Frame parent_frame;
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
     private void annuler_buttonMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_annuler_buttonMousePressed
         // TODO add your handling code here:
         this.dispose();
@@ -282,11 +304,18 @@ private java.awt.Frame parent_frame;
         // TODO add your handling code here:
         String issn = issn_textfield.getText();
         Periodique period = null;//biblio.unPeriodique(issn);
-        if (period == null) {
+        if (period != null) {
             nom_periodique_textfield.setDisabledTextColor(Color.red);
             nom_periodique_textfield.setText("L'ISSN spécifié n'existe pas.");
         } else {
             nom_periodique_textfield.setText("Le monde");
+            issn_textfield.setEnabled(false);
+            rechercher_button.setEnabled(false);
+            id_parution_textfield.setEnabled(true);
+            creer_parution_button.setEnabled(true);
+
+
+
         }
 
 }//GEN-LAST:event_rechercher_buttonMousePressed
@@ -295,18 +324,16 @@ private java.awt.Frame parent_frame;
         // TODO add your handling code here:
 }//GEN-LAST:event_id_parution_textfieldActionPerformed
 
-    private void ajouter_motcle_buttonMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ajouter_motcle_buttonMousePressed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_ajouter_motcle_buttonMousePressed
-
     private void ajouter_auteur_buttonMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ajouter_auteur_buttonMousePressed
         // TODO add your handling code here:
     }//GEN-LAST:event_ajouter_auteur_buttonMousePressed
 
     private void ajouter_article_buttonMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ajouter_article_buttonMousePressed
         // TODO add your handling code here:
-        article_jtable.addRowSelectionInterval(article_jtable.getRowCount()-1,article_jtable.getRowCount()-1);
-        article_jtable.doLayout();
+            Vector input= new Vector(2);
+
+            DefaultTableModel model = (DefaultTableModel)article_jtable.getModel(); //on récupère le modèle courant
+            model.addRow(input);
     }//GEN-LAST:event_ajouter_article_buttonMousePressed
 
     private void supprimer_article_buttonMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_supprimer_article_buttonMousePressed
@@ -316,9 +343,41 @@ private java.awt.Frame parent_frame;
         selectedRow=article_jtable.getSelectedRow();
 
         if (selectedRow!=-1){
-            article_jtable.removeRowSelectionInterval(selectedRow,selectedRow);
+            DefaultTableModel model = (DefaultTableModel)article_jtable.getModel(); //on récupère le modèle courant
+            model.removeRow(selectedRow);
         }
+
+        ajouter_auteur_button.setEnabled(false);
+        ajouter_motcle_button.setEnabled (false);
+
     }//GEN-LAST:event_supprimer_article_buttonMousePressed
+
+    private void ajouter_auteur_buttonMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ajouter_auteur_buttonMouseReleased
+        // TODO add your handling code here:
+
+    }//GEN-LAST:event_ajouter_auteur_buttonMouseReleased
+
+    private void article_jtableMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_article_jtableMouseReleased
+        // TODO add your handling code here:
+                 int selectedRow;
+        selectedRow=article_jtable.getSelectedRow();
+
+        if (selectedRow!=-1){
+            ajouter_auteur_button.setEnabled(true);
+            ajouter_motcle_button.setEnabled (true);
+        } else {
+            ajouter_auteur_button.setEnabled(false);
+            ajouter_motcle_button.setEnabled (false);
+        }
+    }//GEN-LAST:event_article_jtableMouseReleased
+
+    private void creer_parution_buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_creer_parution_buttonActionPerformed
+        // TODO add your handling code here:
+}//GEN-LAST:event_creer_parution_buttonActionPerformed
+
+    private void creer_parution_buttonMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_creer_parution_buttonMousePressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_creer_parution_buttonMousePressed
 
     /**
     * @param args the command line arguments
@@ -346,6 +405,7 @@ private java.awt.Frame parent_frame;
     private javax.swing.JLabel article_label;
     private javax.swing.JList auteur_jlist;
     private javax.swing.JLabel auteur_label;
+    private javax.swing.JButton creer_parution_button;
     private javax.swing.JLabel id_parution_label;
     private javax.swing.JTextField id_parution_textfield;
     private javax.swing.JLabel issn_label;

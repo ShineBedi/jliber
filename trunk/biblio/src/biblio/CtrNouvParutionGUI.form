@@ -42,7 +42,10 @@
                                   <Component id="issn_textfield" alignment="0" min="-2" pref="141" max="-2" attributes="1"/>
                               </Group>
                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                              <Component id="rechercher_button" min="-2" pref="101" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="creer_parution_button" min="-2" max="-2" attributes="0"/>
+                                  <Component id="rechercher_button" alignment="0" min="-2" pref="101" max="-2" attributes="0"/>
+                              </Group>
                           </Group>
                           <Group type="102" alignment="1" attributes="0">
                               <Component id="annuler_button" min="-2" pref="91" max="-2" attributes="0"/>
@@ -53,27 +56,29 @@
                       <EmptySpace max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="1" attributes="0">
-                      <Group type="103" groupAlignment="1" attributes="0">
-                          <Group type="102" attributes="0">
-                              <Component id="supprimer_article_button" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Component id="ajouter_article_button" min="-2" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="103" groupAlignment="1" attributes="0">
+                              <Group type="102" attributes="0">
+                                  <Component id="supprimer_article_button" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="ajouter_article_button" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <Component id="jScrollPane3" min="-2" pref="242" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                              </Group>
                           </Group>
-                          <Component id="article_label" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Group type="102" alignment="0" attributes="0">
-                              <Component id="jScrollPane3" min="-2" pref="242" max="-2" attributes="0"/>
-                              <EmptySpace max="-2" attributes="0"/>
-                          </Group>
+                          <Component id="article_label" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" attributes="0">
-                              <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
+                          <Component id="auteur_label" min="-2" max="-2" attributes="0"/>
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="1" attributes="0">
                                   <Component id="ajouter_auteur_button" alignment="1" min="-2" max="-2" attributes="0"/>
                                   <Component id="jScrollPane2" alignment="1" min="-2" pref="127" max="-2" attributes="0"/>
                               </Group>
                           </Group>
-                          <Component id="auteur_label" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
@@ -104,14 +109,13 @@
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="id_parution_textfield" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="id_parution_label" alignment="3" min="-2" pref="28" max="-2" attributes="0"/>
+                  <Component id="creer_parution_button" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="42" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="1" attributes="0">
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="mots_cles_label" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="article_label" alignment="3" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <Component id="auteur_label" alignment="1" min="-2" max="-2" attributes="0"/>
+                  <Component id="mots_cles_label" alignment="1" min="-2" max="-2" attributes="0"/>
+                  <Component id="article_label" alignment="1" min="-2" max="-2" attributes="0"/>
+                  <Component id="auteur_label" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="1" max="-2" attributes="0">
@@ -121,9 +125,9 @@
                       <Component id="ajouter_motcle_button" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="1" attributes="0">
-                      <Group type="103" groupAlignment="1" attributes="0">
+                      <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="jScrollPane3" min="0" pref="0" max="32767" attributes="1"/>
-                          <Component id="jScrollPane2" alignment="1" min="-2" max="-2" attributes="1"/>
+                          <Component id="jScrollPane2" min="-2" max="-2" attributes="1"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
@@ -188,7 +192,6 @@
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="fe" green="fe" red="fe" type="rgb"/>
         </Property>
-        <Property name="editable" type="boolean" value="false"/>
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="fe" green="fe" red="fe" type="rgb"/>
         </Property>
@@ -264,9 +267,6 @@
         <Property name="text" type="java.lang.String" value="Ajouter"/>
         <Property name="enabled" type="boolean" value="false"/>
       </Properties>
-      <Events>
-        <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="ajouter_motcle_buttonMousePressed"/>
-      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="ajouter_auteur_button">
       <Properties>
@@ -278,11 +278,12 @@
       </Properties>
       <Events>
         <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="ajouter_auteur_buttonMousePressed"/>
+        <EventHandler event="mouseReleased" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="ajouter_auteur_buttonMouseReleased"/>
       </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="article_label">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Article"/>
+        <Property name="text" type="java.lang.String" value="Articles:"/>
       </Properties>
     </Component>
     <Container class="javax.swing.JScrollPane" name="jScrollPane3">
@@ -295,18 +296,16 @@
         <Component class="javax.swing.JTable" name="article_jtable">
           <Properties>
             <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-              <Table columnCount="2" rowCount="2">
-                <Column editable="true" title="Titre" type="java.lang.Object">
-                  <Data value="OpenBSD"/>
-                  <Data value="Rootkit"/>
-                </Column>
-                <Column editable="true" title="Page" type="java.lang.Object">
-                  <Data value="14"/>
-                  <Data value="28"/>
-                </Column>
+              <Table columnCount="2" rowCount="0">
+                <Column editable="true" title="Titre" type="java.lang.Object"/>
+                <Column editable="true" title="Page" type="java.lang.Object"/>
               </Table>
             </Property>
+            <Property name="enabled" type="boolean" value="false"/>
           </Properties>
+          <Events>
+            <EventHandler event="mouseReleased" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="article_jtableMouseReleased"/>
+          </Events>
         </Component>
       </SubComponents>
     </Container>
@@ -316,6 +315,7 @@
           <Image iconType="3" name="/biblio/plus_icon.gif"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Ajouter"/>
+        <Property name="enabled" type="boolean" value="false"/>
       </Properties>
       <Events>
         <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="ajouter_article_buttonMousePressed"/>
@@ -327,9 +327,20 @@
           <Image iconType="3" name="/biblio/minus_icon.png"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Supprimer"/>
+        <Property name="enabled" type="boolean" value="false"/>
       </Properties>
       <Events>
         <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="supprimer_article_buttonMousePressed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="creer_parution_button">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Cr&#xe9;er"/>
+        <Property name="enabled" type="boolean" value="false"/>
+      </Properties>
+      <Events>
+        <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="creer_parution_buttonMousePressed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="creer_parution_buttonActionPerformed"/>
       </Events>
     </Component>
   </SubComponents>
