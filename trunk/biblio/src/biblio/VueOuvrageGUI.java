@@ -125,7 +125,7 @@ public class VueOuvrageGUI extends javax.swing.JDialog implements Observer {
         exemplaires_table = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setTitle("Ajout d'un ouvrage");
+        setTitle("Vue d'un ouvrage");
         setResizable(false);
 
         terminer_button.setText("Terminer");
@@ -218,7 +218,7 @@ public class VueOuvrageGUI extends javax.swing.JDialog implements Observer {
             .addGroup(layout.createSequentialGroup()
                 .addGap(155, 155, 155)
                 .addComponent(terminer_button, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(230, Short.MAX_VALUE))
+                .addContainerGap(232, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
