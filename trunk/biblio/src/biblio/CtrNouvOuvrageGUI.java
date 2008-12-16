@@ -251,6 +251,10 @@ public class CtrNouvOuvrageGUI extends javax.swing.JDialog {
         String isbn = isbn_textfield.getText();
         // Vérification la non existence de l'ouvrage / ISBN
         Ouvrage ouv = biblio.unOuvrage(isbn);
+        if (isbn.length()==0){
+            isbn_notif_label.setForeground(Color.red);
+            isbn_notif_label.setText("Veuillez saisir un ISBN valide.");
+        } else {
         if (ouv != null) {
             isbn_notif_label.setForeground(Color.red);
             isbn_notif_label.setText("Cet ouvrage existe déjà dans la base !");
@@ -268,6 +272,7 @@ public class CtrNouvOuvrageGUI extends javax.swing.JDialog {
             month_textfield.setEnabled(true);
             year_textfield.setEnabled(true);
             valider_button.setEnabled(true);
+        }
         }
     }//GEN-LAST:event_verifier_buttonMousePressed
 
