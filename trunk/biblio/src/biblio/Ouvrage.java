@@ -21,6 +21,7 @@ public class Ouvrage
 
     //  Attributs d'Association
     private Hashtable exemplaires;
+    private Set<Auteur> auteurs;
 
 // ***********************************
 //          Constructeur
@@ -35,6 +36,7 @@ public Ouvrage(String is, String tit, String aut, String ed,
         derNumExemplaire = 0;
 
         exemplaires = new Hashtable();
+        auteurs = new HashSet();
 } //Fin Constructeur
 
 //**********************************************
