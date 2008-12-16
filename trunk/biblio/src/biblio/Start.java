@@ -5,10 +5,15 @@ import java.io.*;
 
 public class Start {
 
+ 
+
+    
+    
+    
 //****************************
 //      Constructeur
 //****************************
-public Start () {
+public  Start()  {
     // Creation de l'instance Appli
     Bibliotheque  bib = new Bibliotheque();
     String nomfich = "Fsauve.txt";
@@ -35,6 +40,7 @@ try  {
 
     // Appel au Menu Principal
     menu.menuPrincipal(bib);
+  
 
 // Sauvegarde des objets de l'application
 {
