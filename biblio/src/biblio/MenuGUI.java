@@ -7,12 +7,14 @@
 package biblio;
 import java.io.*;
 import javax.swing.*;
+import java.nio.channels.FileChannel ;
 /**
  *
  * @author  mailleta vargasch
  */
 public class MenuGUI extends javax.swing.JFrame {
-    
+    private  String nomfich = "Fsauve.txt";
+    private  String nomfichbk = "Fsauve.txt.bk";
     private Bibliotheque bibliotheque;
     
     /** Creates new form MenuGUI */
@@ -44,6 +46,8 @@ public class MenuGUI extends javax.swing.JFrame {
         jMenuBar1 = new javax.swing.JMenuBar();
         fichier_menu = new javax.swing.JMenu();
         quitter_fichier_button = new javax.swing.JMenuItem();
+        sauvegarder_fichier_button = new javax.swing.JMenuItem();
+        restaurer_fichier_button = new javax.swing.JMenuItem();
         lecteur_menu = new javax.swing.JMenu();
         nouveau_lecteur_button = new javax.swing.JMenuItem();
         consulter_lecteur_button = new javax.swing.JMenuItem();
@@ -88,6 +92,22 @@ public class MenuGUI extends javax.swing.JFrame {
             }
         });
         fichier_menu.add(quitter_fichier_button);
+
+        sauvegarder_fichier_button.setText("Sauvegarder");
+        sauvegarder_fichier_button.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                sauvegarder_fichier_buttonMousePressed(evt);
+            }
+        });
+        fichier_menu.add(sauvegarder_fichier_button);
+
+        restaurer_fichier_button.setText("Restaurer");
+        restaurer_fichier_button.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                restaurer_fichier_buttonMousePressed(evt);
+            }
+        });
+        fichier_menu.add(restaurer_fichier_button);
 
         jMenuBar1.add(fichier_menu);
 
@@ -229,7 +249,33 @@ public class MenuGUI extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+    private void  backup()
+    {
+        FileChannel in = null; // canal d'entrée
+        FileChannel out = null; // canal de sortie
+ 
+        try {
+        // Init
+        in = new FileInputStream(nomfich).getChannel();
+        out = new FileOutputStream(nomfichbk).getChannel();
+ 
+        // Copie depuis le in vers le out
+        in.transferTo(0, in.size(), out);
+        } catch (Exception e) {
+        e.printStackTrace(); // n'importe quelle exception
+        } finally { // finalement on ferme
+            if(in != null) {
+            try {
+                in.close();
+            } catch (IOException e) {}
+            }
+            if(out != null) {
+                try {
+                    out.close();
+                } catch (IOException e) {}
+            }
+        }
+    }
     private void nouveau_lecteur_buttonMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_nouveau_lecteur_buttonMousePressed
         // TODO add your handling code here:
          CtrNouvLecteurGUI ctrNvLectGUI = new CtrNouvLecteurGUI(this, true);
@@ -256,7 +302,6 @@ public class MenuGUI extends javax.swing.JFrame {
         options[0]); //default button title
         if (reponse == JOptionPane.YES_OPTION)
         {
-            String nomfich = "Fsauve.txt";
             try  {
                 FileOutputStream f = new FileOutputStream(nomfich);
                 ObjectOutputStream out = new ObjectOutputStream(f);
@@ -342,6 +387,24 @@ public class MenuGUI extends javax.swing.JFrame {
     private void formWindowClosing(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosing
        if(demanderEtSauvegarder())System.exit(0);
     }//GEN-LAST:event_formWindowClosing
+
+    private void sauvegarder_fichier_buttonMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_sauvegarder_fichier_buttonMousePressed
+        backup();
+    }//GEN-LAST:event_sauvegarder_fichier_buttonMousePressed
+
+    private void restaurer_fichier_buttonMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_restaurer_fichier_buttonMousePressed
+        try {
+        File file = new File(nomfich);
+        File filebk = new File(nomfichbk);
+        file.delete();
+        filebk.renameTo(file);
+        }catch(Exception e){
+            //TODO : faire une boite de dialogue
+        }
+        
+        
+        
+    }//GEN-LAST:event_restaurer_fichier_buttonMousePressed
     
     /**
      * @param args the command line arguments
@@ -379,7 +442,9 @@ public class MenuGUI extends javax.swing.JFrame {
     private javax.swing.JMenuItem rendre_consultable_button;
     private javax.swing.JMenuItem rendre_empruntable_button;
     private javax.swing.JMenuItem rendre_indisponible_button;
+    private javax.swing.JMenuItem restaurer_fichier_button;
     private javax.swing.JMenuItem retour_exemplaire_button;
+    private javax.swing.JMenuItem sauvegarder_fichier_button;
     private javax.swing.JMenu statut_menu;
     // End of variables declaration//GEN-END:variables
     

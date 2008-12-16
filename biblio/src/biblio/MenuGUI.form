@@ -17,6 +17,22 @@
                 <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="quitter_fichier_buttonMousePressed"/>
               </Events>
             </MenuItem>
+            <MenuItem class="javax.swing.JMenuItem" name="sauvegarder_fichier_button">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Sauvegarder"/>
+              </Properties>
+              <Events>
+                <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="sauvegarder_fichier_buttonMousePressed"/>
+              </Events>
+            </MenuItem>
+            <MenuItem class="javax.swing.JMenuItem" name="restaurer_fichier_button">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Restaurer"/>
+              </Properties>
+              <Events>
+                <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="restaurer_fichier_buttonMousePressed"/>
+              </Events>
+            </MenuItem>
           </SubComponents>
         </Menu>
         <Menu class="javax.swing.JMenu" name="lecteur_menu">

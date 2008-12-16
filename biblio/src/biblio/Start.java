@@ -27,13 +27,17 @@ try  {
     System.out.println();
     System.out.println(" $$$ Restauration du fichier "+nomfich+" realisée");
     System.out.println();
+    f.close();
+    
 }
   catch (Exception e)  {
         System.out.println(" *** ");
         System.out.println(" *** Start : Pbs de Restauration / fichier "+nomfich);
         System.out.println(" *** ");
 }
+finally {
 }
+    
 
     // Creation de l'instance menu de MenuBiblio
     MenuGUI menu = new MenuGUI();
@@ -42,27 +46,8 @@ try  {
     menu.menuPrincipal(bib);
   
 
-// Sauvegarde des objets de l'application
-{
-try  {
-  FileOutputStream f = new FileOutputStream(nomfich);
-  ObjectOutputStream out = new ObjectOutputStream(f);
-
-  out.writeObject(bib);
-
-  System.out.println();
-  System.out.println(" $$$ Sauvegarde dans le fichier "+nomfich+" realisee");
-  System.out.println();
-}
-catch (Exception e)  {
-        System.out.println(" *** ");
-        System.out.println(" *** Start :Pbs de Sauvegarde dans le fichier "+nomfich);
-        System.out.println(" *** ");
-}
-}
-
 } // Fin Constructeur
-
+}
 //************************************
 //         Programme Principal
 //************************************
