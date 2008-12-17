@@ -47,7 +47,7 @@ public class MenuGUI extends javax.swing.JFrame {
     fichier_menu = new javax.swing.JMenu();
     sauvegarder_fichier_button = new javax.swing.JMenuItem();
     exporter_fichier_button = new javax.swing.JMenuItem();
-    restaurer_fichier_button = new javax.swing.JMenuItem();
+    importer_fichier_button = new javax.swing.JMenuItem();
     quitter_fichier_button = new javax.swing.JMenuItem();
     lecteur_menu = new javax.swing.JMenu();
     nouveau_lecteur_button = new javax.swing.JMenuItem();
@@ -102,13 +102,13 @@ public class MenuGUI extends javax.swing.JFrame {
     });
     fichier_menu.add(exporter_fichier_button);
 
-    restaurer_fichier_button.setText("Restaurer");
-    restaurer_fichier_button.addMouseListener(new java.awt.event.MouseAdapter() {
+    importer_fichier_button.setText("Importer");
+    importer_fichier_button.addMouseListener(new java.awt.event.MouseAdapter() {
       public void mousePressed(java.awt.event.MouseEvent evt) {
-        restaurer_fichier_buttonMousePressed(evt);
+        importer_fichier_buttonMousePressed(evt);
       }
     });
-    fichier_menu.add(restaurer_fichier_button);
+    fichier_menu.add(importer_fichier_button);
 
     quitter_fichier_button.setText("Quitter");
     quitter_fichier_button.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -258,7 +258,7 @@ public class MenuGUI extends javax.swing.JFrame {
 
     pack();
   }// </editor-fold>//GEN-END:initComponents
-    private void  backup()
+    private void  backup(String nomfichier)
     {
         FileChannel in = null; // canal d'entrée
         FileChannel out = null; // canal de sortie
@@ -266,7 +266,7 @@ public class MenuGUI extends javax.swing.JFrame {
         try {
         // Init
         in = new FileInputStream(nomfich).getChannel();
-        out = new FileOutputStream(nomfichbk).getChannel();
+        out = new FileOutputStream(nomfichier).getChannel();
  
         // Copie depuis le in vers le out
         in.transferTo(0, in.size(), out);
@@ -418,22 +418,32 @@ public class MenuGUI extends javax.swing.JFrame {
     }//GEN-LAST:event_formWindowClosing
 
     private void exporter_fichier_buttonMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_exporter_fichier_buttonMousePressed
-        backup();
+        JFileChooser fc = new JFileChooser();
+        int returnVal = fc.showOpenDialog(this);
+        if (returnVal == JFileChooser.APPROVE_OPTION )
+        {
+            String nom = fc.getSelectedFile().getAbsolutePath() ;
+            backup(nom);
+        }
 }//GEN-LAST:event_exporter_fichier_buttonMousePressed
 
-    private void restaurer_fichier_buttonMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_restaurer_fichier_buttonMousePressed
-        try {
-        File file = new File(nomfich);
-        File filebk = new File(nomfichbk);
-        file.delete();
-        filebk.renameTo(file);
-        }catch(Exception e){
-            //TODO : faire une boite de dialogue
+    private void importer_fichier_buttonMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_importer_fichier_buttonMousePressed
+        JFileChooser fc = new JFileChooser();
+        int returnVal = fc.showOpenDialog(this);
+        if ( returnVal == JFileChooser.APPROVE_OPTION )
+        {
+            try {
+            File file = new File(nomfich);
+            File filebk  = fc.getSelectedFile();
+            file.delete();
+            filebk.renameTo(file);
+            backup(filebk.getAbsolutePath());
+            }catch(Exception e){
+                //TODO : faire une boite de dialogue
+            }
+            restaurer();
         }
-        backup();
-        restaurer();
-        
-    }//GEN-LAST:event_restaurer_fichier_buttonMousePressed
+}//GEN-LAST:event_importer_fichier_buttonMousePressed
 
     private void sauvegarder_fichier_buttonMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_sauvegarder_fichier_buttonMousePressed
         try  {
@@ -473,6 +483,7 @@ public class MenuGUI extends javax.swing.JFrame {
   private javax.swing.JMenu exemplaire_menu;
   private javax.swing.JMenuItem exporter_fichier_button;
   private javax.swing.JMenu fichier_menu;
+  private javax.swing.JMenuItem importer_fichier_button;
   private javax.swing.JLabel jLabel2;
   private javax.swing.JMenuBar jMenuBar1;
   private javax.swing.JMenu lecteur_menu;
@@ -491,7 +502,6 @@ public class MenuGUI extends javax.swing.JFrame {
   private javax.swing.JMenuItem rendre_consultable_button;
   private javax.swing.JMenuItem rendre_empruntable_button;
   private javax.swing.JMenuItem rendre_indisponible_button;
-  private javax.swing.JMenuItem restaurer_fichier_button;
   private javax.swing.JMenuItem retour_exemplaire_button;
   private javax.swing.JMenuItem sauvegarder_fichier_button;
   private javax.swing.JMenu statut_menu;
