@@ -12,6 +12,7 @@
 package biblio;
 import javax.swing.* ;
 import java.awt.*;
+import java.util.GregorianCalendar;
 /**
  *
  * @author ksz gardaud
@@ -56,6 +57,7 @@ public class CtrNouvExemplaireGUI extends javax.swing.JDialog {
         year_jspinner = new javax.swing.JSpinner();
         sep_label2 = new javax.swing.JLabel();
         sep_label3 = new javax.swing.JLabel();
+        date_notif_jlabel = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Ajouter un exemplaire");
@@ -105,30 +107,12 @@ public class CtrNouvExemplaireGUI extends javax.swing.JDialog {
 
         sep_label3.setText("/");
 
+        date_notif_jlabel.setText(" ");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(annuler_button, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(valider_button, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(date_label, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(day_jspinner, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(sep_label2)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(month_jspinner, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(sep_label3)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(year_jspinner, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(137, 137, 137)))
-                .addContainerGap())
             .addComponent(jSeparator1, javax.swing.GroupLayout.DEFAULT_SIZE, 532, Short.MAX_VALUE)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
@@ -141,6 +125,28 @@ public class CtrNouvExemplaireGUI extends javax.swing.JDialog {
                         .addGap(18, 18, 18)
                         .addComponent(verifier_button, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(19, 19, 19))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addComponent(date_label, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(date_notif_jlabel)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(day_jspinner, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(sep_label2)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(month_jspinner, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(annuler_button, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(valider_button, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(sep_label3)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(year_jspinner, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                .addGap(44, 44, 44))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -157,13 +163,14 @@ public class CtrNouvExemplaireGUI extends javax.swing.JDialog {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(date_label, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(day_jspinner, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(sep_label2)
-                        .addComponent(month_jspinner, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(sep_label3)
-                        .addComponent(year_jspinner)))
-                .addGap(32, 32, 32)
+                    .addComponent(day_jspinner, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(sep_label2)
+                    .addComponent(month_jspinner, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(sep_label3)
+                    .addComponent(year_jspinner))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(date_notif_jlabel)
+                .addGap(36, 36, 36)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(valider_button, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(annuler_button, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -182,14 +189,31 @@ public class CtrNouvExemplaireGUI extends javax.swing.JDialog {
             isbn_notif_jlabel.setForeground(Color.red);
             isbn_notif_jlabel.setText("L'ISBN saisit n'existe pas dans la base.");
         } else {
+            // On confirme que l'on peut créer l'ouvrage.
             isbn_notif_jlabel.setForeground(Color.green);
             isbn_notif_jlabel.setText("Ok"); //plus tard on affichera le titre
+            //On active les champs à remplir.
             verifier_button.setEnabled(false);
             isbn_textfield.setEnabled(false);
             valider_button.setEnabled(true);
             day_jspinner.setEnabled(true);
             month_jspinner.setEnabled(true);
             year_jspinner.setEnabled(true);
+            //On met la date au minimum
+            GregorianCalendar date;
+            date=ouv.dateEdition(); //on récupère la date
+
+           int day=date.get(GregorianCalendar.DAY_OF_MONTH);//on la parse
+           int month=date.get(GregorianCalendar.MONTH)+1;
+           int year=date.get(GregorianCalendar.YEAR);
+
+            day_jspinner.setValue(day); //on l'assigne aux spinners
+            month_jspinner.setValue(month);
+            year_jspinner.setValue(year);
+
+            SpinnerNumberModel model = (SpinnerNumberModel) year_jspinner.getModel();//on modifie le modèle (pour mettre à jour l'année minimum)
+            model.setMinimum(year);
+            year_jspinner.setModel(model);
         }
 }//GEN-LAST:event_verifier_buttonMousePressed
 
@@ -204,8 +228,6 @@ public class CtrNouvExemplaireGUI extends javax.swing.JDialog {
         String isbn = isbn_textfield.getText();
         Ouvrage ouv = biblio.unOuvrage(isbn);
         if (ouv != null) {
-            try {
-
                 int day = Integer.parseInt(day_jspinner.getValue().toString());
                 int month = Integer.parseInt(month_jspinner.getValue().toString());
                 int year = Integer.parseInt(year_jspinner.getValue().toString());
@@ -221,14 +243,10 @@ public class CtrNouvExemplaireGUI extends javax.swing.JDialog {
                     vOuvGUI.elimineObserveur();
                     vOuvGUI = null;
                  } else  {
-                    javax.swing.JOptionPane.showMessageDialog(null, "Date de Reception incorrecte / à la date d'Edition.");
+                    date_notif_jlabel.setForeground(Color.red);
+                    date_notif_jlabel.setText("La date doit être postérieure à la date d'édition.");
                 }
-            } catch(java.lang.NumberFormatException e){
-                javax.swing.JOptionPane.showMessageDialog(null, "La date doit etre de la forme : dd/mm/yyyy");
             }
-        } else  {
-            javax.swing.JOptionPane.showMessageDialog(null, "Cet ouvrage existe déjà dans la base");
-        }
 }//GEN-LAST:event_valider_buttonMousePressed
 
     /**
@@ -251,6 +269,7 @@ public class CtrNouvExemplaireGUI extends javax.swing.JDialog {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton annuler_button;
     private javax.swing.JLabel date_label;
+    private javax.swing.JLabel date_notif_jlabel;
     private javax.swing.JSpinner day_jspinner;
     private javax.swing.JLabel isbn_label;
     private javax.swing.JLabel isbn_notif_jlabel;
