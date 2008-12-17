@@ -191,7 +191,7 @@ public class CtrNouvExemplaireGUI extends javax.swing.JDialog {
         } else {
             // On confirme que l'on peut créer l'ouvrage.
             isbn_notif_jlabel.setForeground(Color.green);
-            isbn_notif_jlabel.setText("Ok"); //plus tard on affichera le titre
+            isbn_notif_jlabel.setText("Titre de l'ouvrage :"+ouv.titre());
             //On active les champs à remplir.
             verifier_button.setEnabled(false);
             isbn_textfield.setEnabled(false);
