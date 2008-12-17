@@ -181,6 +181,7 @@ public class VueOuvrageGUI extends javax.swing.JDialog implements Observer {
             }
         });
         exemplaires_table.setCellSelectionEnabled(true);
+        exemplaires_table.setEnabled(false);
         exemplaires_table.getTableHeader().setReorderingAllowed(false);
         jScrollPane1.setViewportView(exemplaires_table);
         exemplaires_table.getColumnModel().getSelectionModel().setSelectionMode(javax.swing.ListSelectionModel.SINGLE_INTERVAL_SELECTION);
