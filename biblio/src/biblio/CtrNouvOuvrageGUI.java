@@ -52,16 +52,19 @@ public class CtrNouvOuvrageGUI extends javax.swing.JDialog {
         auteur_textfield = new javax.swing.JTextField();
         titre_textfield = new javax.swing.JTextField();
         editeur_textfield = new javax.swing.JTextField();
-        day_textfield = new javax.swing.JTextField();
         isbn_label = new javax.swing.JLabel();
         isbn_textfield = new javax.swing.JTextField();
         verifier_button = new javax.swing.JButton();
-        month_textfield = new javax.swing.JTextField();
-        year_textfield = new javax.swing.JTextField();
-        sep_label1 = new javax.swing.JLabel();
-        sep_label = new javax.swing.JLabel();
         isbn_notif_label = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
+        day_jspinner = new javax.swing.JSpinner();
+        month_jspinner = new javax.swing.JSpinner();
+        year_jspinner = new javax.swing.JSpinner();
+        sep_label2 = new javax.swing.JLabel();
+        sep_label3 = new javax.swing.JLabel();
+        titre_notif_jlabel = new javax.swing.JLabel();
+        auteur_notif_jlabel = new javax.swing.JLabel();
+        editeur_notif_jlabel = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Ajout d'un ouvrage");
@@ -98,9 +101,6 @@ public class CtrNouvOuvrageGUI extends javax.swing.JDialog {
 
         editeur_textfield.setEnabled(false);
 
-        day_textfield.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
-        day_textfield.setEnabled(false);
-
         isbn_label.setText("Numero ISBN :");
 
         verifier_button.setIcon(new javax.swing.ImageIcon(getClass().getResource("/biblio/find.png"))); // NOI18N
@@ -111,15 +111,26 @@ public class CtrNouvOuvrageGUI extends javax.swing.JDialog {
             }
         });
 
-        month_textfield.setEnabled(false);
-
-        year_textfield.setEnabled(false);
-
-        sep_label1.setText("/");
-
-        sep_label.setText("/");
-
         isbn_notif_label.setText("Saisissez un numéro ISBN.");
+
+        day_jspinner.setModel(new javax.swing.SpinnerNumberModel(1, 1, 31, 1));
+        day_jspinner.setEnabled(false);
+
+        month_jspinner.setModel(new javax.swing.SpinnerNumberModel(1, 1, 12, 1));
+        month_jspinner.setEnabled(false);
+
+        year_jspinner.setModel(new javax.swing.SpinnerNumberModel(2008, 0, 9999, 1));
+        year_jspinner.setEnabled(false);
+
+        sep_label2.setText("/");
+
+        sep_label3.setText("/");
+
+        titre_notif_jlabel.setText(" ");
+
+        auteur_notif_jlabel.setText(" ");
+
+        editeur_notif_jlabel.setText(" ");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -127,40 +138,66 @@ public class CtrNouvOuvrageGUI extends javax.swing.JDialog {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(date_label, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(editeur_label, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(auteur_label, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(titre_label, javax.swing.GroupLayout.DEFAULT_SIZE, 151, Short.MAX_VALUE))
-                    .addComponent(isbn_label))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(isbn_label)
+                .addGap(63, 63, 63)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(isbn_notif_label)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addComponent(editeur_textfield, javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(auteur_textfield, javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(titre_textfield, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(day_textfield, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(sep_label)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(month_textfield, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(sep_label1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(year_textfield, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(annuler_button, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(24, 24, 24)
-                        .addComponent(valider_button, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(isbn_textfield, javax.swing.GroupLayout.DEFAULT_SIZE, 185, Short.MAX_VALUE)
+                        .addComponent(isbn_textfield, javax.swing.GroupLayout.DEFAULT_SIZE, 308, Short.MAX_VALUE)
                         .addGap(18, 18, 18)
                         .addComponent(verifier_button, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
-            .addComponent(jSeparator1, javax.swing.GroupLayout.DEFAULT_SIZE, 481, Short.MAX_VALUE)
+            .addComponent(jSeparator1, javax.swing.GroupLayout.DEFAULT_SIZE, 614, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(titre_label)
+                            .addComponent(auteur_label))
+                        .addGap(108, 108, 108)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(auteur_notif_jlabel)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 261, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(titre_notif_jlabel)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 261, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(auteur_textfield, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 265, Short.MAX_VALUE)
+                                    .addComponent(titre_textfield, javax.swing.GroupLayout.DEFAULT_SIZE, 265, Short.MAX_VALUE))
+                                .addGap(174, 174, 174))))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(date_label)
+                            .addComponent(editeur_label))
+                        .addGap(33, 33, 33)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(editeur_notif_jlabel)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 249, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                    .addComponent(editeur_textfield, javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                        .addComponent(day_jspinner, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(sep_label2)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(month_jspinner, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(sep_label3)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(year_jspinner, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addGap(174, 174, 174)))))
+                .addContainerGap())
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(395, Short.MAX_VALUE)
+                .addComponent(annuler_button, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(24, 24, 24)
+                .addComponent(valider_button, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -179,26 +216,32 @@ public class CtrNouvOuvrageGUI extends javax.swing.JDialog {
                     .addComponent(titre_label)
                     .addComponent(titre_textfield, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(auteur_label)
-                    .addComponent(auteur_textfield, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(titre_notif_jlabel)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(auteur_textfield, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(auteur_label))
+                .addGap(11, 11, 11)
+                .addComponent(auteur_notif_jlabel)
+                .addGap(13, 13, 13)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(editeur_label)
                     .addComponent(editeur_textfield, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(editeur_notif_jlabel)
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(date_label, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(day_textfield, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(sep_label)
-                    .addComponent(month_textfield, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(year_textfield, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(sep_label1))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 63, Short.MAX_VALUE)
+                    .addComponent(day_jspinner, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(month_jspinner, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(year_jspinner, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(sep_label2)
+                    .addComponent(sep_label3))
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(valider_button, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(annuler_button, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap())
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
@@ -210,20 +253,42 @@ public class CtrNouvOuvrageGUI extends javax.swing.JDialog {
 }//GEN-LAST:event_annuler_buttonMousePressed
 
     private void valider_buttonMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_valider_buttonMousePressed
-        // TODO add your handling code here:
-         // Vérification la non existence de l'ouvrage / ISBN
+
+        titre_notif_jlabel.setText(" ");
+        auteur_notif_jlabel.setText(" ");
+        editeur_notif_jlabel.setText(" ");
+
+        // Saisie de toutes les infos de l'ouvrage
+
         String isbn = isbn_textfield.getText();
         Ouvrage ouv = biblio.unOuvrage(isbn);
+
+        String titre = titre_textfield.getText();
+        String auteur = auteur_textfield.getText();
+        String editeur = editeur_textfield.getText();
+
+        int day = Integer.parseInt(day_jspinner.getValue().toString());
+        int month = Integer.parseInt(month_jspinner.getValue().toString());
+        int year = Integer.parseInt(year_jspinner.getValue().toString());
+
+        if (titre.isEmpty() || auteur.isEmpty() || editeur.isEmpty()){
+        if (titre.isEmpty()){
+            titre_notif_jlabel.setForeground(Color.red);
+            titre_notif_jlabel.setText("Vous devez saisir un titre.");
+        }
+        if (auteur.isEmpty()) {
+            auteur_notif_jlabel.setForeground(Color.red);
+            auteur_notif_jlabel.setText("Vous devez saisir un auteur.");
+        }
+        if (editeur.isEmpty()) {
+            editeur_notif_jlabel.setForeground(Color.red);
+            editeur_notif_jlabel.setText("Vous devez spécifier un éditeur.");
+        }
+
+        } else {
+
         if (ouv == null) {
              try {
-                 // Saisie de toutes les infos de l'ouvrage
-                String titre = titre_textfield.getText();
-                String auteur = auteur_textfield.getText();
-                String editeur = editeur_textfield.getText();
-                int day, month, year;
-                day = Integer.parseInt(day_textfield.getText());
-                month = Integer.parseInt(month_textfield.getText());
-                year = Integer.parseInt(year_textfield.getText());
                 java.util.GregorianCalendar dateEdition = new java.util.GregorianCalendar(year, month-1, day);
                  // Demande d'ajout d'un nouvel ouvrage
                 ouv = biblio.nouvelOuvrage(isbn, titre, auteur, editeur, dateEdition);
@@ -238,6 +303,7 @@ public class CtrNouvOuvrageGUI extends javax.swing.JDialog {
             }
         } else  {
            javax.swing.JOptionPane.showMessageDialog(null, "Cet ouvrage existe déjà dans la base");
+        }
         }
 }//GEN-LAST:event_valider_buttonMousePressed
 
@@ -263,9 +329,9 @@ public class CtrNouvOuvrageGUI extends javax.swing.JDialog {
             titre_textfield.setEnabled(true);
             auteur_textfield.setEnabled(true);
             editeur_textfield.setEnabled(true);
-            day_textfield.setEnabled(true);
-            month_textfield.setEnabled(true);
-            year_textfield.setEnabled(true);
+            day_jspinner.setEnabled(true);
+            month_jspinner.setEnabled(true);
+            year_jspinner.setEnabled(true);
             valider_button.setEnabled(true);
         }
         }
@@ -291,23 +357,26 @@ public class CtrNouvOuvrageGUI extends javax.swing.JDialog {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton annuler_button;
     private javax.swing.JLabel auteur_label;
+    private javax.swing.JLabel auteur_notif_jlabel;
     private javax.swing.JTextField auteur_textfield;
     private javax.swing.JLabel date_label;
-    private javax.swing.JTextField day_textfield;
+    private javax.swing.JSpinner day_jspinner;
     private javax.swing.JLabel editeur_label;
+    private javax.swing.JLabel editeur_notif_jlabel;
     private javax.swing.JTextField editeur_textfield;
     private javax.swing.JLabel isbn_label;
     private javax.swing.JLabel isbn_notif_label;
     private javax.swing.JTextField isbn_textfield;
     private javax.swing.JSeparator jSeparator1;
-    private javax.swing.JTextField month_textfield;
-    private javax.swing.JLabel sep_label;
-    private javax.swing.JLabel sep_label1;
+    private javax.swing.JSpinner month_jspinner;
+    private javax.swing.JLabel sep_label2;
+    private javax.swing.JLabel sep_label3;
     private javax.swing.JLabel titre_label;
+    private javax.swing.JLabel titre_notif_jlabel;
     private javax.swing.JTextField titre_textfield;
     private javax.swing.JButton valider_button;
     private javax.swing.JButton verifier_button;
-    private javax.swing.JTextField year_textfield;
+    private javax.swing.JSpinner year_jspinner;
     // End of variables declaration//GEN-END:variables
 
 }
