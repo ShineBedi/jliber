@@ -18,7 +18,7 @@ public class Bibliotheque
     private Hashtable<String,Ouvrage> ouvrages;
     private Hashtable<String,Periodique> periodiques;
     private Set1 emprunts;
-    private Hashtable auteurs;
+    private Hashtable<String,Auteur> auteurs;
 
 // ***************************
 //      Constructeur
@@ -100,12 +100,22 @@ public Periodique unPeriodique(String issn) {
     return (Periodique) periodiques.get(issn);
 } // Fin unPeriodique
 
+public Auteur unAuteur(String nomprenom)
+{
+    return (Auteur) auteurs.get(nomprenom);
+}
+
 private void lierOuvrage(Ouvrage ouv, String isbn) {
     ouvrages.put(isbn, ouv);
 } // Fin lierOuvrage
+
 private void lierPeriodique(Periodique per, String issn) {
     periodiques.put(issn, per);
 } // Fin lierPeriodique
+
+private void lierAuteur(Auteur aut, String nomprenom) {
+    auteurs.put(nomprenom, aut);
+}
 
 private int genererNumLecteur() {
     derNumLecteur = derNumLecteur + 1;
