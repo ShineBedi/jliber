@@ -19,6 +19,7 @@ public class Bibliotheque
     private Hashtable<String,Periodique> periodiques;
     private Set1 emprunts;
     private Hashtable<String,Auteur> auteurs;
+    private Hashtable<String,MotCle> motsCles;
 
 // ***************************
 //      Constructeur
@@ -29,6 +30,7 @@ public Bibliotheque() {
         periodiques = new Hashtable();
         emprunts = new Set1();
         auteurs = new Hashtable();
+        motsCles = new Hashtable();
         derNumLecteur = 0;
         try {
             jbInit();
@@ -96,25 +98,34 @@ private void lierLecteur(Lecteur lec, int numero) {
 public Ouvrage unOuvrage(String isbn) {
     return (Ouvrage) ouvrages.get(isbn);
 } // Fin un Ouvrage
-public Periodique unPeriodique(String issn) {
-    return (Periodique) periodiques.get(issn);
-} // Fin unPeriodique
-
-public Auteur unAuteur(String nomprenom)
-{
-    return (Auteur) auteurs.get(nomprenom);
-}
 
 private void lierOuvrage(Ouvrage ouv, String isbn) {
     ouvrages.put(isbn, ouv);
 } // Fin lierOuvrage
 
+public Periodique unPeriodique(String issn) {
+    return (Periodique) periodiques.get(issn);
+} // Fin unPeriodique
+
 private void lierPeriodique(Periodique per, String issn) {
     periodiques.put(issn, per);
 } // Fin lierPeriodique
 
+
+public Auteur unAuteur(String nomprenom) {
+    return (Auteur) auteurs.get(nomprenom);
+}
+
 private void lierAuteur(Auteur aut, String nomprenom) {
     auteurs.put(nomprenom, aut);
+}
+
+public MotCle unMotCle(String motcle) {
+    return (MotCle) motsCles.get(motcle);
+}
+
+private void lierMotCle(MotCle mc, String motcle) {
+    motsCles.put(motcle, mc);
 }
 
 private int genererNumLecteur() {
