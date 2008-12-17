@@ -112,11 +112,6 @@ private java.awt.Frame parent_frame;
 
         id_parution_textfield.setToolTipText("Entrez ici l'identifiant de parution du périodique spécifié.");
         id_parution_textfield.setEnabled(false);
-        id_parution_textfield.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                id_parution_textfieldActionPerformed(evt);
-            }
-        });
 
         mot_cle_jlist.setEnabled(false);
         jScrollPane1.setViewportView(mot_cle_jlist);
@@ -291,7 +286,6 @@ private java.awt.Frame parent_frame;
         pack();
     }// </editor-fold>//GEN-END:initComponents
     private void annuler_buttonMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_annuler_buttonMousePressed
-        // TODO add your handling code here:
         this.dispose();
 }//GEN-LAST:event_annuler_buttonMousePressed
 
@@ -320,16 +314,11 @@ private java.awt.Frame parent_frame;
 
 }//GEN-LAST:event_rechercher_buttonMousePressed
 
-    private void id_parution_textfieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_id_parution_textfieldActionPerformed
-        // TODO add your handling code here:
-}//GEN-LAST:event_id_parution_textfieldActionPerformed
-
     private void ajouter_auteur_buttonMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ajouter_auteur_buttonMousePressed
         // TODO add your handling code here:
     }//GEN-LAST:event_ajouter_auteur_buttonMousePressed
 
     private void ajouter_article_buttonMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ajouter_article_buttonMousePressed
-        // TODO add your handling code here:
             Vector input= new Vector(2);
 
             DefaultTableModel model = (DefaultTableModel)article_jtable.getModel(); //on récupère le modèle courant
@@ -339,7 +328,6 @@ private java.awt.Frame parent_frame;
     }//GEN-LAST:event_ajouter_article_buttonMousePressed
 
     private void supprimer_article_buttonMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_supprimer_article_buttonMousePressed
-        // TODO add your handling code here:
         int selectedRow;
 
         selectedRow=article_jtable.getSelectedRow();
@@ -364,8 +352,7 @@ private java.awt.Frame parent_frame;
     }//GEN-LAST:event_ajouter_auteur_buttonMouseReleased
 
     private void article_jtableMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_article_jtableMouseReleased
-        // TODO add your handling code here:
-                 int selectedRow;
+        int selectedRow;
         selectedRow=article_jtable.getSelectedRow();
 
         if (selectedRow!=-1){
@@ -378,10 +365,12 @@ private java.awt.Frame parent_frame;
     }//GEN-LAST:event_article_jtableMouseReleased
 
     private void creer_parution_buttonMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_creer_parution_buttonMousePressed
-        // TODO add your handling code here:
+        //(Dés)activation des champs nécessaire
         article_jtable.setEnabled(true);
         ajouter_article_button.setEnabled(true);
         supprimer_article_button.setEnabled(true);
+        creer_parution_button.setEnabled(false);
+        id_parution_textfield.setEnabled(false);
 
 
     }//GEN-LAST:event_creer_parution_buttonMousePressed
