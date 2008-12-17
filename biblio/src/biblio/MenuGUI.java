@@ -13,8 +13,7 @@ import java.nio.channels.FileChannel ;
  * @author  mailleta vargasch
  */
 public class MenuGUI extends javax.swing.JFrame {
-    private  String nomfich = "Fsauve.txt";
-    private  String nomfichbk = "Fsauve.txt.bk";
+    private  String nomfich = "bd.data";
     private Bibliotheque bibliotheque;
     
     /** Creates new form MenuGUI */

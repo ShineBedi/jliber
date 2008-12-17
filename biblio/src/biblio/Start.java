@@ -16,7 +16,7 @@ public class Start {
 public  Start()  {
     // Creation de l'instance Appli
     Bibliotheque  bib = new Bibliotheque();
-    String nomfich = "Fsauve.txt";
+    String nomfich = "bd.data";
 // Restauration des objets de l'application
 {
 try  {
