@@ -24,7 +24,7 @@ public class Article
     public Article(String titre, int page, Parution parution) {
         this.titre = titre;
         this.page = page;
-        this.parution = parution;
+        this.lierParution(parution);
         auteurs = new HashSet<Auteur>();
         motsCles = new HashSet<MotCle>();
     }
@@ -59,6 +59,10 @@ public class Article
 
     private void lierMotCle(Set<MotCle> motsCles) {
         this.motsCles = motsCles;
+    }
+
+    private void lierParution(Parution parution) {
+        this.parution = parution;
     }
 
 }
