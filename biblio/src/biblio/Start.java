@@ -35,8 +35,7 @@ try  {
         System.out.println(" *** Start : Pbs de Restauration / fichier "+nomfich);
         System.out.println(" *** ");
 }
-finally {
-}
+
     
 
     // Creation de l'instance menu de MenuBiblio

@@ -9,14 +9,6 @@
             <Property name="text" type="java.lang.String" value="Fichier"/>
           </Properties>
           <SubComponents>
-            <MenuItem class="javax.swing.JMenuItem" name="quitter_fichier_button">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Quitter"/>
-              </Properties>
-              <Events>
-                <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="quitter_fichier_buttonMousePressed"/>
-              </Events>
-            </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="sauvegarder_fichier_button">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Sauvegarder"/>
@@ -25,12 +17,28 @@
                 <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="sauvegarder_fichier_buttonMousePressed"/>
               </Events>
             </MenuItem>
+            <MenuItem class="javax.swing.JMenuItem" name="exporter_fichier_button">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Exporter"/>
+              </Properties>
+              <Events>
+                <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="exporter_fichier_buttonMousePressed"/>
+              </Events>
+            </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="restaurer_fichier_button">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Restaurer"/>
               </Properties>
               <Events>
                 <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="restaurer_fichier_buttonMousePressed"/>
+              </Events>
+            </MenuItem>
+            <MenuItem class="javax.swing.JMenuItem" name="quitter_fichier_button">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Quitter"/>
+              </Properties>
+              <Events>
+                <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="quitter_fichier_buttonMousePressed"/>
               </Events>
             </MenuItem>
           </SubComponents>
