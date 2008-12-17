@@ -351,6 +351,22 @@ public class MenuGUI extends javax.swing.JFrame {
         System.out.println(" *** ");
         System.out.println(" *** Start : Pbs de Restauration / fichier "+nomfich);
         System.out.println(" *** ");
+        try  {
+                FileOutputStream f = new FileOutputStream(nomfich);
+                ObjectOutputStream out = new ObjectOutputStream(f);
+
+                out.writeObject(bibliotheque);
+
+                System.out.println();
+                System.out.println(" $$$ Sauvegarde dans le fichier "+nomfich+" realisee");
+                System.out.println();
+            }
+            catch (Exception ex)  {
+                System.out.println(" *** ");
+                System.out.println(" *** Start :Pbs de Sauvegarde dans le fichier "+nomfich);
+                System.out.println(" *** ");
+
+            }
 }
     }
     private void quitter_fichier_buttonMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_quitter_fichier_buttonMousePressed
@@ -435,9 +451,9 @@ public class MenuGUI extends javax.swing.JFrame {
             try {
             File file = new File(nomfich);
             File filebk  = fc.getSelectedFile();
-            file.delete();
+            String path = filebk.getAbsolutePath() ;
             filebk.renameTo(file);
-            backup(filebk.getAbsolutePath());
+            backup(path);
             }catch(Exception e){
                 //TODO : faire une boite de dialogue
             }
