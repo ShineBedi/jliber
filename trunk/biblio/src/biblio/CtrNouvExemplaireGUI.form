@@ -40,7 +40,8 @@
               <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
           </Group>
           <Group type="102" alignment="1" attributes="0">
-              <Component id="date_label" max="32767" attributes="1"/>
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="date_label" pref="175" max="32767" attributes="1"/>
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Component id="date_notif_jlabel" alignment="0" min="-2" max="-2" attributes="0"/>
@@ -84,12 +85,12 @@
               <Component id="jSeparator1" min="-2" pref="10" max="-2" attributes="0"/>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="date_label" alignment="3" min="-2" pref="26" max="-2" attributes="0"/>
                   <Component id="day_jspinner" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="sep_label2" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="month_jspinner" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="sep_label3" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="year_jspinner" alignment="3" max="32767" attributes="0"/>
+                  <Component id="date_label" alignment="3" min="-2" pref="26" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
               <Component id="date_notif_jlabel" min="-2" max="-2" attributes="0"/>
