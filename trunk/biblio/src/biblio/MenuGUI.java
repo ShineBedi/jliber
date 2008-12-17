@@ -46,8 +46,8 @@ public class MenuGUI extends javax.swing.JFrame {
     jMenuBar1 = new javax.swing.JMenuBar();
     fichier_menu = new javax.swing.JMenu();
     sauvegarder_fichier_button = new javax.swing.JMenuItem();
-    exporter_fichier_button = new javax.swing.JMenuItem();
     importer_fichier_button = new javax.swing.JMenuItem();
+    exporter_fichier_button = new javax.swing.JMenuItem();
     quitter_fichier_button = new javax.swing.JMenuItem();
     lecteur_menu = new javax.swing.JMenu();
     nouveau_lecteur_button = new javax.swing.JMenuItem();
@@ -94,14 +94,6 @@ public class MenuGUI extends javax.swing.JFrame {
     });
     fichier_menu.add(sauvegarder_fichier_button);
 
-    exporter_fichier_button.setText("Exporter");
-    exporter_fichier_button.addMouseListener(new java.awt.event.MouseAdapter() {
-      public void mousePressed(java.awt.event.MouseEvent evt) {
-        exporter_fichier_buttonMousePressed(evt);
-      }
-    });
-    fichier_menu.add(exporter_fichier_button);
-
     importer_fichier_button.setText("Importer");
     importer_fichier_button.addMouseListener(new java.awt.event.MouseAdapter() {
       public void mousePressed(java.awt.event.MouseEvent evt) {
@@ -109,6 +101,14 @@ public class MenuGUI extends javax.swing.JFrame {
       }
     });
     fichier_menu.add(importer_fichier_button);
+
+    exporter_fichier_button.setText("Exporter");
+    exporter_fichier_button.addMouseListener(new java.awt.event.MouseAdapter() {
+      public void mousePressed(java.awt.event.MouseEvent evt) {
+        exporter_fichier_buttonMousePressed(evt);
+      }
+    });
+    fichier_menu.add(exporter_fichier_button);
 
     quitter_fichier_button.setText("Quitter");
     quitter_fichier_button.addMouseListener(new java.awt.event.MouseAdapter() {
