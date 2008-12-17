@@ -218,9 +218,6 @@
         <Property name="toolTipText" type="java.lang.String" value="Entrez ici l&apos;identifiant de parution du p&#xe9;riodique sp&#xe9;cifi&#xe9;."/>
         <Property name="enabled" type="boolean" value="false"/>
       </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="id_parution_textfieldActionPerformed"/>
-      </Events>
     </Component>
     <Container class="javax.swing.JScrollPane" name="jScrollPane1">
       <AuxValues>
