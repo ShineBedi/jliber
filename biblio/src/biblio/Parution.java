@@ -13,19 +13,17 @@ public class Parution
         extends Observable        // pour MVC
         implements Serializable{
 
-        private String numpar;
-        
+        private String idParution;
         private Periodique periodique;
-
         private Set<Article> articles;
 
-        public Parution(String numpar, Periodique periodique) {
-           this.numpar = numpar;
+        public Parution(String idParution, Periodique periodique) {
+           this.idParution = idParution;
            this.lierPeriodique(periodique);
            articles = new HashSet<Article>();
         }
 
-        public String numpar() { return numpar; }
+        public String idParution() { return idParution; }
         
         public Periodique tonPeriodique() {return periodique;}
 

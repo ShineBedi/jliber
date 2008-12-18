@@ -30,15 +30,16 @@
                   <Group type="103" alignment="0" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="issn_label" alignment="0" pref="280" max="32767" attributes="1"/>
-                              <Component id="nom_periodique_label" alignment="0" pref="280" max="32767" attributes="0"/>
-                              <Component id="id_parution_label" alignment="0" pref="280" max="32767" attributes="0"/>
+                              <Component id="issn_label" alignment="0" pref="278" max="32767" attributes="1"/>
+                              <Component id="nom_periodique_label" alignment="0" pref="278" max="32767" attributes="0"/>
+                              <Component id="id_parution_label" alignment="0" pref="278" max="32767" attributes="0"/>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
                               <Component id="id_parution_textfield" max="32767" attributes="1"/>
                               <Component id="nom_periodique_textfield" max="32767" attributes="1"/>
                               <Component id="issn_textfield" alignment="0" min="-2" pref="141" max="-2" attributes="1"/>
+                              <Component id="id_parution_notif_jlabel" alignment="0" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
@@ -110,7 +111,9 @@
                   <Component id="id_parution_label" alignment="3" min="-2" pref="28" max="-2" attributes="0"/>
                   <Component id="creer_parution_button" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace min="-2" pref="42" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="id_parution_notif_jlabel" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="1" attributes="0">
                   <Component id="mots_cles_label" alignment="1" min="-2" max="-2" attributes="0"/>
                   <Component id="article_label" alignment="1" min="-2" max="-2" attributes="0"/>
@@ -350,6 +353,11 @@
       <Events>
         <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="creer_parution_buttonMousePressed"/>
       </Events>
+    </Component>
+    <Component class="javax.swing.JLabel" name="id_parution_notif_jlabel">
+      <Properties>
+        <Property name="text" type="java.lang.String" value=" "/>
+      </Properties>
     </Component>
   </SubComponents>
 </Form>
