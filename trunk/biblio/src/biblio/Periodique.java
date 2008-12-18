@@ -37,9 +37,9 @@ public class Periodique
   public String issn() {return issn ;}
   public String nom(){return nom ;}
 
-  /*public Parution uneParution(int numeroParution) {
-       return (Parution) parutions.get(new Integer(numeroParution));
-} // Fin uneParution*/
+  public Parution uneParution(String idParution) {
+       return (Parution) parutions.get(idParution);
+} // Fin uneParution*
 
 public Enumeration enumParutions() {return parutions.elements();}
 

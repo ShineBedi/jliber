@@ -68,6 +68,7 @@ private java.awt.Frame parent_frame;
         ajouter_article_button = new javax.swing.JButton();
         supprimer_article_button = new javax.swing.JButton();
         creer_parution_button = new javax.swing.JButton();
+        id_parution_notif_jlabel = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Ajout d'une parution");
@@ -186,6 +187,8 @@ private java.awt.Frame parent_frame;
             }
         });
 
+        id_parution_notif_jlabel.setText(" ");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -196,14 +199,15 @@ private java.awt.Frame parent_frame;
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(layout.createSequentialGroup()
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(issn_label, javax.swing.GroupLayout.DEFAULT_SIZE, 280, Short.MAX_VALUE)
-                                .addComponent(nom_periodique_label, javax.swing.GroupLayout.DEFAULT_SIZE, 280, Short.MAX_VALUE)
-                                .addComponent(id_parution_label, javax.swing.GroupLayout.DEFAULT_SIZE, 280, Short.MAX_VALUE))
+                                .addComponent(issn_label, javax.swing.GroupLayout.DEFAULT_SIZE, 278, Short.MAX_VALUE)
+                                .addComponent(nom_periodique_label, javax.swing.GroupLayout.DEFAULT_SIZE, 278, Short.MAX_VALUE)
+                                .addComponent(id_parution_label, javax.swing.GroupLayout.DEFAULT_SIZE, 278, Short.MAX_VALUE))
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                 .addComponent(id_parution_textfield)
                                 .addComponent(nom_periodique_textfield)
-                                .addComponent(issn_textfield, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(issn_textfield, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(id_parution_notif_jlabel))
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                 .addComponent(creer_parution_button)
@@ -255,7 +259,9 @@ private java.awt.Frame parent_frame;
                     .addComponent(id_parution_textfield, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(id_parution_label, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(creer_parution_button))
-                .addGap(42, 42, 42)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(id_parution_notif_jlabel)
+                .addGap(22, 22, 22)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(mots_cles_label)
                     .addComponent(article_label)
@@ -291,18 +297,21 @@ private java.awt.Frame parent_frame;
 
     private void valider_buttonMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_valider_buttonMousePressed
         // TODO add your handling code here:
+        //on ajoute l'identifiant de parution au périodique
 
+        //on créé la parution et ses détails
 }//GEN-LAST:event_valider_buttonMousePressed
 
     private void rechercher_buttonMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_rechercher_buttonMousePressed
         // TODO add your handling code here:
         String issn = issn_textfield.getText();
-        Periodique period = null;//biblio.unPeriodique(issn);
-        if (period != null) {
+        Periodique period = biblio.unPeriodique(issn);
+        
+        if (period == null) {
             nom_periodique_textfield.setDisabledTextColor(Color.red);
             nom_periodique_textfield.setText("L'ISSN spécifié n'existe pas.");
         } else {
-            nom_periodique_textfield.setText("Le monde");
+            nom_periodique_textfield.setText(period.nom());
             issn_textfield.setEnabled(false);
             rechercher_button.setEnabled(false);
             id_parution_textfield.setEnabled(true);
@@ -365,13 +374,27 @@ private java.awt.Frame parent_frame;
     }//GEN-LAST:event_article_jtableMouseReleased
 
     private void creer_parution_buttonMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_creer_parution_buttonMousePressed
+        //vérification de la saisie
+        String id_parution = id_parution_textfield.getText();
+        Periodique per = biblio.unPeriodique(issn_textfield.getText());
+
+
+        if (id_parution.isEmpty()) { //L'utilisateur n'a pas saisi d'identifiant de parution
+            id_parution_notif_jlabel.setForeground(Color.red);
+            id_parution_notif_jlabel.setText("Vous devez donner un identifiant de parution !");
+
+        } else if (per.uneParution(id_parution) != null) { //l'identifiant saisi existe déjà
+            id_parution_notif_jlabel.setForeground(Color.red);
+            id_parution_notif_jlabel.setText("Cet identifiant existe déjà pour ce périodique.");
+        } else {
         //(Dés)activation des champs nécessaire
+        id_parution_notif_jlabel.setText(" ");
         article_jtable.setEnabled(true);
         ajouter_article_button.setEnabled(true);
         supprimer_article_button.setEnabled(true);
         creer_parution_button.setEnabled(false);
         id_parution_textfield.setEnabled(false);
-
+        }
 
     }//GEN-LAST:event_creer_parution_buttonMousePressed
 
@@ -403,6 +426,7 @@ private java.awt.Frame parent_frame;
     private javax.swing.JLabel auteur_label;
     private javax.swing.JButton creer_parution_button;
     private javax.swing.JLabel id_parution_label;
+    private javax.swing.JLabel id_parution_notif_jlabel;
     private javax.swing.JTextField id_parution_textfield;
     private javax.swing.JLabel issn_label;
     private javax.swing.JTextField issn_textfield;
