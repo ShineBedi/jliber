@@ -44,9 +44,9 @@ public class VueOuvrageGUI extends javax.swing.JDialog implements Observer {
     private void afficherTout()  {
         isbn_textfield.setText(ouvrage.isbn());
         titre_textfield.setText(ouvrage.titre());
-        //auteur_textfield.setText(ouvrage.auteur());
+        this.afficherListeAuteurs();
         editeur_textfield.setText(ouvrage.editeur());
-
+        this.afficherListeMotsCles();
         java.text.DateFormat dateFormat = new java.text.SimpleDateFormat("dd/MM/yyyy");
         java.util.Date dateDate = ouvrage.dateEdition().getTime();
         String dateString = dateFormat.format(dateDate);
@@ -54,49 +54,68 @@ public class VueOuvrageGUI extends javax.swing.JDialog implements Observer {
 
         nbexemp_textfield.setText(Integer.toString(ouvrage.nbExemplaires()));
         
+        this.afficherListeExemplaires();
 
-       this.afficherListeExemplaires();
+    }
 
+    private void afficherListeAuteurs() {
+        Set<Auteur> auteurs  = ouvrage.tesAuteurs();
+        javax.swing.table.DefaultTableModel dtmAuteurs = new javax.swing.table.DefaultTableModel();
+        Vector<Vector<Object>> dataAuteurs = new Vector<Vector<Object>>();
+        dataAuteurs.clear();
+        Vector<String> columnAuteurs = new Vector<String>();
+        columnAuteurs.clear();
+        columnAuteurs.add("Numéro");
+        columnAuteurs.add("Statut");
+        for(Auteur aut:auteurs) {
+            Vector<Object> data_lineAuteurs = new Vector<Object>();
+             data_lineAuteurs.add(aut.nom());
+             data_lineAuteurs.add(aut.prenom());
+             dataAuteurs.add(data_lineAuteurs);
+        }
+       dtmAuteurs.setDataVector(dataAuteurs, columnAuteurs);
+       auteurs_table.setModel(dtmAuteurs);
+    }
+
+     private void afficherListeMotsCles() {
+        Set<MotCle> motsCles  = ouvrage.tesMotsCles();
+        javax.swing.table.DefaultTableModel dtmMotsCles = new javax.swing.table.DefaultTableModel();
+        Vector<Vector<Object>> dataMotsCles = new Vector<Vector<Object>>();
+        dataMotsCles.clear();
+        Vector<String> columnMotsCles = new Vector<String>();
+        columnMotsCles.clear();
+        columnMotsCles.add("Liste mot clé");
+        for(MotCle mc:motsCles) {
+            Vector<Object> data_lineMotsCles = new Vector<Object>();
+             data_lineMotsCles.add(mc.motCle());
+             dataMotsCles.add(data_lineMotsCles);
+        }
+       dtmMotsCles.setDataVector(dataMotsCles, columnMotsCles);
+       motscles_table.setModel(dtmMotsCles);
     }
 
     private void afficherListeExemplaires() {
       Enumeration enumEx = ouvrage.enumExemplaires();
-      /**
-      if  (enumEx.hasMoreElements()) {
 
-          while (enumEx.hasMoreElements()) {
-              Exemplaire exemp = (Exemplaire) enumEx.nextElement();
-              try {
-                 exemplaires_table.getModel().setValueAt(Integer.toString(exemp.numero()), i, 0);
-                 exemplaires_table.getModel().setValueAt(exemp.libStatut(), i, 1);
-                 exemplaires_table.addRowSelectionInterval(i, i+1);
-              } catch(Exception e) {
-                  javax.swing.JOptionPane.showMessageDialog(null, "mon code sux");
-              }
-              i = i+1;
-          }
-      }
-       * */
-
-      javax.swing.table.DefaultTableModel dtm = new javax.swing.table.DefaultTableModel();
-      Vector<Vector<Object>> data = new Vector<Vector<Object>>();
-      data.clear();
-      Vector<String> column = new Vector<String>();
-      column.clear();
-      column.add("Numéro");
-      column.add("Statut");
+      javax.swing.table.DefaultTableModel dtmExemp = new javax.swing.table.DefaultTableModel();
+      Vector<Vector<Object>> dataExemp = new Vector<Vector<Object>>();
+      dataExemp.clear();
+      Vector<String> columnExemp = new Vector<String>();
+      columnExemp.clear();
+      columnExemp.add("Numéro");
+      columnExemp.add("Statut");
       if  (enumEx.hasMoreElements()) {
           while (enumEx.hasMoreElements()) {
-              Vector<Object> data_line = new Vector<Object>();
+              Vector<Object> data_lineExemp = new Vector<Object>();
               Exemplaire exemp = (Exemplaire) enumEx.nextElement();
-              data_line.add(Integer.toString(exemp.numero()));
-              data_line.add(exemp.libStatut());
-              data.add(data_line);
+              data_lineExemp.add(Integer.toString(exemp.numero()));
+              data_lineExemp.add(exemp.libStatut());
+              dataExemp.add(data_lineExemp);
           }
       }
       
-      dtm.setDataVector(data, column);
-      exemplaires_table.setModel(dtm);
+      dtmExemp.setDataVector(dataExemp, columnExemp);
+      exemplaires_table.setModel(dtmExemp);
     }
     /** This method is called from within the constructor to
      * initialize the form.
@@ -112,7 +131,6 @@ public class VueOuvrageGUI extends javax.swing.JDialog implements Observer {
         titre_label = new javax.swing.JLabel();
         editeur_label = new javax.swing.JLabel();
         date_label = new javax.swing.JLabel();
-        auteur_textfield = new javax.swing.JTextField();
         titre_textfield = new javax.swing.JTextField();
         editeur_textfield = new javax.swing.JTextField();
         date_textfield = new javax.swing.JTextField();
@@ -123,6 +141,11 @@ public class VueOuvrageGUI extends javax.swing.JDialog implements Observer {
         exemplaires_label = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         exemplaires_table = new javax.swing.JTable();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        auteurs_table = new javax.swing.JTable();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        motscles_table = new javax.swing.JTable();
+        auteur_label1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Vue d'un ouvrage");
@@ -136,15 +159,13 @@ public class VueOuvrageGUI extends javax.swing.JDialog implements Observer {
             }
         });
 
-        auteur_label.setText("Auteur :");
+        auteur_label.setText("Auteur(s) :");
 
         titre_label.setText("Titre :");
 
         editeur_label.setText("Editeur :");
 
         date_label.setText("Date edition :");
-
-        auteur_textfield.setEditable(false);
 
         titre_textfield.setEditable(false);
 
@@ -188,39 +209,104 @@ public class VueOuvrageGUI extends javax.swing.JDialog implements Observer {
         exemplaires_table.getColumnModel().getColumn(0).setResizable(false);
         exemplaires_table.getColumnModel().getColumn(1).setResizable(false);
 
+        auteurs_table.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "nom", "prenom"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.String.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, false
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        auteurs_table.getTableHeader().setReorderingAllowed(false);
+        jScrollPane2.setViewportView(auteurs_table);
+        auteurs_table.getColumnModel().getColumn(0).setResizable(false);
+        auteurs_table.getColumnModel().getColumn(1).setResizable(false);
+
+        motscles_table.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "liste mot clé"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jScrollPane3.setViewportView(motscles_table);
+        motscles_table.getColumnModel().getColumn(0).setResizable(false);
+
+        auteur_label1.setText("Mot(s) clé(s) :");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+            .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(terminer_button)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(auteur_label, javax.swing.GroupLayout.DEFAULT_SIZE, 181, Short.MAX_VALUE)
-                            .addComponent(titre_label, javax.swing.GroupLayout.DEFAULT_SIZE, 181, Short.MAX_VALUE)
-                            .addComponent(isbn_label, javax.swing.GroupLayout.DEFAULT_SIZE, 181, Short.MAX_VALUE)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(exemplaires_label, javax.swing.GroupLayout.DEFAULT_SIZE, 181, Short.MAX_VALUE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))
-                            .addComponent(editeur_label, javax.swing.GroupLayout.DEFAULT_SIZE, 181, Short.MAX_VALUE)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                    .addComponent(date_label, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(nbexemp_label, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 167, Short.MAX_VALUE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
+                            .addComponent(isbn_label, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(titre_label, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(titre_textfield, javax.swing.GroupLayout.DEFAULT_SIZE, 253, Short.MAX_VALUE)
+                            .addComponent(isbn_textfield, javax.swing.GroupLayout.DEFAULT_SIZE, 253, Short.MAX_VALUE))
+                        .addGap(23, 23, 23))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(auteur_label, javax.swing.GroupLayout.DEFAULT_SIZE, 155, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 218, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(23, 23, 23))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(editeur_label, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(14, 14, 14)
+                        .addComponent(editeur_textfield, javax.swing.GroupLayout.DEFAULT_SIZE, 253, Short.MAX_VALUE)
+                        .addGap(21, 21, 21))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(date_label, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(exemplaires_label, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(nbexemp_label))
                         .addGap(14, 14, 14)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jScrollPane1, 0, 0, Short.MAX_VALUE)
-                            .addComponent(editeur_textfield)
-                            .addComponent(auteur_textfield, javax.swing.GroupLayout.DEFAULT_SIZE, 253, Short.MAX_VALUE)
-                            .addComponent(titre_textfield, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 254, Short.MAX_VALUE)
-                            .addComponent(isbn_textfield, javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(date_textfield, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(nbexemp_textfield, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addGap(21, 21, 21))
+                            .addComponent(nbexemp_textfield, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(terminer_button, javax.swing.GroupLayout.Alignment.TRAILING))
+                        .addContainerGap(21, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(auteur_label1, javax.swing.GroupLayout.DEFAULT_SIZE, 155, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 218, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(23, 23, 23))))
         );
+
+        layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {auteur_label, auteur_label1, date_label, editeur_label, exemplaires_label, isbn_label, nbexemp_label, titre_label});
+
+        layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {date_textfield, editeur_textfield, isbn_textfield, jScrollPane1, jScrollPane2, jScrollPane3, titre_textfield});
+
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
@@ -232,29 +318,33 @@ public class VueOuvrageGUI extends javax.swing.JDialog implements Observer {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(titre_label)
                     .addComponent(titre_textfield, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(auteur_textfield, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(auteur_label))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(editeur_textfield, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(editeur_label))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(12, 12, 12)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(auteur_label1))
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(date_label, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(date_textfield, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(nbexemp_label, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(nbexemp_label)
                     .addComponent(nbexemp_textfield, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(exemplaires_label)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 18, Short.MAX_VALUE)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(exemplaires_label))
+                .addGap(18, 18, 18)
                 .addComponent(terminer_button)
-                .addContainerGap())
+                .addContainerGap(27, Short.MAX_VALUE))
         );
 
         pack();
@@ -286,7 +376,8 @@ public class VueOuvrageGUI extends javax.swing.JDialog implements Observer {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel auteur_label;
-    private javax.swing.JTextField auteur_textfield;
+    private javax.swing.JLabel auteur_label1;
+    private javax.swing.JTable auteurs_table;
     private javax.swing.JLabel date_label;
     private javax.swing.JTextField date_textfield;
     private javax.swing.JLabel editeur_label;
@@ -296,6 +387,9 @@ public class VueOuvrageGUI extends javax.swing.JDialog implements Observer {
     private javax.swing.JLabel isbn_label;
     private javax.swing.JTextField isbn_textfield;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JTable motscles_table;
     private javax.swing.JLabel nbexemp_label;
     private javax.swing.JTextField nbexemp_textfield;
     private javax.swing.JButton terminer_button;

@@ -73,10 +73,9 @@ public Periodique nouveauPeriodique(String issn, String nom) {
         return per;
 } // Fin nouveauperiodique
 //****************************
-public Ouvrage nouvelOuvrage(String isbn, String tit, Set<Auteur> aut,
-                               String ed, GregorianCalendar dateE) {
+public Ouvrage nouvelOuvrage(String isbn, String tit, String ed, GregorianCalendar dateE, Set<Auteur> mesAuteurs, Set<MotCle> mesMotsCles) {
         // Création de l'objet ouv
-        Ouvrage ouv = new Ouvrage(isbn, tit, aut, ed, dateE);
+        Ouvrage ouv = new Ouvrage(isbn, tit, ed, dateE, mesAuteurs, mesMotsCles);
 
         this.lierOuvrage(ouv, isbn);
         return ouv;
@@ -92,6 +91,11 @@ public void modifStatutExemplaire(Exemplaire ex, int s) {
             ex.modifierStatut(s);
 } // modifStatutExemplaire
 
+public Auteur nouvelAuteur(String nom, String prenom) {
+    Auteur aut = new Auteur(nom, prenom);
+    this.lierAuteur(aut, nom+prenom);
+    return aut;
+}
 
 
 
@@ -101,6 +105,7 @@ public void modifStatutExemplaire(Exemplaire ex, int s) {
 
 public Enumeration enumMotsCles() {return motsCles.elements();}
 
+public Enumeration enumAuteurs() { return auteurs.elements(); }
 //***********************************
 public Lecteur unLecteur(int numero) {
      return (Lecteur) lecteurs.get(new Integer(numero));

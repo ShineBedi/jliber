@@ -16,7 +16,7 @@ implements Serializable
         auteurs  = new HashSet<Auteur>();
     }
   
-    public String getTitre() {
+    public String titre() {
         return titre;
     }
 
