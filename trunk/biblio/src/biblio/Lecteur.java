@@ -24,7 +24,7 @@ public class Lecteur
     private int age;
 
     //  Attributs d'Association
-    private Set1 emprunts;
+    private Set<Emprunt> emprunts;
 
 // ***************************
 //     Constructeur
@@ -37,7 +37,7 @@ public Lecteur(int num, String no, String pre,
     adresse = adr;
     age = ag;
 
-    emprunts = new Set1();
+    emprunts = new HashSet<Emprunt>();
 }  // Fin Constructeur
 
 //*****************************
@@ -58,8 +58,9 @@ public String adresse() {return adresse;}
 
 public int age() {return age;}
 
-public Set1 tesEmprunts() {return emprunts;}
+public Set<Emprunt> tesEmprunts() {return emprunts;}
 
-
-
+public void lierEmprunt(Emprunt emp) {
+    emprunts.add(emp);
+}
 } // Fin Classe Lecteur

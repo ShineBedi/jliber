@@ -35,8 +35,8 @@ public class Parution
             this.periodique = periodique;
         }
 
-        public void lierArticle(Set<Article> articles) {
-            this.articles = articles;
+        public void lierArticle(Article art) {
+            articles.add(art);
         }
 
 }

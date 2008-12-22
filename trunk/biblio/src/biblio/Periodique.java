@@ -64,10 +64,9 @@ public int nbParutions() {return parutions.size();}
 // ***********************************
 //   Méthodes privées
 // ***********************************
-/*
- private void lierParution(Parution paru, int numero) {
-    parutions.put(new Integer(numero), paru);
-} // Fin lierExemplaire
- */
+
+ private void lierParution(Parution paru, String idParution) {
+    parutions.put(idParution, paru);
+} 
 
 }  // Fin Classe Periodique
