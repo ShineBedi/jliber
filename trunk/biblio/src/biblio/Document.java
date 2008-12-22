@@ -28,11 +28,11 @@ implements Serializable
         return (Set<MotCle>)motsCles;
     }
 
-    private void lierAuteur(Auteur aut) {
+    protected void lierAuteur(Auteur aut) {
         auteurs.add(aut);
     }
     
-    private void lierMotCle(MotCle mc) {
+    protected void lierMotCle(MotCle mc) {
         motsCles.add(mc);
     }
 

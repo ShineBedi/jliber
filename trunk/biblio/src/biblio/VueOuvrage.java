@@ -46,7 +46,6 @@ public class VueOuvrage
    System.out.println("                 -------------------------------------- ");
     System.out.println("                 - ISBN  = " + ouv.isbn() );
    System.out.println("                 - Titre  = " + ouv.titre() );
-   System.out.println("                 - Auteur  = " + ouv.auteur() );
    System.out.println("                 - Editeur = " + ouv.editeur() );
    System.out.println("                 - Date edition : " + IO.ecrireDate(ouv.dateEdition()));
    System.out.println("                 - Nb d'exemplaires  = " + ouv.nbExemplaires() );

@@ -41,11 +41,11 @@ implements Serializable
         return ouvrages;
       }
 
-      private void lierOuvrage(Ouvrage ouv) {
+      protected void lierOuvrage(Ouvrage ouv) {
             documents.add(ouv);
       } // Fin lierOuvrage
 
-       private void lierArticle(Article art) {
+       protected void lierArticle(Article art) {
             documents.add(art);
       }
 
