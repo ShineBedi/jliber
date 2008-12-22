@@ -44,7 +44,7 @@ public class VueOuvrageGUI extends javax.swing.JDialog implements Observer {
     private void afficherTout()  {
         isbn_textfield.setText(ouvrage.isbn());
         titre_textfield.setText(ouvrage.titre());
-        auteur_textfield.setText(ouvrage.auteur());
+        //auteur_textfield.setText(ouvrage.auteur());
         editeur_textfield.setText(ouvrage.editeur());
 
         java.text.DateFormat dateFormat = new java.text.SimpleDateFormat("dd/MM/yyyy");

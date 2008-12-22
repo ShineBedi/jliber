@@ -17,7 +17,7 @@ public class Bibliotheque
     private Hashtable<Integer,Lecteur> lecteurs;
     private Hashtable<String,Ouvrage> ouvrages;
     private Hashtable<String,Periodique> periodiques;
-    private Set1 emprunts;
+    private Set<Emprunt> emprunts;
     private Hashtable<String,Auteur> auteurs;
     private Hashtable<String,MotCle> motsCles;
 
@@ -28,10 +28,23 @@ public Bibliotheque() {
         lecteurs = new Hashtable();
         ouvrages = new Hashtable();
         periodiques = new Hashtable();
-        emprunts = new Set1();
+        emprunts = new HashSet<Emprunt>();
         auteurs = new Hashtable();
         motsCles = new Hashtable();
         derNumLecteur = 0;
+
+        try {
+            BufferedReader in =  new BufferedReader(new FileReader("ListeAutorite.txt"));
+            String ligne;
+            while((ligne= in.readLine()) != null)
+            {
+                this.lierMotCle(new MotCle(ligne), ligne);
+             }
+        } catch(Exception e) {
+             javax.swing.JOptionPane.showMessageDialog(null, "Impossible d'ouvrir la liste des mots clés");
+        }
+
+
         try {
             jbInit();
         } catch (Exception ex) {
@@ -60,7 +73,7 @@ public Periodique nouveauPeriodique(String issn, String nom) {
         return per;
 } // Fin nouveauperiodique
 //****************************
-public Ouvrage nouvelOuvrage(String isbn, String tit, String aut,
+public Ouvrage nouvelOuvrage(String isbn, String tit, Set<Auteur> aut,
                                String ed, GregorianCalendar dateE) {
         // Création de l'objet ouv
         Ouvrage ouv = new Ouvrage(isbn, tit, aut, ed, dateE);
@@ -85,6 +98,8 @@ public void modifStatutExemplaire(Exemplaire ex, int s) {
 // ********************************************
 //    Méthodes d'accès- liaison d'objets
 // ********************************************
+
+public Enumeration enumMotsCles() {return motsCles.elements();}
 
 //***********************************
 public Lecteur unLecteur(int numero) {

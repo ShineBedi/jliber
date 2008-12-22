@@ -14,7 +14,6 @@ public class Ouvrage
 // *************************
     private String isbn;
     private String titre;
-    private String auteur;
     private String editeur;
     private GregorianCalendar dateEdition;
     private int derNumExemplaire;   // pour la génération des numeros d'exempl.
@@ -22,71 +21,73 @@ public class Ouvrage
     //  Attributs d'Association
     private Hashtable exemplaires;
 
-// ***********************************
-//          Constructeur
-// ***********************************
-public Ouvrage(String is, String tit, String aut, String ed,
-                   GregorianCalendar dat) {
-        super(tit);
-        isbn = is;
-        auteur = aut;
-        editeur = ed;
-        dateEdition = dat;
-        derNumExemplaire = 0;
+    // ***********************************
+    //          Constructeur
+    // ***********************************
+    public Ouvrage(String is, String tit, Set<Auteur> auteurs, String ed,
+                       GregorianCalendar dat) {
+            super(tit);
+            isbn = is;
+            for(Auteur aut:auteurs){
+                this.lierAuteur(aut);
+                aut.lierOuvrage(this);
+            }
+            editeur = ed;
+            dateEdition = dat;
+            derNumExemplaire = 0;
 
-        exemplaires = new Hashtable();
-} //Fin Constructeur
+            exemplaires = new Hashtable();
+    } //Fin Constructeur
 
-//**********************************************
-// Méthodes d'Acces aux attributs de la classe
-//**********************************************
-public  String isbn() {return isbn;}
+    //**********************************************
+    // Méthodes d'Acces aux attributs de la classe
+    //**********************************************
+    public  String isbn() {return isbn;}
 
-public String titre() {return titre;}
+    public String titre() {return titre;}
 
-public String auteur() {return auteur;}
+    public String editeur() {return editeur;}
 
-public String editeur() {return editeur;}
+    public GregorianCalendar dateEdition() {return dateEdition;}
 
-public GregorianCalendar dateEdition() {return dateEdition;}
+    public Exemplaire unExemplaire(int numero) {
+           return (Exemplaire) exemplaires.get(new Integer(numero));
+    } // Fin unExemplaire
 
-public Exemplaire unExemplaire(int numero) {
-       return (Exemplaire) exemplaires.get(new Integer(numero));
-} // Fin unExemplaire
+    public Enumeration enumExemplaires() {return exemplaires.elements();}
 
-public Enumeration enumExemplaires() {return exemplaires.elements();}
+    public int nbExemplaires() {return exemplaires.size();}
 
-public int nbExemplaires() {return exemplaires.size();}
+    //**********************************************
+    //   Methodes de traitement
+    //**********************************************
+    public void ajouterExemplaire(GregorianCalendar dateReception) {
+        // Generation du numero chronologique de l'exemplaire
+        int numero = this.genererNumeroExemplaire();
+        // Creation de l'exemplaire
+        Exemplaire exempl = new Exemplaire(numero, dateReception, this);
+        // liaison de l'ouvrage a l'exemplaire
+        this.lierExemplaire(exempl, numero);
+    } // Fin ajouterExemplaire
 
-//**********************************************
-//   Methodes de traitement
-//**********************************************
-public void ajouterExemplaire(GregorianCalendar dateReception) {
-    // Generation du numero chronologique de l'exemplaire
-    int numero = this.genererNumeroExemplaire();
-    // Creation de l'exemplaire
-    Exemplaire exempl = new Exemplaire(numero, dateReception, this);
-    // liaison de l'ouvrage a l'exemplaire
-    this.lierExemplaire(exempl, numero);
-} // Fin ajouterExemplaire
+    //**********************************************
+    //   Prédicats / Invariants
+    //**********************************************
+    public boolean verifDate(GregorianCalendar dateRecep) {
+            return (dateRecep.after(dateEdition));
+    }
 
-//**********************************************
-//   Prédicats / Invariants
-//**********************************************
-public boolean verifDate(GregorianCalendar dateRecep) {
-        return (dateRecep.after(dateEdition));
-}
+    // ***********************************
+    //   Méthodes privées
+    // ***********************************
+    private int genererNumeroExemplaire() {
+        derNumExemplaire = this.derNumExemplaire + 1;
+        return derNumExemplaire;
+    } // Fin genererNumeroExemplaire
 
-// ***********************************
-//   Méthodes privées
-// ***********************************
-private int genererNumeroExemplaire() {
-    derNumExemplaire = this.derNumExemplaire + 1;
-    return derNumExemplaire;
-} // Fin genererNumeroExemplaire
+    private void lierExemplaire(Exemplaire exp, int numero) {
+        exemplaires.put(new Integer(numero), exp);
+    } // Fin lierExemplaire
 
-private void lierExemplaire(Exemplaire exp, int numero) {
-    exemplaires.put(new Integer(numero), exp);
-} // Fin lierExemplaire
 
 }  // Fin Classe Ouvrage

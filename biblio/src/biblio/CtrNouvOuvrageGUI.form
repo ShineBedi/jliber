@@ -24,76 +24,92 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" alignment="0" attributes="0">
+          <Group type="102" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="isbn_label" min="-2" max="-2" attributes="1"/>
-              <EmptySpace min="-2" pref="63" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="isbn_notif_label" alignment="0" min="-2" max="-2" attributes="0"/>
-                  <Group type="102" alignment="1" attributes="0">
-                      <Component id="isbn_textfield" pref="313" max="32767" attributes="1"/>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="verifier_button" min="-2" pref="101" max="-2" attributes="0"/>
-                  </Group>
-              </Group>
-              <EmptySpace max="-2" attributes="0"/>
-          </Group>
-          <Component id="jSeparator1" alignment="0" pref="614" max="32767" attributes="0"/>
-          <Group type="102" alignment="1" attributes="0">
-              <EmptySpace pref="395" max="32767" attributes="0"/>
-              <Component id="annuler_button" min="-2" pref="91" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
-              <Component id="valider_button" min="-2" pref="92" max="-2" attributes="0"/>
-              <EmptySpace max="-2" attributes="0"/>
-          </Group>
-          <Group type="102" alignment="0" attributes="0">
-              <EmptySpace min="-2" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="titre_label" min="-2" max="-2" attributes="1"/>
-                  <Component id="auteur_label" alignment="0" min="-2" max="-2" attributes="1"/>
-                  <Component id="date_label" min="-2" max="-2" attributes="1"/>
-                  <Component id="editeur_label" alignment="0" min="-2" max="-2" attributes="1"/>
-              </Group>
-              <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="editeur_notif_jlabel" alignment="0" min="-2" max="-2" attributes="0"/>
-                  <Group type="102" alignment="0" attributes="0">
+                  <Group type="102" attributes="0">
+                      <Component id="isbn_label" linkSize="6" min="-2" pref="106" max="-2" attributes="1"/>
+                      <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" attributes="0">
-                              <Component id="day_jspinner" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Component id="sep_label2" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Component id="month_jspinner" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Component id="sep_label3" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Component id="year_jspinner" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <Component id="auteur_notif_jlabel" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="editeur_textfield" alignment="0" pref="270" max="32767" attributes="2"/>
+                          <Component id="isbn_textfield" linkSize="5" alignment="0" pref="312" max="32767" attributes="1"/>
+                          <Component id="isbn_notif_label" linkSize="5" alignment="0" min="-2" max="-2" attributes="1"/>
                       </Group>
-                      <EmptySpace min="-2" pref="174" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="verifier_button" linkSize="9" min="-2" pref="88" max="-2" attributes="1"/>
+                      <EmptySpace min="-2" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
-                      <Component id="titre_notif_jlabel" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="266" max="-2" attributes="0"/>
-                  </Group>
-                  <Group type="102" alignment="1" attributes="0">
-                      <Group type="103" groupAlignment="1" attributes="0">
-                          <Component id="auteur_textfield" alignment="0" pref="270" max="32767" attributes="1"/>
-                          <Component id="titre_textfield" alignment="1" pref="270" max="32767" attributes="1"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" alignment="0" attributes="0">
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="titre_label" linkSize="6" alignment="0" min="-2" pref="50" max="-2" attributes="1"/>
+                                  <Component id="auteur_label" linkSize="6" alignment="0" min="-2" pref="77" max="-2" attributes="1"/>
+                              </Group>
+                              <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="titre_textfield" linkSize="5" alignment="0" min="-2" pref="290" max="-2" attributes="1"/>
+                                  <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
+                                      <Component id="jScrollPane1" alignment="0" max="32767" attributes="1"/>
+                                      <Component id="titre_notif_jlabel" linkSize="5" alignment="0" pref="247" max="32767" attributes="1"/>
+                                      <Component id="auteur_notif_jlabel" linkSize="5" alignment="0" min="-2" pref="312" max="-2" attributes="1"/>
+                                  </Group>
+                              </Group>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="ajouter_auteurs_button" linkSize="9" min="-2" max="-2" attributes="1"/>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Group type="103" groupAlignment="1" attributes="0">
+                                  <Group type="102" alignment="1" attributes="0">
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Group type="102" alignment="0" attributes="0">
+                                              <Component id="date_label" linkSize="6" min="-2" max="-2" attributes="1"/>
+                                              <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
+                                              <Component id="day_jspinner" min="-2" max="-2" attributes="0"/>
+                                              <EmptySpace max="-2" attributes="0"/>
+                                              <Component id="sep_label2" min="-2" max="-2" attributes="0"/>
+                                              <EmptySpace max="-2" attributes="0"/>
+                                              <Component id="month_jspinner" min="-2" max="-2" attributes="0"/>
+                                              <EmptySpace max="-2" attributes="0"/>
+                                              <Component id="sep_label3" min="-2" max="-2" attributes="0"/>
+                                              <EmptySpace max="-2" attributes="0"/>
+                                              <Component id="year_jspinner" min="-2" max="-2" attributes="0"/>
+                                              <EmptySpace pref="61" max="-2" attributes="0"/>
+                                          </Group>
+                                          <Group type="102" alignment="1" attributes="0">
+                                              <Group type="103" groupAlignment="0" attributes="0">
+                                                  <Component id="motscles_label" linkSize="6" alignment="0" min="-2" pref="87" max="-2" attributes="1"/>
+                                                  <Component id="editeur_label" linkSize="6" alignment="0" min="-2" max="-2" attributes="1"/>
+                                              </Group>
+                                              <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
+                                              <Group type="103" groupAlignment="0" attributes="0">
+                                                  <Component id="editeur_textfield" linkSize="5" alignment="0" pref="312" max="32767" attributes="3"/>
+                                                  <Component id="jScrollPane2" linkSize="5" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="editeur_notif_jlabel" linkSize="5" alignment="0" min="-2" pref="262" max="-2" attributes="1"/>
+                                                  <Component id="motscles_notif_jlabel" linkSize="5" alignment="0" min="-2" pref="266" max="-2" attributes="0"/>
+                                              </Group>
+                                          </Group>
+                                      </Group>
+                                      <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" alignment="1" attributes="0">
+                                      <Component id="annuler_button" min="-2" pref="91" max="-2" attributes="0"/>
+                                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                                  </Group>
+                              </Group>
+                              <Component id="valider_button" min="-2" pref="92" max="-2" attributes="0"/>
+                          </Group>
                       </Group>
-                      <EmptySpace min="-2" pref="174" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" max="-2" attributes="0"/>
                   </Group>
+                  <Component id="jSeparator1" alignment="1" pref="584" max="32767" attributes="0"/>
               </Group>
-              <EmptySpace max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" attributes="0">
+          <Group type="102" alignment="0" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="isbn_label" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -102,37 +118,46 @@
               </Group>
               <EmptySpace max="-2" attributes="0"/>
               <Component id="isbn_notif_label" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
+              <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Component id="jSeparator1" min="-2" pref="10" max="-2" attributes="0"/>
-              <EmptySpace max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="titre_label" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="titre_textfield" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="titre_notif_jlabel" min="-2" max="-2" attributes="0"/>
-              <EmptySpace max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="auteur_textfield" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="auteur_label" alignment="3" min="-2" max="-2" attributes="0"/>
-              </Group>
+              <Component id="titre_notif_jlabel" min="-2" pref="15" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" attributes="0">
-                      <EmptySpace min="-2" pref="41" max="-2" attributes="0"/>
-                      <Component id="editeur_label" min="-2" max="-2" attributes="0"/>
-                  </Group>
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="auteur_notif_jlabel" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="13" max="-2" attributes="0"/>
-                      <Component id="editeur_textfield" min="-2" max="-2" attributes="0"/>
+                      <Component id="auteur_label" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
+                      <Component id="ajouter_auteurs_button" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
+                      <Component id="jScrollPane1" min="-2" max="-2" attributes="0"/>
                   </Group>
               </Group>
+              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+              <Component id="auteur_notif_jlabel" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="editeur_notif_jlabel" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="1" attributes="0">
+                  <Component id="editeur_textfield" alignment="0" min="-2" pref="25" max="-2" attributes="0"/>
+                  <Component id="editeur_label" alignment="0" min="-2" pref="15" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="editeur_notif_jlabel" min="-2" max="-2" attributes="1"/>
+              <EmptySpace min="-2" pref="13" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="motscles_label" min="-2" max="-2" attributes="0"/>
+                  <Component id="jScrollPane2" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="motscles_notif_jlabel" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="date_label" alignment="3" min="-2" pref="26" max="-2" attributes="0"/>
+                  <Component id="date_label" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="day_jspinner" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="month_jspinner" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="year_jspinner" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -175,7 +200,7 @@
     </Component>
     <Component class="javax.swing.JLabel" name="auteur_label">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Auteur :"/>
+        <Property name="text" type="java.lang.String" value="Auteur(s) :"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="titre_label">
@@ -191,11 +216,6 @@
     <Component class="javax.swing.JLabel" name="date_label">
       <Properties>
         <Property name="text" type="java.lang.String" value="Date : (jj/mm/aaaa)"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JTextField" name="auteur_textfield">
-      <Properties>
-        <Property name="enabled" type="boolean" value="false"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="titre_textfield">
@@ -230,8 +250,6 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="Saisissez un num&#xe9;ro ISBN."/>
       </Properties>
-    </Component>
-    <Component class="javax.swing.JSeparator" name="jSeparator1">
     </Component>
     <Component class="javax.swing.JSpinner" name="day_jspinner">
       <Properties>
@@ -281,6 +299,65 @@
       <Properties>
         <Property name="text" type="java.lang.String" value=" "/>
       </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="motscles_label">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Mots cl&#xe9;(s) :"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="motscles_notif_jlabel">
+      <Properties>
+        <Property name="text" type="java.lang.String" value=" "/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="ajouter_auteurs_button">
+      <Properties>
+        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+          <Image iconType="3" name="/biblio/plus_icon.gif"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Ajouter"/>
+        <Property name="enabled" type="boolean" value="false"/>
+      </Properties>
+      <Events>
+        <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="ajouter_auteurs_buttonMousePressed"/>
+      </Events>
+    </Component>
+    <Container class="javax.swing.JScrollPane" name="jScrollPane2">
+      <AuxValues>
+        <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
+      </AuxValues>
+
+      <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+      <SubComponents>
+        <Component class="javax.swing.JList" name="motscles_list">
+          <Properties>
+            <Property name="model" type="javax.swing.ListModel" editor="org.netbeans.modules.form.editors2.ListModelEditor">
+              <StringArray count="0"/>
+            </Property>
+            <Property name="enabled" type="boolean" value="false"/>
+          </Properties>
+        </Component>
+      </SubComponents>
+    </Container>
+    <Container class="javax.swing.JScrollPane" name="jScrollPane1">
+      <AuxValues>
+        <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
+      </AuxValues>
+
+      <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+      <SubComponents>
+        <Component class="javax.swing.JList" name="auteurs_list">
+          <Properties>
+            <Property name="model" type="javax.swing.ListModel" editor="org.netbeans.modules.form.editors2.ListModelEditor">
+              <StringArray count="0"/>
+            </Property>
+            <Property name="enabled" type="boolean" value="false"/>
+            <Property name="name" type="java.lang.String" value="null" noResource="true"/>
+          </Properties>
+        </Component>
+      </SubComponents>
+    </Container>
+    <Component class="javax.swing.JSeparator" name="jSeparator1">
     </Component>
   </SubComponents>
 </Form>
