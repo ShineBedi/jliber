@@ -6,7 +6,7 @@ import java.io.*;
 import java.util.*;
 
 public class Ouvrage
-        extends Observable        // pour MVC
+        extends Document
         implements Serializable {
 
 // *************************
@@ -21,22 +21,20 @@ public class Ouvrage
 
     //  Attributs d'Association
     private Hashtable exemplaires;
-    private Set<Auteur> auteurs;
 
 // ***********************************
 //          Constructeur
 // ***********************************
 public Ouvrage(String is, String tit, String aut, String ed,
                    GregorianCalendar dat) {
+        super(tit);
         isbn = is;
-        titre = tit;
         auteur = aut;
         editeur = ed;
         dateEdition = dat;
         derNumExemplaire = 0;
 
         exemplaires = new Hashtable();
-        auteurs = new HashSet();
 } //Fin Constructeur
 
 //**********************************************
