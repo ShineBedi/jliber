@@ -19,15 +19,16 @@ import java.util.*;
  *
  * @author ksz
  */
-public class CtrEmpruntExGUI extends javax.swing.JDialog {
+public class CtrRetourExGUI extends javax.swing.JDialog {
 
     private Bibliotheque biblio;
     private java.awt.Frame parent_frame;
     private Ouvrage ouvrage_global;
     private Lecteur lecteur_global;
+    private Emprunt emprunt_global;
 
     /** Creates new form CtrRendreExEmpruntableGUI */
-    public CtrEmpruntExGUI(java.awt.Frame parent, boolean modal) {
+    public CtrRetourExGUI(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         parent_frame = parent;
         initComponents();
@@ -65,7 +66,7 @@ public class CtrEmpruntExGUI extends javax.swing.JDialog {
         isbn_textfield = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setTitle("Emprunter un exemplaire");
+        setTitle("Retour d'un exemplaire");
 
         numero_lect_label.setText("Numéro du lecteur :");
 
@@ -115,8 +116,6 @@ public class CtrEmpruntExGUI extends javax.swing.JDialog {
             }
         });
 
-        isbn_textfield.setEnabled(false);
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -130,12 +129,6 @@ public class CtrEmpruntExGUI extends javax.swing.JDialog {
                 .addContainerGap(315, Short.MAX_VALUE))
             .addComponent(jSeparator1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 472, Short.MAX_VALUE)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(234, Short.MAX_VALUE)
-                .addComponent(annuler_button, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(valider_button, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(37, 37, 37))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                         .addContainerGap()
@@ -148,23 +141,29 @@ public class CtrEmpruntExGUI extends javax.swing.JDialog {
                         .addComponent(numero_lecteur_notif_jlabel, javax.swing.GroupLayout.DEFAULT_SIZE, 429, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(169, 169, 169)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(numero_lecteur_spin, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(isbn_textfield, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(numexemp_combobox, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 33, Short.MAX_VALUE)
+                            .addComponent(numexemp_combobox, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(isbn_textfield, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(8, 8, 8)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(verifierNumLecteur_button)
                             .addComponent(rechercherISBN_button))
                         .addGap(13, 13, 13)))
                 .addGap(31, 31, 31))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(233, Short.MAX_VALUE)
+                .addComponent(annuler_button, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(valider_button, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(43, 43, 43))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addComponent(jSeparator2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 472, Short.MAX_VALUE))
         );
 
         layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {issn_label, issn_label1, numero_lect_label});
 
-        layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {rechercherISBN_button, verifierNumLecteur_button});
+        layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {annuler_button, rechercherISBN_button, valider_button, verifierNumLecteur_button});
 
         layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {isbn_textfield, numero_lecteur_spin, numexemp_combobox});
 
@@ -183,8 +182,8 @@ public class CtrEmpruntExGUI extends javax.swing.JDialog {
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(issn_label)
-                    .addComponent(isbn_textfield, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(rechercherISBN_button))
+                    .addComponent(rechercherISBN_button)
+                    .addComponent(isbn_textfield, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(isbn_notif_jlabel)
                 .addGap(32, 32, 32)
@@ -193,11 +192,11 @@ public class CtrEmpruntExGUI extends javax.swing.JDialog {
                     .addComponent(numexemp_combobox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(numexemp_notif_jlabel)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 18, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(valider_button, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(annuler_button, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addGap(164, 164, 164)
@@ -220,18 +219,20 @@ public class CtrEmpruntExGUI extends javax.swing.JDialog {
            numero_lecteur_notif_jlabel.setForeground(Color.red);
            numero_lecteur_notif_jlabel.setText("Ce lecteur n'existe pas.");
         } else {
-            if(!lect.nonSature()){
-                numero_lecteur_notif_jlabel.setForeground(Color.red);
-                numero_lecteur_notif_jlabel.setText("Ce lecteur ne peut plus emprunter.");
-            } else {
                 lecteur_global = lect;
-                numero_lecteur_notif_jlabel.setForeground(Color.green);
-                numero_lecteur_notif_jlabel.setText("Lecteur: "+ lect.nom() + " " + lect.prenom());
-                numero_lecteur_spin.setEnabled(false);
-                verifierNumLecteur_button.setEnabled(false);
-                isbn_textfield.setEnabled(true);
-                rechercherISBN_button.setEnabled(true);
-            }
+                Set<Emprunt> emprunts = lecteur_global.tesEmprunts();
+                if (emprunts.isEmpty()) {
+                    numero_lecteur_notif_jlabel.setForeground(Color.red);
+                    numero_lecteur_notif_jlabel.setText("Ce lecteur n'a emprunté aucun livre.");
+                } else {
+         
+                    numero_lecteur_notif_jlabel.setForeground(Color.green);
+                    numero_lecteur_notif_jlabel.setText("Lecteur: "+ lect.nom() + " " + lect.prenom());
+                    numero_lecteur_spin.setEnabled(false);
+                    verifierNumLecteur_button.setEnabled(false);
+                    isbn_textfield.setEnabled(true);
+                    rechercherISBN_button.setEnabled(true);
+                }
         }
 }//GEN-LAST:event_verifierNumLecteur_buttonMousePressed
 
@@ -244,35 +245,29 @@ public class CtrEmpruntExGUI extends javax.swing.JDialog {
             isbn_notif_jlabel.setText("Cet ouvrage n'existe pas.");
         } else {
             ouvrage_global = ouv;
-            Enumeration enumEx = ouv.enumExemplaires();
-
-            if  (enumEx.hasMoreElements()) {
-                int i=0;
-                while (enumEx.hasMoreElements()) {
-                    Exemplaire exemp = (Exemplaire) enumEx.nextElement();
-                    if(exemp.estEmpruntable()) {
+            Set<Emprunt> emprunts = lecteur_global.tesEmprunts();
+            int i = 0;
+            for(Emprunt emp:emprunts){
+                    Exemplaire exemp = emp.tonExemplaire();
+                    if(exemp.tonOuvrage() == ouvrage_global && exemp.estEmprunte()) {
                         Integer num = exemp.numero();
                         numexemp_combobox.addItem(num);
                         i++;
                     }
-                }
-                // il n'y a pas d'exemplaire empruntable
-                if(i!=0){
-                    //on notifie
-                    isbn_notif_jlabel.setForeground(Color.green);
-                    isbn_notif_jlabel.setText("Titre de l'ouvrage: "+ ouv.titre());
-                    //on (dés)active les contrôles nécessaires
-                    isbn_textfield.setEnabled(false);
-                    rechercherISBN_button.setEnabled(false);
-                    numexemp_combobox.setEnabled(true);
-                    valider_button.setEnabled(true);
-                } else {
-                    isbn_notif_jlabel.setForeground(Color.red);
-                    isbn_notif_jlabel.setText("Cet ouvrage n'a pas d'exemplaires empruntables.");
-                }
-            } else {
+             }
+            // il n'y a pas d'exemplaire emprunté
+            if(i==0){
                 isbn_notif_jlabel.setForeground(Color.red);
-                isbn_notif_jlabel.setText("Cet ouvrage n'a pas d'exemplaires.");
+                isbn_notif_jlabel.setText("Il n'y a pas d'exemplaire emprunté.");
+            } else {
+                 //on notifie
+                 isbn_notif_jlabel.setForeground(Color.green);
+                 isbn_notif_jlabel.setText("Titre de l'ouvrage: "+ ouv.titre());
+                 //on (dés)active les contrôles nécessaires
+                 isbn_textfield.setEnabled(false);
+                 rechercherISBN_button.setEnabled(false);
+                 numexemp_combobox.setEnabled(true);
+                 valider_button.setEnabled(true);
             }
         }
 }//GEN-LAST:event_rechercherISBN_buttonMousePressed
@@ -288,13 +283,21 @@ public class CtrEmpruntExGUI extends javax.swing.JDialog {
             numexemp_notif_jlabel.setForeground(Color.red);
             numexemp_notif_jlabel.setText("Cet exemplaire n'existe pas .");
         } else {
-            if(!exemp.estEmpruntable()) {
+            if(!exemp.estEmprunte()) {
                  numexemp_notif_jlabel.setForeground(Color.red);
-                 numexemp_notif_jlabel.setText("Cet exemplaire n'est pas empruntable .");
+                 numexemp_notif_jlabel.setText("Cet exemplaire n'est pas emprunté.");
             } else {
-                  GregorianCalendar date = new GregorianCalendar();
-                  biblio.nouvelEmprunt(date,date, lecteur_global, exemp);
-                  exemp.modifierStatut(exemp.emprunte);
+
+                  Set<Emprunt> mesEmprunts = lecteur_global.tesEmprunts();
+                  // on selectionne le bon emprunt
+                  for(Emprunt emp:mesEmprunts) {
+                    Exemplaire ex = emp.tonExemplaire();
+                    if(ex == exemp && ex.tonOuvrage() == ouvrage_global){
+                          // l'exemplaire devient empruntable
+                        exemp.modifierStatut(exemp.empruntable);
+                        emp.finEmprunt(new GregorianCalendar());
+                    }
+                  }
                   this.dispose();
                   // Création de la vue
                   VueLecteurGUI vLectGUI = new VueLecteurGUI(parent_frame, true);

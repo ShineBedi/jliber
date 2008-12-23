@@ -87,6 +87,10 @@ private void lierOuvrage(Ouvrage ouv){
     ouvrage = ouv;
 } // Fin lierOuvrage
 
+public Set<Emprunt> tesEmprunts() {
+    return emprunts;
+}
+
 public void lierEmprunt(Emprunt emp) {
     emprunts.add(emp);
 }

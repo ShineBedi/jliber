@@ -107,9 +107,7 @@ public class CtrRendreExConsultableGUI extends javax.swing.JDialog {
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                                 .addComponent(isbn_label)
                                 .addGap(34, 34, 34)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(isbn_notif_jlabel)
-                                    .addComponent(isbn_textfield, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(isbn_textfield, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 33, Short.MAX_VALUE)
                                 .addComponent(verifierISBN_button)))
                         .addContainerGap())
@@ -119,6 +117,10 @@ public class CtrRendreExConsultableGUI extends javax.swing.JDialog {
                         .addComponent(exemplaires_combobox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(247, 247, 247))))
             .addComponent(jSeparator1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 450, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(isbn_notif_jlabel, javax.swing.GroupLayout.DEFAULT_SIZE, 426, Short.MAX_VALUE)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -202,19 +204,28 @@ public class CtrRendreExConsultableGUI extends javax.swing.JDialog {
             Enumeration enumEx = ouv.enumExemplaires();
 
             if  (enumEx.hasMoreElements()) {
+                int i = 0;
                 while (enumEx.hasMoreElements()) {
                      Exemplaire exemp = (Exemplaire) enumEx.nextElement();
-                     Integer num = exemp.numero();
-                     exemplaires_combobox.addItem(num);
+                     if(exemp.estNonDisponible()){
+                         Integer num = exemp.numero();
+                         exemplaires_combobox.addItem(num);
+                         i++;
+                     }
                 }
-                 //on notifie
-                isbn_notif_jlabel.setForeground(Color.green);
-                isbn_notif_jlabel.setText("Titre de l'ouvrage: "+ ouv.titre());
-                //on (dés)active les contrôles nécessaires
-                isbn_textfield.setEnabled(false);
-                verifierISBN_button.setEnabled(false);
-                valider_button.setEnabled(true);
-                exemplaires_combobox.setEnabled(true);
+                if(i!=0){
+                     //on notifie
+                    isbn_notif_jlabel.setForeground(Color.green);
+                    isbn_notif_jlabel.setText("Titre de l'ouvrage: "+ ouv.titre());
+                    //on (dés)active les contrôles nécessaires
+                    isbn_textfield.setEnabled(false);
+                    verifierISBN_button.setEnabled(false);
+                    valider_button.setEnabled(true);
+                    exemplaires_combobox.setEnabled(true);
+                } else {
+                    isbn_notif_jlabel.setForeground(Color.red);
+                    isbn_notif_jlabel.setText("Il n'y pas d'exemplaire pouvant etre mis en consultation.");
+                }
             // TODO on remplit la liste
             } else {
                 isbn_notif_jlabel.setForeground(Color.red);
