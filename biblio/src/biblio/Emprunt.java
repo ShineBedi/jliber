@@ -34,6 +34,9 @@ public class Emprunt
     public GregorianCalendar dateEmprunt() { return dateEmprunt; }
     public GregorianCalendar dateRetour() { return dateRetour; }
 
+    public void finEmprunt(GregorianCalendar dateRetour) {
+        this.dateRetour = dateRetour;
+    }
     public Lecteur tonLecteur() {
         return (Lecteur)lecteur;
     }

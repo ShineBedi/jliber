@@ -58,6 +58,7 @@ public class VueLecteurGUI extends javax.swing.JDialog implements Observer {
         Vector<String> columnEmprunts = new Vector<String>();
         columnEmprunts.clear();
         columnEmprunts.add("Ouvrage");
+        columnEmprunts.add("Exemplaire");
         columnEmprunts.add("Statut");
         for(Emprunt emp:mesEmprunts){
             Vector<Object> data_lineEmprunts = new Vector<Object>();
@@ -65,6 +66,7 @@ public class VueLecteurGUI extends javax.swing.JDialog implements Observer {
             Ouvrage ouv = exemp.tonOuvrage();
             String titre = ouv.titre();
             data_lineEmprunts.add(titre);
+            data_lineEmprunts.add(emp.tonExemplaire().numero());
             String statut;
             if(emp.dateEmprunt() == emp.dateRetour()) {
                 statut = "non rendu";
@@ -156,11 +158,11 @@ public class VueLecteurGUI extends javax.swing.JDialog implements Observer {
 
             },
             new String [] {
-                "Ouvrage", "Statut"
+                "Ouvrage", "Exemplaire", "Statut"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false
+                false, false, true
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {

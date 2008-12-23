@@ -201,20 +201,29 @@ public class CtrRendreExNonDispoGUI extends javax.swing.JDialog {
             Enumeration enumEx = ouv.enumExemplaires();
 
             if  (enumEx.hasMoreElements()) {
+                int i=0;
                 while (enumEx.hasMoreElements()) {
                     Exemplaire exemp = (Exemplaire) enumEx.nextElement();
-                    Integer num = exemp.numero();
-                    exemplaires_combobox.addItem(num);
+                    if(exemp.estEmpruntable() || exemp.estEnConsultation()){
+                        Integer num = exemp.numero();
+                        exemplaires_combobox.addItem(num);
+                        i++;
+                    }
                 }
-                //on notifie
-                isbn_notif_jlabel.setForeground(Color.green);
-                isbn_notif_jlabel.setText("Titre de l'ouvrage: "+ ouv.titre());
-                //on (dés)active les contrôles nécessaires
-                isbn_textfield.setEnabled(false);
-                verifierISBN_button.setEnabled(false);
-                valider_button.setEnabled(true);
-                exemplaires_combobox.setEnabled(true);
-                // TODO on remplit la liste
+                if(i!=0){
+                    //on notifie
+                    isbn_notif_jlabel.setForeground(Color.green);
+                    isbn_notif_jlabel.setText("Titre de l'ouvrage: "+ ouv.titre());
+                    //on (dés)active les contrôles nécessaires
+                    isbn_textfield.setEnabled(false);
+                    verifierISBN_button.setEnabled(false);
+                    valider_button.setEnabled(true);
+                    exemplaires_combobox.setEnabled(true);
+                    // TODO on remplit la liste
+                } else {
+                     isbn_notif_jlabel.setForeground(Color.red);
+                     isbn_notif_jlabel.setText("Il n'y a pas d'exemplaire pouvant être mis en indisponible.");
+                }
             } else {
                 isbn_notif_jlabel.setForeground(Color.red);
                 isbn_notif_jlabel.setText("Cet ouvrage n'a pas d'exemplaires.");

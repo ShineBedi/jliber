@@ -204,6 +204,11 @@ public class MenuGUI extends javax.swing.JFrame {
         exemplaire_menu.add(emprunt_exemplaire_button);
 
         retour_exemplaire_button.setText("Retour");
+        retour_exemplaire_button.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                retour_exemplaire_buttonMousePressed(evt);
+            }
+        });
         exemplaire_menu.add(retour_exemplaire_button);
 
         ouvrage_menu.add(exemplaire_menu);
@@ -490,6 +495,13 @@ public class MenuGUI extends javax.swing.JFrame {
         ctr.menuPrincipal(bibliotheque);
         ctr = null;
     }//GEN-LAST:event_emprunt_exemplaire_buttonMousePressed
+
+    private void retour_exemplaire_buttonMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_retour_exemplaire_buttonMousePressed
+        // TODO add your handling code here:
+        CtrRetourExGUI ctr = new CtrRetourExGUI(this, true);
+        ctr.menuPrincipal(bibliotheque);
+        ctr = null;
+    }//GEN-LAST:event_retour_exemplaire_buttonMousePressed
     
     /**
      * @param args the command line arguments

@@ -43,7 +43,16 @@ public Lecteur(int num, String no, String pre,
 //*****************************
 //     Pr�dicats d'Etat
 //*****************************
-public boolean nonSature() {return (emprunts.size() < maxEmprunt);}
+public boolean nonSature() {
+    int size =0;
+    for(Emprunt emp:emprunts){
+        if(emp.dateRetour() == emp.dateEmprunt())
+        {
+            size++;
+        }
+    }
+    return (size < maxEmprunt);
+}
 
 //************************************************
 // M�thodes d'Acces aux attributs de la classe

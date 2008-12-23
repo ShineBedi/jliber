@@ -37,10 +37,7 @@
                           <Group type="102" alignment="1" attributes="0">
                               <Component id="isbn_label" min="-2" max="-2" attributes="1"/>
                               <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="isbn_notif_jlabel" min="-2" max="-2" attributes="0"/>
-                                  <Component id="isbn_textfield" min="-2" pref="185" max="-2" attributes="1"/>
-                              </Group>
+                              <Component id="isbn_textfield" min="-2" pref="185" max="-2" attributes="1"/>
                               <EmptySpace pref="33" max="32767" attributes="0"/>
                               <Component id="verifierISBN_button" min="-2" max="-2" attributes="1"/>
                           </Group>
@@ -56,6 +53,11 @@
               </Group>
           </Group>
           <Component id="jSeparator1" alignment="1" pref="450" max="32767" attributes="0"/>
+          <Group type="102" alignment="0" attributes="0">
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="isbn_notif_jlabel" pref="426" max="32767" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+          </Group>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
