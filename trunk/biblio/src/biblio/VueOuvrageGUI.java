@@ -65,8 +65,8 @@ public class VueOuvrageGUI extends javax.swing.JDialog implements Observer {
         dataAuteurs.clear();
         Vector<String> columnAuteurs = new Vector<String>();
         columnAuteurs.clear();
-        columnAuteurs.add("Numéro");
-        columnAuteurs.add("Statut");
+        columnAuteurs.add("Nom");
+        columnAuteurs.add("Prenom");
         for(Auteur aut:auteurs) {
             Vector<Object> data_lineAuteurs = new Vector<Object>();
              data_lineAuteurs.add(aut.nom());
