@@ -1,5 +1,7 @@
 package biblio;
 import java.awt.Color;
+import java.lang.*;
+import java.util.*;
 /*
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
@@ -48,11 +50,9 @@ public class CtrRendreExConsultableGUI extends javax.swing.JDialog {
         valider_button = new javax.swing.JButton();
         isbn_textfield = new javax.swing.JTextField();
         verifierISBN_button = new javax.swing.JButton();
-        numexemp_textfield = new javax.swing.JTextField();
-        verifierNum_button = new javax.swing.JButton();
         jSeparator1 = new javax.swing.JSeparator();
         isbn_notif_jlabel = new javax.swing.JLabel();
-        exemplaire_jcombobox = new javax.swing.JComboBox();
+        exemplaires_combobox = new javax.swing.JComboBox();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Rendre un exemplaire consultable");
@@ -87,17 +87,9 @@ public class CtrRendreExConsultableGUI extends javax.swing.JDialog {
             }
         });
 
-        verifierNum_button.setIcon(new javax.swing.ImageIcon(getClass().getResource("/biblio/find.png"))); // NOI18N
-        verifierNum_button.setText("Verifier");
-        verifierNum_button.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                verifierNum_buttonMousePressed(evt);
-            }
-        });
-
         isbn_notif_jlabel.setText(" ");
 
-        exemplaire_jcombobox.setEnabled(false);
+        exemplaires_combobox.setEnabled(false);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -113,24 +105,19 @@ public class CtrRendreExConsultableGUI extends javax.swing.JDialog {
                                 .addGap(18, 18, 18)
                                 .addComponent(valider_button, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addComponent(isbn_label)
+                                .addGap(34, 34, 34)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(numexemp_textfield, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(isbn_label)
-                                        .addGap(34, 34, 34)
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(isbn_notif_jlabel)
-                                            .addComponent(isbn_textfield, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(verifierNum_button, javax.swing.GroupLayout.DEFAULT_SIZE, 101, Short.MAX_VALUE)
-                                    .addComponent(verifierISBN_button))))
+                                    .addComponent(isbn_notif_jlabel)
+                                    .addComponent(isbn_textfield, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 33, Short.MAX_VALUE)
+                                .addComponent(verifierISBN_button)))
                         .addContainerGap())
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(numexp_label, javax.swing.GroupLayout.DEFAULT_SIZE, 147, Short.MAX_VALUE)
+                        .addComponent(numexp_label, javax.swing.GroupLayout.DEFAULT_SIZE, 156, Short.MAX_VALUE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(exemplaire_jcombobox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(238, 238, 238))))
+                        .addComponent(exemplaires_combobox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(247, 247, 247))))
             .addComponent(jSeparator1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 450, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
@@ -143,17 +130,13 @@ public class CtrRendreExConsultableGUI extends javax.swing.JDialog {
                     .addComponent(isbn_textfield, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(isbn_notif_jlabel)
-                .addGap(11, 11, 11)
-                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(numexp_label, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(exemplaire_jcombobox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 25, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(numexemp_textfield, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(verifierNum_button))
-                .addGap(18, 18, 18)
+                    .addComponent(exemplaires_combobox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 16, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(valider_button, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(annuler_button, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -174,7 +157,7 @@ public class CtrRendreExConsultableGUI extends javax.swing.JDialog {
             String isbn = isbn_textfield.getText();
 
             Ouvrage ouv = biblio.unOuvrage(isbn);
-            String numexp = numexemp_textfield.getText();
+            String numexp = String.valueOf(exemplaires_combobox.getSelectedItem());
             if (ouv != null) {
                     Exemplaire exemp = ouv.unExemplaire(Integer.parseInt(numexp));
                     // Vérification la non existence de l'ouvrage / ISBN
@@ -216,40 +199,31 @@ public class CtrRendreExConsultableGUI extends javax.swing.JDialog {
             isbn_notif_jlabel.setForeground(Color.red);
             isbn_notif_jlabel.setText("L'ouvrage n'existe pas dans la base.");
         } else {
-            //on notifie
-            isbn_notif_jlabel.setForeground(Color.green);
-            isbn_notif_jlabel.setText("Titre de l'ouvrage: "+ ouv.titre());
-            //on (dés)active les contrôles nécessaires
-            isbn_textfield.setEnabled(false);
-            verifierISBN_button.setEnabled(false);
-            exemplaire_jcombobox.setEnabled(true);
+            Enumeration enumEx = ouv.enumExemplaires();
+
+            if  (enumEx.hasMoreElements()) {
+                while (enumEx.hasMoreElements()) {
+                     Exemplaire exemp = (Exemplaire) enumEx.nextElement();
+                     Integer num = exemp.numero();
+                     exemplaires_combobox.addItem(num);
+                }
+                 //on notifie
+                isbn_notif_jlabel.setForeground(Color.green);
+                isbn_notif_jlabel.setText("Titre de l'ouvrage: "+ ouv.titre());
+                //on (dés)active les contrôles nécessaires
+                isbn_textfield.setEnabled(false);
+                verifierISBN_button.setEnabled(false);
+                valider_button.setEnabled(true);
+                exemplaires_combobox.setEnabled(true);
             // TODO on remplit la liste
+            } else {
+                isbn_notif_jlabel.setForeground(Color.red);
+                isbn_notif_jlabel.setText("Cet ouvrage n'a pas d'exemplaires.");
+            }
 
             
         }
 }//GEN-LAST:event_verifierISBN_buttonMousePressed
-
-    private void verifierNum_buttonMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_verifierNum_buttonMousePressed
-        try {
-             String isbn = isbn_textfield.getText();
-            // Vérification la non existence de l'ouvrage / ISBN
-            Ouvrage ouv = biblio.unOuvrage(isbn);
-            if (ouv == null) {
-                javax.swing.JOptionPane.showMessageDialog(null, "Cet ouvrage n'existe pas dans la base");
-            } else {
-                String numexp = numexemp_textfield.getText();
-                  // Vérification la non existence de l'ouvrage / ISBN
-                Exemplaire exemp = ouv.unExemplaire(Integer.parseInt(numexp));
-                if (exemp  == null) {
-                    javax.swing.JOptionPane.showMessageDialog(null, "Cet exemplaire n'existe pas dans la base");
-                } else {
-                    javax.swing.JOptionPane.showMessageDialog(null, "Cet exemplaire existe dans la base on peut donc le modifier");
-                }
-            }
-        } catch (java.lang.NumberFormatException e) {
-             javax.swing.JOptionPane.showMessageDialog(null, "Erreur de saisie dans les champs obligatoires");
-         }
-}//GEN-LAST:event_verifierNum_buttonMousePressed
 
     /**
     * @param args the command line arguments
@@ -270,16 +244,14 @@ public class CtrRendreExConsultableGUI extends javax.swing.JDialog {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton annuler_button;
-    private javax.swing.JComboBox exemplaire_jcombobox;
+    private javax.swing.JComboBox exemplaires_combobox;
     private javax.swing.JLabel isbn_label;
     private javax.swing.JLabel isbn_notif_jlabel;
     private javax.swing.JTextField isbn_textfield;
     private javax.swing.JSeparator jSeparator1;
-    private javax.swing.JTextField numexemp_textfield;
     private javax.swing.JLabel numexp_label;
     private javax.swing.JButton valider_button;
     private javax.swing.JButton verifierISBN_button;
-    private javax.swing.JButton verifierNum_button;
     // End of variables declaration//GEN-END:variables
 
 }
