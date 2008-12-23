@@ -11,7 +11,7 @@ public class Exemplaire
 //**************************
 //        Attributs
 //**************************
-    final static int empruntable = 0, enConsultation = 1, nonDisponible = 2;
+    final static int empruntable = 0, enConsultation = 1, nonDisponible = 2, emprunte = 3;
 
 
     private int numero;
@@ -20,6 +20,7 @@ public class Exemplaire
 
     // Attributs d'Association
     private Ouvrage ouvrage;
+    private Set<Emprunt> emprunts;
 
 // *************************
 //     Constructeur
@@ -27,7 +28,7 @@ public class Exemplaire
 public Exemplaire(int num,GregorianCalendar dateR, Ouvrage ouv) {
     numero = num; dateReception = dateR; statut = nonDisponible;
     this.lierOuvrage(ouv);
-
+    emprunts = new HashSet<Emprunt>();
 } // Fin Constructeur
 
 //**********************************************
@@ -54,6 +55,8 @@ public boolean estNonDisponible(){return (statut == nonDisponible);}
 
 public boolean estEnConsultation(){return (statut == enConsultation);}
 
+public boolean estEmprunte(){return(statut == emprunte);}
+
 
 
 // Pour les affichages
@@ -61,6 +64,7 @@ public String libStatut() {
     if (statut == nonDisponible ) return "non disponible";
     else if (statut == empruntable)  return "empruntable";
     else if (statut == enConsultation) return "en consultation";
+    else if (statut == emprunte) return "emprunté";
     else return "erreur dans le statut de l'exemplaire";
 }  // Fin libStatut
 
@@ -82,6 +86,10 @@ public String libStatut() {
 private void lierOuvrage(Ouvrage ouv){
     ouvrage = ouv;
 } // Fin lierOuvrage
+
+public void lierEmprunt(Emprunt emp) {
+    emprunts.add(emp);
+}
 
 
 } // Fin Classe Exemplaire

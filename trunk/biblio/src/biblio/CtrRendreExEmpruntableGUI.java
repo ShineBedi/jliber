@@ -71,8 +71,8 @@ public class CtrRendreExEmpruntableGUI extends javax.swing.JDialog {
         valider_button.setText("Valider");
         valider_button.setEnabled(false);
         valider_button.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                valider_buttonMousePressed(evt);
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                valider_buttonMouseClicked(evt);
             }
         });
 
@@ -96,7 +96,6 @@ public class CtrRendreExEmpruntableGUI extends javax.swing.JDialog {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 463, Short.MAX_VALUE)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -124,7 +123,6 @@ public class CtrRendreExEmpruntableGUI extends javax.swing.JDialog {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 187, Short.MAX_VALUE)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -152,46 +150,6 @@ public class CtrRendreExEmpruntableGUI extends javax.swing.JDialog {
     private void annuler_buttonMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_annuler_buttonMousePressed
         this.dispose();
 }//GEN-LAST:event_annuler_buttonMousePressed
-
-    private void valider_buttonMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_valider_buttonMousePressed
-        // Vérification la non existence de l'ouvrage / ISBN
-        try {
-
-            String isbn = isbn_textfield.getText();
-
-            Ouvrage ouv = biblio.unOuvrage(isbn);
-            String numexp = String.valueOf(exemplaires_combobox.getSelectedItem());
-            if (ouv != null) {
-                Exemplaire exemp = ouv.unExemplaire(Integer.parseInt(numexp));
-                // Vérification la non existence de l'ouvrage / ISBN
-                 if (exemp != null) {
-
-                    // l'exemplaire est actuellement non disponible
-                    if ( exemp.estNonDisponible() )
-                    {
-                        biblio.modifStatutExemplaire(exemp,exemp.empruntable);
-                        this.dispose();
-                        VueOuvrageGUI vOuvGUI = new VueOuvrageGUI(parent_frame, true);
-                        vOuvGUI.menuPrincipal(ouv);
-                        vOuvGUI.elimineObserveur();
-                        vOuvGUI = null;
-                    }
-                    else
-                    // l'exemplaire est déjà empruntable
-                    if (exemp.estEmpruntable()) javax.swing.JOptionPane.showMessageDialog(null, "L'exemplaire est déjà empruntable.");
-
-                    // l'exemplaire est actuellement consultable en bibliothéque
-                    else javax.swing.JOptionPane.showMessageDialog(null, "Un exemplaire consultable en bibliothèque ne peut pas devenir directement empruntable.");
-                } else {
-                     javax.swing.JOptionPane.showMessageDialog(null, "Cet exemplaire n'existe pas dans la base");
-                }
-            } else {
-                javax.swing.JOptionPane.showMessageDialog(null, "Cet ouvrage n'existe pas dans la base");
-            }
-        } catch (java.lang.NumberFormatException e) {
-            javax.swing.JOptionPane.showMessageDialog(null, "Erreur de saisie dans les champs obligatoires");
-        }
-}//GEN-LAST:event_valider_buttonMousePressed
 
     private void verifierISBN_buttonMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_verifierISBN_buttonMousePressed
         String isbn = isbn_textfield.getText();
@@ -226,6 +184,44 @@ public class CtrRendreExEmpruntableGUI extends javax.swing.JDialog {
 
         }
 }//GEN-LAST:event_verifierISBN_buttonMousePressed
+
+    private void valider_buttonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_valider_buttonMouseClicked
+        // TODO add your handling code here:
+        try {
+
+            String isbn = isbn_textfield.getText();
+
+            Ouvrage ouv = biblio.unOuvrage(isbn);
+            String numexp = String.valueOf(exemplaires_combobox.getSelectedItem());
+            if (ouv != null) {
+                Exemplaire exemp = ouv.unExemplaire(Integer.parseInt(numexp));
+                // Vérification la non existence de l'ouvrage / ISBN
+                if (exemp != null) {
+
+                    // l'exemplaire est actuellement non disponible
+                    if ( exemp.estNonDisponible() ) {
+                        biblio.modifStatutExemplaire(exemp,exemp.empruntable);
+                        this.dispose();
+                        VueOuvrageGUI vOuvGUI = new VueOuvrageGUI(parent_frame, true);
+                        vOuvGUI.menuPrincipal(ouv);
+                        vOuvGUI.elimineObserveur();
+                        vOuvGUI = null;
+                    } else
+                        // l'exemplaire est déjà empruntable
+                        if (exemp.estEmpruntable()) javax.swing.JOptionPane.showMessageDialog(null, "L'exemplaire est déjà empruntable.");
+
+                    // l'exemplaire est actuellement consultable en bibliothéque
+                        else javax.swing.JOptionPane.showMessageDialog(null, "Un exemplaire consultable en bibliothèque ne peut pas devenir directement empruntable.");
+                } else {
+                    javax.swing.JOptionPane.showMessageDialog(null, "Cet exemplaire n'existe pas dans la base");
+                }
+            } else {
+                javax.swing.JOptionPane.showMessageDialog(null, "Cet ouvrage n'existe pas dans la base");
+            }
+        } catch (java.lang.NumberFormatException e) {
+            javax.swing.JOptionPane.showMessageDialog(null, "Erreur de saisie dans les champs obligatoires");
+        }
+}//GEN-LAST:event_valider_buttonMouseClicked
 
     /**
     * @param args the command line arguments

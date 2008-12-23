@@ -22,7 +22,9 @@ public class Emprunt
         this.dateEmprunt = dateEmprunt;
         this.dateRetour = dateRetour;
         this.lierLecteur(lecteur);
+        lecteur.lierEmprunt(this);
         this.lierExemplaire(exemplaire);
+        exemplaire.lierEmprunt(this);
     }
 
     //**********************************************

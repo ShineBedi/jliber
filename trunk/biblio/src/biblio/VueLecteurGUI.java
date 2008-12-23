@@ -47,8 +47,38 @@ public class VueLecteurGUI extends javax.swing.JDialog implements Observer {
         adresse_textarea.setText(lect.adresse());
         Integer age = lect.age();
         age_textfield.setText(age.toString());
+        this.afficherEmprunts();
  }
 
+    private void afficherEmprunts() {
+        Set<Emprunt> mesEmprunts = lect.tesEmprunts();
+        javax.swing.table.DefaultTableModel dtmEmprunts = new javax.swing.table.DefaultTableModel();
+        Vector<Vector<Object>> dataEmprunts = new Vector<Vector<Object>>();
+        dataEmprunts.clear();
+        Vector<String> columnEmprunts = new Vector<String>();
+        columnEmprunts.clear();
+        columnEmprunts.add("Ouvrage");
+        columnEmprunts.add("Statut");
+        for(Emprunt emp:mesEmprunts){
+            Vector<Object> data_lineEmprunts = new Vector<Object>();
+            Exemplaire exemp = emp.tonExemplaire();
+            Ouvrage ouv = exemp.tonOuvrage();
+            String titre = ouv.titre();
+            data_lineEmprunts.add(titre);
+            String statut;
+            if(emp.dateEmprunt() == emp.dateRetour()) {
+                statut = "non rendu";
+                data_lineEmprunts.add(statut);
+            } else {
+                statut = "rendu";
+                data_lineEmprunts.add(statut);
+            }
+            dataEmprunts.add(data_lineEmprunts);
+        }
+       dtmEmprunts.setDataVector(dataEmprunts, columnEmprunts);
+       emprunts_table.setModel(dtmEmprunts);
+    }
+    
     /** Creates new form VueLecteurGUI */
     public VueLecteurGUI(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
@@ -77,6 +107,9 @@ public class VueLecteurGUI extends javax.swing.JDialog implements Observer {
         numero_textfield = new javax.swing.JTextField();
         age_textfield = new javax.swing.JTextField();
         terminer_button = new javax.swing.JButton();
+        emprunt_label = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        emprunts_table = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Lecteur");
@@ -116,6 +149,30 @@ public class VueLecteurGUI extends javax.swing.JDialog implements Observer {
             }
         });
 
+        emprunt_label.setText("Historique des emprunts:");
+
+        emprunts_table.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Ouvrage", "Statut"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        emprunts_table.setCellSelectionEnabled(true);
+        emprunts_table.setEnabled(false);
+        emprunts_table.getTableHeader().setReorderingAllowed(false);
+        jScrollPane1.setViewportView(emprunts_table);
+        emprunts_table.getColumnModel().getSelectionModel().setSelectionMode(javax.swing.ListSelectionModel.SINGLE_INTERVAL_SELECTION);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -126,11 +183,11 @@ public class VueLecteurGUI extends javax.swing.JDialog implements Observer {
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(prenom_label, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(prenom_textfield, javax.swing.GroupLayout.DEFAULT_SIZE, 262, Short.MAX_VALUE))
+                        .addComponent(prenom_textfield, javax.swing.GroupLayout.PREFERRED_SIZE, 303, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(nom_label, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(nom_textfield, javax.swing.GroupLayout.DEFAULT_SIZE, 262, Short.MAX_VALUE))
+                        .addComponent(nom_textfield, javax.swing.GroupLayout.PREFERRED_SIZE, 303, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(numero_label, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -144,10 +201,19 @@ public class VueLecteurGUI extends javax.swing.JDialog implements Observer {
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(age_textfield, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(216, 216, 216))
-                            .addComponent(scroller, javax.swing.GroupLayout.DEFAULT_SIZE, 262, Short.MAX_VALUE)))
+                            .addComponent(scroller, javax.swing.GroupLayout.DEFAULT_SIZE, 303, Short.MAX_VALUE)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(emprunt_label, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 303, Short.MAX_VALUE))
                     .addComponent(terminer_button, javax.swing.GroupLayout.Alignment.TRAILING))
                 .addContainerGap())
         );
+
+        layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {jScrollPane1, nom_textfield, prenom_textfield, scroller});
+
+        layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {adresse_label, age_label, emprunt_label, nom_label, numero_label, prenom_label});
+
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
@@ -172,9 +238,16 @@ public class VueLecteurGUI extends javax.swing.JDialog implements Observer {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(age_label)
                             .addComponent(age_textfield, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 30, Short.MAX_VALUE)
-                .addComponent(terminer_button)
-                .addContainerGap())
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 33, Short.MAX_VALUE)
+                        .addComponent(terminer_button)
+                        .addGap(20, 20, 20))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(emprunt_label)
+                        .addContainerGap())))
         );
 
         pack();
@@ -207,6 +280,9 @@ public class VueLecteurGUI extends javax.swing.JDialog implements Observer {
     private javax.swing.JTextArea adresse_textarea;
     private javax.swing.JLabel age_label;
     private javax.swing.JTextField age_textfield;
+    private javax.swing.JLabel emprunt_label;
+    private javax.swing.JTable emprunts_table;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel nom_label;
     private javax.swing.JTextField nom_textfield;
     private javax.swing.JLabel numero_label;
