@@ -31,24 +31,24 @@
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
-                      <Component id="prenom_label" min="-2" pref="137" max="-2" attributes="0"/>
+                      <Component id="prenom_label" linkSize="3" min="-2" pref="137" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="prenom_textfield" pref="262" max="32767" attributes="0"/>
+                      <Component id="prenom_textfield" linkSize="1" min="-2" pref="303" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
-                      <Component id="nom_label" min="-2" pref="137" max="-2" attributes="0"/>
+                      <Component id="nom_label" linkSize="3" min="-2" pref="137" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="nom_textfield" pref="262" max="32767" attributes="0"/>
+                      <Component id="nom_textfield" linkSize="1" min="-2" pref="303" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
-                      <Component id="numero_label" min="-2" pref="137" max="-2" attributes="0"/>
+                      <Component id="numero_label" linkSize="3" min="-2" pref="137" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="numero_textfield" min="-2" pref="46" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="adresse_label" alignment="0" min="-2" pref="137" max="-2" attributes="0"/>
-                          <Component id="age_label" alignment="0" min="-2" pref="137" max="-2" attributes="0"/>
+                          <Component id="adresse_label" linkSize="3" alignment="0" min="-2" pref="137" max="-2" attributes="0"/>
+                          <Component id="age_label" linkSize="3" alignment="0" min="-2" pref="137" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
@@ -56,8 +56,13 @@
                               <Component id="age_textfield" min="-2" pref="46" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="216" max="-2" attributes="0"/>
                           </Group>
-                          <Component id="scroller" alignment="0" pref="262" max="32767" attributes="1"/>
+                          <Component id="scroller" linkSize="1" alignment="0" pref="303" max="32767" attributes="1"/>
                       </Group>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <Component id="emprunt_label" linkSize="3" min="-2" pref="174" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="jScrollPane1" linkSize="1" pref="303" max="32767" attributes="1"/>
                   </Group>
                   <Component id="terminer_button" alignment="1" min="-2" max="-2" attributes="0"/>
               </Group>
@@ -67,7 +72,7 @@
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" alignment="0" attributes="0">
+          <Group type="102" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="numero_textfield" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -95,9 +100,19 @@
                       </Group>
                   </Group>
               </Group>
-              <EmptySpace pref="30" max="32767" attributes="0"/>
-              <Component id="terminer_button" min="-2" max="-2" attributes="0"/>
-              <EmptySpace max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" attributes="0">
+                      <Component id="jScrollPane1" min="-2" pref="95" max="-2" attributes="0"/>
+                      <EmptySpace pref="33" max="32767" attributes="0"/>
+                      <Component id="terminer_button" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" attributes="0">
+                      <Component id="emprunt_label" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                  </Group>
+              </Group>
           </Group>
       </Group>
     </DimensionLayout>
@@ -178,5 +193,48 @@
         <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="terminer_buttonMousePressed"/>
       </Events>
     </Component>
+    <Component class="javax.swing.JLabel" name="emprunt_label">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Historique des emprunts:"/>
+      </Properties>
+    </Component>
+    <Container class="javax.swing.JScrollPane" name="jScrollPane1">
+      <AuxValues>
+        <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
+      </AuxValues>
+
+      <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+      <SubComponents>
+        <Component class="javax.swing.JTable" name="emprunts_table">
+          <Properties>
+            <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
+              <Table columnCount="2" rowCount="0">
+                <Column editable="false" title="Ouvrage" type="java.lang.Object"/>
+                <Column editable="false" title="Statut" type="java.lang.Object"/>
+              </Table>
+            </Property>
+            <Property name="cellSelectionEnabled" type="boolean" value="true"/>
+            <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
+              <TableColumnModel selectionModel="2">
+                <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                  <Title/>
+                  <Editor/>
+                  <Renderer/>
+                </Column>
+                <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                  <Title/>
+                  <Editor/>
+                  <Renderer/>
+                </Column>
+              </TableColumnModel>
+            </Property>
+            <Property name="enabled" type="boolean" value="false"/>
+            <Property name="tableHeader" type="javax.swing.table.JTableHeader" editor="org.netbeans.modules.form.editors2.JTableHeaderEditor">
+              <TableHeader reorderingAllowed="false" resizingAllowed="true"/>
+            </Property>
+          </Properties>
+        </Component>
+      </SubComponents>
+    </Container>
   </SubComponents>
 </Form>

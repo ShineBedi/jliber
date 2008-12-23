@@ -86,6 +86,9 @@ public void nouvelExemplaire(Ouvrage ouv, GregorianCalendar dateR) {
         ouv.ajouterExemplaire(dateR);
 } // Fin nouvelExemplaire
 
+public void nouvelEmprunt(GregorianCalendar dateEmp, GregorianCalendar dateRetour, Lecteur lect, Exemplaire exemp){
+    Emprunt emprunt = new Emprunt(dateEmp, dateRetour, lect, exemp);
+}
 //****************************
 public void modifStatutExemplaire(Exemplaire ex, int s) {
             ex.modifierStatut(s);
