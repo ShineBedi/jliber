@@ -7,6 +7,13 @@
 package biblio;
 import javax.swing.*;
 import java.util.*;
+
+import javax.swing.JTree;
+import javax.swing.tree.DefaultMutableTreeNode;
+import javax.swing.tree.TreeSelectionModel;
+import javax.swing.tree.DefaultTreeModel;
+
+
 /**
  *
  * @author  scriptoff
@@ -36,6 +43,32 @@ public class VuePeriodiqueGUI extends javax.swing.JDialog implements Observer {
     private void afficherTout()  {
        text_field_issn.setText(per.issn());
        text_field_nom.setText(per.nom());
+       this.afficherParutions();
+    }
+
+    private void afficherParutions() {
+
+      DefaultMutableTreeNode rootNode = new DefaultMutableTreeNode(per.nom());
+      DefaultTreeModel treeModel = new DefaultTreeModel(rootNode);
+
+     parutions_jtree.setModel(treeModel);
+
+     Enumeration mesParutions = per.enumParutions();
+      if  (mesParutions.hasMoreElements()) {
+          while (mesParutions.hasMoreElements()) {
+              Parution paru = (Parution) mesParutions.nextElement();
+              DefaultMutableTreeNode x = new DefaultMutableTreeNode(paru.idParution());
+              // on affiches tous les articles des parutions
+              Set<Article> mesArticles = paru.tesArticles();
+              for(Article art:mesArticles) {
+                   x.add( new DefaultMutableTreeNode(art.titre()+" - page " + art.page()));
+              }
+              // x.add( new DefaultMutableTreeNode("filsN° "+ i+"  "+j));
+              rootNode.add(x);
+          }
+      }
+     parutions_jtree.expandRow(0);
+
     }
 
     /** This method is called from within the constructor to
@@ -50,10 +83,10 @@ public class VuePeriodiqueGUI extends javax.swing.JDialog implements Observer {
         jLabel2 = new javax.swing.JLabel();
         text_field_issn = new javax.swing.JTextField();
         text_field_nom = new javax.swing.JTextField();
-        terminer_button = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         parutions_jtree = new javax.swing.JTree();
         parutions_periodique_label = new javax.swing.JLabel();
+        terminer_button = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Vue d'un périodique");
@@ -66,48 +99,20 @@ public class VuePeriodiqueGUI extends javax.swing.JDialog implements Observer {
 
         text_field_nom.setEditable(false);
 
-        terminer_button.setText("Terminer");
-        terminer_button.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                terminer_buttonActionPerformed(evt);
-            }
-        });
-
-        javax.swing.tree.DefaultMutableTreeNode treeNode1 = new javax.swing.tree.DefaultMutableTreeNode("NomPeriodique");
-        javax.swing.tree.DefaultMutableTreeNode treeNode2 = new javax.swing.tree.DefaultMutableTreeNode("Parution1");
-        javax.swing.tree.DefaultMutableTreeNode treeNode3 = new javax.swing.tree.DefaultMutableTreeNode("article1-page");
-        treeNode2.add(treeNode3);
-        treeNode3 = new javax.swing.tree.DefaultMutableTreeNode("article2-page");
-        treeNode2.add(treeNode3);
-        treeNode3 = new javax.swing.tree.DefaultMutableTreeNode("article3-page");
-        treeNode2.add(treeNode3);
-        treeNode3 = new javax.swing.tree.DefaultMutableTreeNode("article4-page");
-        treeNode2.add(treeNode3);
-        treeNode1.add(treeNode2);
-        treeNode2 = new javax.swing.tree.DefaultMutableTreeNode("Parution2");
-        treeNode3 = new javax.swing.tree.DefaultMutableTreeNode("article1-page");
-        treeNode2.add(treeNode3);
-        treeNode3 = new javax.swing.tree.DefaultMutableTreeNode("article2-page");
-        treeNode2.add(treeNode3);
-        treeNode3 = new javax.swing.tree.DefaultMutableTreeNode("article3-page");
-        treeNode2.add(treeNode3);
-        treeNode3 = new javax.swing.tree.DefaultMutableTreeNode("article4-page");
-        treeNode2.add(treeNode3);
-        treeNode1.add(treeNode2);
-        treeNode2 = new javax.swing.tree.DefaultMutableTreeNode("Parution3");
-        treeNode3 = new javax.swing.tree.DefaultMutableTreeNode("article1-page");
-        treeNode2.add(treeNode3);
-        treeNode3 = new javax.swing.tree.DefaultMutableTreeNode("article2-page");
-        treeNode2.add(treeNode3);
-        treeNode3 = new javax.swing.tree.DefaultMutableTreeNode("article3-page");
-        treeNode2.add(treeNode3);
-        treeNode3 = new javax.swing.tree.DefaultMutableTreeNode("article4-page");
-        treeNode2.add(treeNode3);
-        treeNode1.add(treeNode2);
+        javax.swing.tree.DefaultMutableTreeNode treeNode1 = new javax.swing.tree.DefaultMutableTreeNode("root");
         parutions_jtree.setModel(new javax.swing.tree.DefaultTreeModel(treeNode1));
+        parutions_jtree.setAutoscrolls(true);
         jScrollPane1.setViewportView(parutions_jtree);
 
         parutions_periodique_label.setText("Parutions du périodique :");
+
+        terminer_button.setIcon(new javax.swing.ImageIcon(getClass().getResource("/biblio/flag_red.png"))); // NOI18N
+        terminer_button.setText("Terminer");
+        terminer_button.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                terminer_buttonMousePressed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -115,9 +120,6 @@ public class VuePeriodiqueGUI extends javax.swing.JDialog implements Observer {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(170, 170, 170)
-                        .addComponent(terminer_button, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -129,7 +131,10 @@ public class VuePeriodiqueGUI extends javax.swing.JDialog implements Observer {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 250, Short.MAX_VALUE)
                             .addComponent(text_field_nom, javax.swing.GroupLayout.DEFAULT_SIZE, 250, Short.MAX_VALUE)
-                            .addComponent(text_field_issn, javax.swing.GroupLayout.DEFAULT_SIZE, 250, Short.MAX_VALUE))))
+                            .addComponent(text_field_issn, javax.swing.GroupLayout.DEFAULT_SIZE, 250, Short.MAX_VALUE)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(168, 168, 168)
+                        .addComponent(terminer_button)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -145,33 +150,26 @@ public class VuePeriodiqueGUI extends javax.swing.JDialog implements Observer {
                     .addComponent(text_field_nom, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(37, 37, 37)
-                        .addComponent(terminer_button))
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(parutions_periodique_label))
-                .addContainerGap(46, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(terminer_button)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void terminer_buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_terminer_buttonActionPerformed
+    private void terminer_buttonMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_terminer_buttonMousePressed
+        // TODO add your handling code here:
+        // Vérification la non existence de l'ouvrage / ISBN
         this.dispose();
-}//GEN-LAST:event_terminer_buttonActionPerformed
+}//GEN-LAST:event_terminer_buttonMousePressed
     
     /**
      * @param args the command line arguments
      */
     public static void main(String args[]) {
-        try {
-	    // Set System L&F
-        UIManager.setLookAndFeel(
-            UIManager.getSystemLookAndFeelClassName());
-    } 
-    catch (Exception e) {
-       System.out.println("Java sucks , C++ rocks");
-    }
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 VuePeriodiqueGUI dialog = new VuePeriodiqueGUI(new javax.swing.JFrame(), true);

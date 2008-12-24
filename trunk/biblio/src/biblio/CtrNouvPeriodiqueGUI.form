@@ -26,11 +26,17 @@
           <Group type="102" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="issn_notif_jlabel" alignment="0" pref="474" max="32767" attributes="0"/>
+                  <Component id="nom_notif_jlabel" linkSize="4" alignment="0" min="-2" pref="171" max="-2" attributes="0"/>
+                  <Component id="issn_notif_jlabel" linkSize="4" alignment="0" min="-2" pref="474" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace pref="21" max="32767" attributes="1"/>
+          </Group>
+          <Component id="jSeparator1" alignment="1" pref="507" max="32767" attributes="0"/>
+          <Group type="102" attributes="0">
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
-                      <EmptySpace min="176" pref="176" max="176" attributes="0"/>
-                      <Component id="nom_notif_jlabel" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="105" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="285" max="-2" attributes="0"/>
                       <Component id="annuler_button" min="-2" pref="91" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="valider_button" min="-2" pref="92" max="-2" attributes="0"/>
@@ -40,7 +46,7 @@
                       <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
                       <Component id="issn_textfield" linkSize="3" min="-2" pref="209" max="-2" attributes="1"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="verifierISSN_button" pref="123" max="32767" attributes="1"/>
+                      <Component id="verifierISSN_button" pref="132" max="32767" attributes="1"/>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
                       <Component id="nom_label" linkSize="1" min="-2" pref="70" max="-2" attributes="1"/>
@@ -50,7 +56,6 @@
               </Group>
               <EmptySpace max="-2" attributes="0"/>
           </Group>
-          <Component id="jSeparator1" alignment="1" pref="498" max="32767" attributes="0"/>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
@@ -69,27 +74,21 @@
                       <Component id="issn_textfield" min="-2" max="-2" attributes="0"/>
                   </Group>
               </Group>
-              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
               <Component id="issn_notif_jlabel" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
               <Component id="jSeparator1" min="-2" pref="10" max="-2" attributes="0"/>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="nom_textfield" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="nom_label" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" attributes="0">
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="nom_notif_jlabel" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="valider_button" alignment="3" min="-2" pref="29" max="-2" attributes="0"/>
-                          <Component id="annuler_button" alignment="3" min="-2" pref="29" max="-2" attributes="0"/>
-                      </Group>
-                  </Group>
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="nom_notif_jlabel" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="valider_button" alignment="3" min="-2" pref="29" max="-2" attributes="0"/>
+                  <Component id="annuler_button" alignment="3" min="-2" pref="29" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="32767" attributes="0"/>
           </Group>

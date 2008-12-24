@@ -54,7 +54,7 @@ public class CtrConsPerGUI extends javax.swing.JDialog {
         notif_jlabel = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setTitle("Consulter un lecteur");
+        setTitle("Consulter un périodique");
         setResizable(false);
 
         issn_label.setText("Numéro ISSN :");
