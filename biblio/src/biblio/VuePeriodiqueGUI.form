@@ -25,11 +25,7 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" attributes="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="170" max="-2" attributes="0"/>
-                      <Component id="terminer_button" min="-2" pref="108" max="-2" attributes="0"/>
-                  </Group>
-                  <Group type="102" alignment="0" attributes="0">
+                  <Group type="102" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
@@ -44,6 +40,10 @@
                           <Component id="text_field_nom" alignment="0" pref="250" max="32767" attributes="1"/>
                           <Component id="text_field_issn" alignment="0" pref="250" max="32767" attributes="1"/>
                       </Group>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="168" max="-2" attributes="0"/>
+                      <Component id="terminer_button" min="-2" max="-2" attributes="0"/>
                   </Group>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
@@ -65,14 +65,12 @@
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" attributes="0">
-                      <Component id="jScrollPane1" min="-2" pref="185" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="37" max="-2" attributes="0"/>
-                      <Component id="terminer_button" min="-2" max="-2" attributes="0"/>
-                  </Group>
+                  <Component id="jScrollPane1" min="-2" pref="185" max="-2" attributes="0"/>
                   <Component id="parutions_periodique_label" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace pref="46" max="32767" attributes="0"/>
+              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+              <Component id="terminer_button" min="-2" max="-2" attributes="0"/>
+              <EmptySpace max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -98,14 +96,6 @@
         <Property name="editable" type="boolean" value="false"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JButton" name="terminer_button">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Terminer"/>
-      </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="terminer_buttonActionPerformed"/>
-      </Events>
-    </Component>
     <Container class="javax.swing.JScrollPane" name="jScrollPane1">
       <AuxValues>
         <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
@@ -116,8 +106,9 @@
         <Component class="javax.swing.JTree" name="parutions_jtree">
           <Properties>
             <Property name="model" type="javax.swing.tree.TreeModel" editor="org.netbeans.modules.form.editors2.TreeModelEditor">
-              <TreeModel code="NomPeriodique&#xa; Parution1&#xa;  article1-page&#xa;  article2-page&#xa;  article3-page&#xa;  article4-page&#xa; Parution2&#xa;  article1-page&#xa;  article2-page&#xa;  article3-page&#xa;  article4-page&#xa; Parution3&#xa;  article1-page&#xa;  article2-page&#xa;  article3-page&#xa;  article4-page"/>
+              <TreeModel code=""/>
             </Property>
+            <Property name="autoscrolls" type="boolean" value="true"/>
           </Properties>
         </Component>
       </SubComponents>
@@ -126,6 +117,17 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="Parutions du p&#xe9;riodique :"/>
       </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="terminer_button">
+      <Properties>
+        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+          <Image iconType="3" name="/biblio/flag_red.png"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Terminer"/>
+      </Properties>
+      <Events>
+        <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="terminer_buttonMousePressed"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>

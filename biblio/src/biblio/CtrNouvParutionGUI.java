@@ -313,6 +313,12 @@ public class CtrNouvParutionGUI extends javax.swing.JDialog {
     private void terminer_buttonMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_terminer_buttonMousePressed
         // TODO add your handling code here:
         // Vérification la non existence de l'ouvrage / ISBN
+        if(parution_global != null) {
+            VuePeriodiqueGUI vPerGUI = new VuePeriodiqueGUI(parent_frame, true);
+             vPerGUI.menuPrincipal(periodique_global);
+             vPerGUI.elimineObserveur();
+             vPerGUI = null;
+        }
         this.dispose();
 }//GEN-LAST:event_terminer_buttonMousePressed
 
