@@ -64,6 +64,11 @@ public int nbParutions() {return parutions.size();}
 // ***********************************
 //   Méthodes privées
 // ***********************************
+ public Parution nouvParution(String numpar, Periodique per){
+     Parution paru = new Parution(numpar, per);
+     this.lierParution(paru, numpar);
+     return paru;
+ }
 
  private void lierParution(Parution paru, String idParution) {
     parutions.put(idParution, paru);

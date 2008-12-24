@@ -226,11 +226,16 @@ public class MenuGUI extends javax.swing.JFrame {
         periodique_menu.add(nouveau_periodique_button);
 
         consulter_periodique_button.setText("Consulter");
+        consulter_periodique_button.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                consulter_periodique_buttonMousePressed(evt);
+            }
+        });
         periodique_menu.add(consulter_periodique_button);
 
         parution_menu.setText("Parution");
 
-        nouvelle_parution_button.setText("Nouvelle");
+        nouvelle_parution_button.setText("Nouvelle / Modifier");
         nouvelle_parution_button.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 nouvelle_parution_buttonMousePressed(evt);
@@ -502,6 +507,13 @@ public class MenuGUI extends javax.swing.JFrame {
         ctr.menuPrincipal(bibliotheque);
         ctr = null;
     }//GEN-LAST:event_retour_exemplaire_buttonMousePressed
+
+    private void consulter_periodique_buttonMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_consulter_periodique_buttonMousePressed
+        // TODO add your handling code here:
+        CtrConsPerGUI ctr = new CtrConsPerGUI(this, true);
+        ctr.menuPrincipal(bibliotheque);
+        ctr = null;
+    }//GEN-LAST:event_consulter_periodique_buttonMousePressed
     
     /**
      * @param args the command line arguments

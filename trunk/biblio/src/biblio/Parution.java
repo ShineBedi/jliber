@@ -23,6 +23,10 @@ public class Parution
            articles = new HashSet<Article>();
         }
 
+        public void nouvArticle(String titre, int page, Parution parution, Set<Auteur> mesAuteurs, Set<MotCle> mesMotsCles) {
+            Article art = new Article(titre, page, parution, mesAuteurs, mesMotsCles);
+        }
+
         public String idParution() { return idParution; }
         
         public Periodique tonPeriodique() {return periodique;}

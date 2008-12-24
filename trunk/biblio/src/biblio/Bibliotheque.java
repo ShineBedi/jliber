@@ -17,6 +17,7 @@ public class Bibliotheque
     private Hashtable<Integer,Lecteur> lecteurs;
     private Hashtable<String,Ouvrage> ouvrages;
     private Hashtable<String,Periodique> periodiques;
+    private Hashtable<String, Article> articles;
     private Set<Emprunt> emprunts;
     private Hashtable<String,Auteur> auteurs;
     private Hashtable<String,MotCle> motsCles;
