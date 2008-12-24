@@ -168,6 +168,9 @@
               <Properties>
                 <Property name="text" type="java.lang.String" value="Consulter"/>
               </Properties>
+              <Events>
+                <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="consulter_periodique_buttonMousePressed"/>
+              </Events>
             </MenuItem>
             <Menu class="javax.swing.JMenu" name="parution_menu">
               <Properties>
@@ -176,7 +179,7 @@
               <SubComponents>
                 <MenuItem class="javax.swing.JMenuItem" name="nouvelle_parution_button">
                   <Properties>
-                    <Property name="text" type="java.lang.String" value="Nouvelle"/>
+                    <Property name="text" type="java.lang.String" value="Nouvelle / Modifier"/>
                   </Properties>
                   <Events>
                     <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="nouvelle_parution_buttonMousePressed"/>

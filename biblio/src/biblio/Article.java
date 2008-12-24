@@ -16,10 +16,19 @@ public class Article
 
     private Parution     parution;
 
-    public Article(String titre, int page, Parution parution) {
+    public Article(String titre, int page, Parution parution, Set<Auteur> mesAuteurs, Set<MotCle> mesMotsCles) {
         super(titre);
         this.page = page;
         this.lierParution(parution);
+        parution.lierArticle(this);
+        for(Auteur aut:mesAuteurs) {
+                this.lierAuteur(aut);
+                aut.lierArticle(this);
+         }
+         for(MotCle mc:mesMotsCles) {
+              this.lierMotCle(mc);
+                mc.lierArticle(this);
+         }
     }
 
     //**********************************************
@@ -39,5 +48,6 @@ public class Article
     private void lierParution(Parution parution) {
         this.parution = parution;
     }
+
 
 }

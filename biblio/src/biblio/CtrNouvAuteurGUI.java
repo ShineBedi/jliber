@@ -24,7 +24,8 @@ public class CtrNouvAuteurGUI extends javax.swing.JDialog {
 
     private Bibliotheque biblio;
     private java.awt.Frame parent_frame;
-    private CtrNouvOuvrageGUI fenetreOuvrage;
+    private CtrNouvOuvrageGUI fenetreOuv;
+    private CtrNouvArticleGUI fenetreArt;
 
     /** Creates new form CtrNouvOuvrageGUI */
     public CtrNouvAuteurGUI(java.awt.Frame parent, boolean modal) {
@@ -34,9 +35,15 @@ public class CtrNouvAuteurGUI extends javax.swing.JDialog {
         this.setLocationRelativeTo(this.getParent());
     }
 
-    public void menuPrincipal(Bibliotheque bib, CtrNouvOuvrageGUI fenetreOuvrage) {
+    public void menuPrincipal(Bibliotheque bib, Object fenetre) {
         biblio = bib;
-        this.fenetreOuvrage = fenetreOuvrage;
+        if(fenetre instanceof CtrNouvOuvrageGUI) {
+            fenetreOuv = (CtrNouvOuvrageGUI)fenetre;
+            fenetreArt = null;
+        } else {
+            fenetreArt = (CtrNouvArticleGUI)fenetre;
+            fenetreOuv = null;
+        }
         this.setVisible(true);
     }
 
@@ -170,9 +177,13 @@ public class CtrNouvAuteurGUI extends javax.swing.JDialog {
         } else {
 
             if (aut == null) {
-                    // Demande d'ajout d'un nouvel ouvrage
+                    // Demande d'ajout d'un nouvel auteur
                     aut = biblio.nouvelAuteur(nom, prenom);
-                    fenetreOuvrage.rafraichirListeAuteur();
+                    if(fenetreOuv == null) {
+                        fenetreArt.rafraichirListeAuteur();
+                    } else {
+                        fenetreOuv.rafraichirListeAuteur();
+                    }
                     javax.swing.JOptionPane.showMessageDialog(null, "Ajout de l'auteur dans la base réussi");
                     this.dispose();
             } else  {

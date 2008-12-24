@@ -179,7 +179,6 @@ public class CtrNouvOuvrageGUI extends javax.swing.JDialog {
         jScrollPane2.setViewportView(motscles_list);
 
         auteurs_list.setEnabled(false);
-        auteurs_list.setName("null"); // NOI18N
         jScrollPane1.setViewportView(auteurs_list);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -240,8 +239,8 @@ public class CtrNouvOuvrageGUI extends javax.swing.JDialog {
                             .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(motscles_notif_jlabel, javax.swing.GroupLayout.PREFERRED_SIZE, 266, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(editeur_notif_jlabel, javax.swing.GroupLayout.PREFERRED_SIZE, 262, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(123, 123, 123))
-                    .addComponent(jSeparator1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 584, Short.MAX_VALUE)))
+                        .addGap(123, 123, 123))))
+            .addComponent(jSeparator1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 596, Short.MAX_VALUE)
         );
 
         layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {auteur_notif_jlabel, editeur_notif_jlabel, editeur_textfield, isbn_notif_label, isbn_textfield, jScrollPane1, jScrollPane2, motscles_notif_jlabel, titre_notif_jlabel, titre_textfield});

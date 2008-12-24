@@ -20,7 +20,7 @@ public class VuePeriodiqueGUI extends javax.swing.JDialog implements Observer {
         this.setLocationRelativeTo(this.getParent());
     }
     
-    public void menuPrincipale(Periodique _per) {
+    public void menuPrincipal(Periodique _per) {
         per = _per;
         per.addObserver(this);
         this.afficherTout();
