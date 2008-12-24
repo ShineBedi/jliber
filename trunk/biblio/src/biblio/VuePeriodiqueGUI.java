@@ -67,7 +67,11 @@ public class VuePeriodiqueGUI extends javax.swing.JDialog implements Observer {
               rootNode.add(x);
           }
       }
-     parutions_jtree.expandRow(0);
+     int i=0;
+     while(i<=parutions_jtree.getRowCount()) {
+        parutions_jtree.expandRow(0);
+        i++;
+     }
 
     }
 
