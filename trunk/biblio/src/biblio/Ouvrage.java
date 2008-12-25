@@ -12,8 +12,7 @@ public class Ouvrage
 // *************************
 //        Attributs
 // *************************
-    private String isbn;
-    private String titre;
+    private String isbn;;
     private String editeur;
     private GregorianCalendar dateEdition;
     private int derNumExemplaire;   // pour la génération des numeros d'exempl.

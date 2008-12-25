@@ -250,9 +250,19 @@ public class MenuGUI extends javax.swing.JFrame {
         recherche_menu.setText("Recherche");
 
         recherche_par_auteur_button.setText("Par auteur");
+        recherche_par_auteur_button.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                recherche_par_auteur_buttonMousePressed(evt);
+            }
+        });
         recherche_menu.add(recherche_par_auteur_button);
 
         recherche_par_motcle_button.setText("Par mot-clé");
+        recherche_par_motcle_button.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                recherche_par_motcle_buttonMousePressed(evt);
+            }
+        });
         recherche_menu.add(recherche_par_motcle_button);
 
         jMenuBar1.add(recherche_menu);
@@ -514,6 +524,20 @@ public class MenuGUI extends javax.swing.JFrame {
         ctr.menuPrincipal(bibliotheque);
         ctr = null;
     }//GEN-LAST:event_consulter_periodique_buttonMousePressed
+
+    private void recherche_par_motcle_buttonMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_recherche_par_motcle_buttonMousePressed
+        // TODO add your handling code here:
+        CtrRechMotCleGUI ctr = new CtrRechMotCleGUI(this, true);
+        ctr.menuPrincipal(bibliotheque);
+        ctr = null;
+    }//GEN-LAST:event_recherche_par_motcle_buttonMousePressed
+
+    private void recherche_par_auteur_buttonMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_recherche_par_auteur_buttonMousePressed
+        // TODO add your handling code here:
+        CtrRechAuteurGUI ctr = new CtrRechAuteurGUI(this, true);
+        ctr.menuPrincipal(bibliotheque);
+        ctr = null;
+    }//GEN-LAST:event_recherche_par_auteur_buttonMousePressed
     
     /**
      * @param args the command line arguments

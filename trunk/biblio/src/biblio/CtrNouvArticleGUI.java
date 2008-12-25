@@ -277,7 +277,7 @@ public class CtrNouvArticleGUI extends javax.swing.JDialog {
 
     private void ajouter_auteurs_buttonMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ajouter_auteurs_buttonMousePressed
         // TODO add your handling code here:
-        CtrNouvAuteurGUI ctr = new CtrNouvAuteurGUI(parent_frame, true);
+        CtrNouvAuteurArtGUI ctr = new CtrNouvAuteurArtGUI(parent_frame, true);
         ctr.menuPrincipal(biblio, this);
         ctr = null;   // suppression du controleur
 }//GEN-LAST:event_ajouter_auteurs_buttonMousePressed
@@ -288,7 +288,7 @@ public class CtrNouvArticleGUI extends javax.swing.JDialog {
     public static void main(String args[]) {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                CtrNouvAuteurGUI dialog = new CtrNouvAuteurGUI(new javax.swing.JFrame(), true);
+                CtrNouvArticleGUI dialog = new CtrNouvArticleGUI(new javax.swing.JFrame(), true);
                 dialog.addWindowListener(new java.awt.event.WindowAdapter() {
                     public void windowClosing(java.awt.event.WindowEvent e) {
                         System.exit(0);

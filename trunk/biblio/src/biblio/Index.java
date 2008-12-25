@@ -27,7 +27,7 @@ implements Serializable
         Set<Object> articles = new HashSet<Object>();
         for(Object d:documents) {
           if(d instanceof Article)
-            articles.add(d);
+            articles.add((Article)d);
         }
         return articles;
       }
@@ -36,16 +36,16 @@ implements Serializable
         Set<Object> ouvrages = new HashSet<Object>();
         for(Object d:documents) {
           if(d instanceof Ouvrage)
-            ouvrages.add((Article)d);
+            ouvrages.add((Ouvrage)d);
         }
         return ouvrages;
       }
 
-      protected void lierOuvrage(Ouvrage ouv) {
+      public void lierOuvrage(Ouvrage ouv) {
             documents.add(ouv);
       } // Fin lierOuvrage
 
-       protected void lierArticle(Article art) {
+       public void lierArticle(Article art) {
             documents.add(art);
       }
 
