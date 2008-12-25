@@ -429,7 +429,7 @@ public class CtrNouvOuvrageGUI extends javax.swing.JDialog {
 
     private void ajouter_auteurs_buttonMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ajouter_auteurs_buttonMousePressed
         // TODO add your handling code here:
-        CtrNouvAuteurGUI ctr = new CtrNouvAuteurGUI(parent_frame, true);
+        CtrNouvAuteurOuvGUI ctr = new CtrNouvAuteurOuvGUI(parent_frame, true);
         ctr.menuPrincipal(biblio, this);
         ctr = null;   // suppression du controleur
 }//GEN-LAST:event_ajouter_auteurs_buttonMousePressed

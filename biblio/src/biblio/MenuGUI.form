@@ -198,11 +198,17 @@
               <Properties>
                 <Property name="text" type="java.lang.String" value="Par auteur"/>
               </Properties>
+              <Events>
+                <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="recherche_par_auteur_buttonMousePressed"/>
+              </Events>
             </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="recherche_par_motcle_button">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Par mot-cl&#xe9;"/>
               </Properties>
+              <Events>
+                <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="recherche_par_motcle_buttonMousePressed"/>
+              </Events>
             </MenuItem>
           </SubComponents>
         </Menu>
