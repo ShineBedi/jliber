@@ -124,7 +124,7 @@ Relecteur : Guillaume ARDAUD
 - Le système demande le numéro de parution de la nouvelle parution.\\
 - La documentaliste saisit le numéro de parution de la nouvelle parution\\
 - Le système créé la nouvelle parution et lie la nouvelle parution à son periodique.\\
-- Le système demande les informations propres des articles de la parution (titre, page).\\
+- Pour tous les articles, le système demande les informations propres des articles de la parution (titre, page).\\
 - La documentaliste saisit les informations propres des articles de la parution.\\
 - le système crée l'article et lie l'article à la parution du periodique.\\
 - Le système demande les auteurs de l'article.\\
@@ -359,7 +359,7 @@ Relecteur : Christophe VARGAS
 \chapter*{Autres}
 \addcontentsline{toc}{chapter}{Autres}
 
-Auteur : Arnaud MAILLET
+Auteur : Arnaud MAILLET et Guillaume ARDAUD
 Relecteur : Christophe VARGAS
 
 \bigskip
