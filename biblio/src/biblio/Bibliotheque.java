@@ -147,7 +147,10 @@ private void lierAuteur(Auteur aut, String nomprenom) {
 public MotCle unMotCle(String motcle) {
     return (MotCle) motsCles.get(motcle);
 }
-
+public void retourExemplaire( Exemplaire ex , Lecteur lect , Ouvrage ouv ){
+    Emprunt emp = ex.tonEmprunt(lect, ouv, ex);
+    emp.retourExemplaire(lect,ex);
+}
 private void lierMotCle(MotCle mc, String motcle) {
     motsCles.put(motcle, mc);
 }

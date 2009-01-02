@@ -53,7 +53,14 @@ public boolean nonSature() {
     }
     return (size < maxEmprunt);
 }
-
+public void supprimerEmprunt(Emprunt emp)
+{
+   delierEmprunt(emp);
+}
+private void delierEmprunt ( Emprunt emp )
+{
+    emprunts.remove(emp);
+}
 //************************************************
 // M�thodes d'Acces aux attributs de la classe
 //************************************************

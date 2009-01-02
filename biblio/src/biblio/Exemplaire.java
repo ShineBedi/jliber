@@ -90,10 +90,30 @@ private void lierOuvrage(Ouvrage ouv){
 public Set<Emprunt> tesEmprunts() {
     return emprunts;
 }
-
+public Emprunt tonEmprunt(Lecteur lect , Ouvrage ouv , Exemplaire exemp){
+    Set<Emprunt> mesEmprunts = lect.tesEmprunts();
+    Emprunt ret = null ;
+    // on selectionne le bon emprunt
+    for(Emprunt emp:mesEmprunts) {
+        Exemplaire ex = emp.tonExemplaire();
+        if(ex == exemp && ex.tonOuvrage() == ouv){
+            // l'exemplaire devient empruntable
+            ret = emp ;
+        }
+    }
+    return ret ;
+}
 public void lierEmprunt(Emprunt emp) {
     emprunts.add(emp);
 }
-
+public void supprimerEmprunt(Emprunt emp)
+{
+  this.modifierStatut(empruntable);
+  delierEmprunt(emp);
+}
+private void delierEmprunt ( Emprunt emp )
+{
+    emprunts.remove(emp);
+}
 
 } // Fin Classe Exemplaire
