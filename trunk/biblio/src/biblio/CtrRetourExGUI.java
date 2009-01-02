@@ -288,7 +288,7 @@ public class CtrRetourExGUI extends javax.swing.JDialog {
                  numexemp_notif_jlabel.setText("Cet exemplaire n'est pas emprunté.");
             } else {
 
-                  Set<Emprunt> mesEmprunts = lecteur_global.tesEmprunts();
+                 /* Set<Emprunt> mesEmprunts = lecteur_global.tesEmprunts();
                   // on selectionne le bon emprunt
                   for(Emprunt emp:mesEmprunts) {
                     Exemplaire ex = emp.tonExemplaire();
@@ -297,7 +297,8 @@ public class CtrRetourExGUI extends javax.swing.JDialog {
                         exemp.modifierStatut(exemp.empruntable);
                         emp.finEmprunt(new GregorianCalendar());
                     }
-                  }
+                  }*/
+                  biblio.retourExemplaire(exemp, lecteur_global, ouvrage_global);
                   this.dispose();
                   // Création de la vue
                   VueLecteurGUI vLectGUI = new VueLecteurGUI(parent_frame, true);

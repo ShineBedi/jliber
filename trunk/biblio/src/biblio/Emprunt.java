@@ -52,4 +52,19 @@ public class Emprunt
     private void lierExemplaire(Exemplaire exemplaire) {
         this.exemplaire = exemplaire;
     }
+    public void retourExemplaire( Lecteur lect, Exemplaire ex)
+    {
+        ex.supprimerEmprunt(this);
+        lect.supprimerEmprunt(this);
+        delierExemplaire(ex);
+        delierLecteur(lect);
+    }
+    public void delierExemplaire(Exemplaire emp)
+    {
+        exemplaire = null;
+    }
+    public void delierLecteur(Lecteur lect)
+    {
+        lecteur = null;
+    }
 }
