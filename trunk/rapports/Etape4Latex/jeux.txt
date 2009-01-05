@@ -1,0 +1,51 @@
+Lecteur 1 :
+	MAILLET
+	Arnaud
+	5 rue honoré de balzac Echirolles 38130
+	19
+
+Lecteur 2 :
+	VARGAS
+	Christophe
+	33 rue du suc St Julien 63320 Montaigut-le-blanc
+	20
+
+Ouvrage 1 : 
+	978-2-7460-4617-7
+	Scripts Shell sous Linux
+	Baranger Jean-Marc
+	Shomaker Théo
+	Eni
+	informatique
+	sciences
+	13/11/2008
+	Exemplaires :
+		1 - 01/01/2009 - non disponible - Emprunté par Lecteur 1
+		2 - 02/01/2009 - non disponible - Emprunté par Lecteur 1
+		3 - 03/01/2009 - non disponible - Emprunté par Lecteur 1
+		4 - 04/01/2009 - en consultation
+		5 - 05/01/2009 - non disponible
+		
+		
+
+Ouvrage 2 :
+	978-2-212-11601-4
+	Programmation système en C sous Linux
+	Blaess Christophe
+	Eyrolles
+	informatique
+	sciences
+	03/03/2005
+	Exemplaires :
+		1 - 01/01/2009 - non disponible - Emprunté par Lecteur 1
+		2 - 02/01/2009 - empruntable
+		3 - 03/01/2009 - empruntable
+		4 - 04/01/2009 - en consultation
+		5 - 05/01/2009 - non disponible
+
+Periodique 1 :
+	1244-4901
+	Misc
+	Parutions :
+		Janvier / Février 2009
+			
