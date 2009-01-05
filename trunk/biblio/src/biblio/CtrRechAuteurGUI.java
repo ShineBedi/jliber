@@ -232,13 +232,14 @@ public class CtrRechAuteurGUI extends javax.swing.JDialog {
         auteur_notif_label.setText(" ");
         // on récupère la liste des mots clés selectionnées
         String auteur = (String) auteurs_list.getSelectedValue();
-        auteur = auteur.replace(" ", "");
-        if (auteur.isEmpty()){
-            if (auteur.isEmpty()){
-                auteur_notif_label.setForeground(Color.red);
-                auteur_notif_label.setText("Vous devez saisir un auteur.");
-            }
+        if(auteur != null){
+            auteur = auteur.replace(" ", "");
         } else {
+            auteur_notif_label.setForeground(Color.red);
+            auteur_notif_label.setText("Vous devez saisir un auteur.");
+        }
+ 
+        if(auteur != null) {
               Auteur aut = biblio.unAuteur(auteur);
               if(aut == null) {
                     auteur_notif_label.setForeground(Color.red);
