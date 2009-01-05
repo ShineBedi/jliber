@@ -113,9 +113,9 @@ public class CtrNouvOuvrageGUI extends javax.swing.JDialog {
         valider_button.setIcon(new javax.swing.ImageIcon(getClass().getResource("/biblio/tick.png"))); // NOI18N
         valider_button.setText("Valider");
         valider_button.setEnabled(false);
-        valider_button.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                valider_buttonMousePressed(evt);
+        valider_button.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                valider_buttonActionPerformed(evt);
             }
         });
 
@@ -169,9 +169,9 @@ public class CtrNouvOuvrageGUI extends javax.swing.JDialog {
         ajouter_auteurs_button.setIcon(new javax.swing.ImageIcon(getClass().getResource("/biblio/plus_icon.gif"))); // NOI18N
         ajouter_auteurs_button.setText("Ajouter");
         ajouter_auteurs_button.setEnabled(false);
-        ajouter_auteurs_button.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                ajouter_auteurs_buttonMousePressed(evt);
+        ajouter_auteurs_button.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ajouter_auteurs_buttonActionPerformed(evt);
             }
         });
 
@@ -315,8 +315,44 @@ public class CtrNouvOuvrageGUI extends javax.swing.JDialog {
         this.dispose();
 }//GEN-LAST:event_annuler_buttonMousePressed
 
-    private void valider_buttonMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_valider_buttonMousePressed
+    private void verifier_buttonMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_verifier_buttonMousePressed
+        // TODO add your handling code here:
+        String isbn = isbn_textfield.getText();
+        // Vérification la non existence de l'ouvrage / ISBN
+        Ouvrage ouv = biblio.unOuvrage(isbn);
+        if (isbn.length()==0){
+            isbn_notif_label.setForeground(Color.red);
+            isbn_notif_label.setText("Veuillez saisir un ISBN valide.");
+        } else {
+        if (ouv != null) {
+            isbn_notif_label.setForeground(Color.red);
+            isbn_notif_label.setText("Cet ouvrage existe déjà dans la base !");
+        } else {
+            isbn_notif_label.setForeground(Color.green);
+            isbn_notif_label.setText("Cet ouvrage n'existe pas, il peut être créé.");
 
+            isbn_textfield.setEnabled(false);
+            verifier_button.setEnabled(false);
+            titre_textfield.setEnabled(true);
+            auteurs_list.setEnabled(true);
+            ajouter_auteurs_button.setEnabled(true);
+            motscles_list.setEnabled(true);
+            editeur_textfield.setEnabled(true);
+            day_jspinner.setEnabled(true);
+            month_jspinner.setEnabled(true);
+            year_jspinner.setEnabled(true);
+            valider_button.setEnabled(true);
+        }
+        }
+    }//GEN-LAST:event_verifier_buttonMousePressed
+
+    private void ajouter_auteurs_buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ajouter_auteurs_buttonActionPerformed
+       CtrNouvAuteurOuvGUI ctr = new CtrNouvAuteurOuvGUI(parent_frame, true);
+        ctr.menuPrincipal(biblio, this);
+        ctr = null;   // suppression du controleur
+    }//GEN-LAST:event_ajouter_auteurs_buttonActionPerformed
+
+    private void valider_buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_valider_buttonActionPerformed
         titre_notif_jlabel.setText(" ");
         auteur_notif_jlabel.setText(" ");
         editeur_notif_jlabel.setText(" ");
@@ -379,7 +415,7 @@ public class CtrNouvOuvrageGUI extends javax.swing.JDialog {
 
             if (ouv == null) {
                  try {
-                    java.util.GregorianCalendar dateEdition = new java.util.GregorianCalendar(year, month-1, day);  
+                    java.util.GregorianCalendar dateEdition = new java.util.GregorianCalendar(year, month-1, day);
                     ouv = biblio.nouvelOuvrage(isbn, titre, editeur, dateEdition, auteurs, motsCles);
                     this.dispose();
                     // Création de la vue
@@ -394,45 +430,7 @@ public class CtrNouvOuvrageGUI extends javax.swing.JDialog {
                javax.swing.JOptionPane.showMessageDialog(null, "Cet ouvrage existe déjà dans la base");
             }
         }
-}//GEN-LAST:event_valider_buttonMousePressed
-
-    private void verifier_buttonMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_verifier_buttonMousePressed
-        // TODO add your handling code here:
-        String isbn = isbn_textfield.getText();
-        // Vérification la non existence de l'ouvrage / ISBN
-        Ouvrage ouv = biblio.unOuvrage(isbn);
-        if (isbn.length()==0){
-            isbn_notif_label.setForeground(Color.red);
-            isbn_notif_label.setText("Veuillez saisir un ISBN valide.");
-        } else {
-        if (ouv != null) {
-            isbn_notif_label.setForeground(Color.red);
-            isbn_notif_label.setText("Cet ouvrage existe déjà dans la base !");
-        } else {
-            isbn_notif_label.setForeground(Color.green);
-            isbn_notif_label.setText("Cet ouvrage n'existe pas, il peut être créé.");
-
-            isbn_textfield.setEnabled(false);
-            verifier_button.setEnabled(false);
-            titre_textfield.setEnabled(true);
-            auteurs_list.setEnabled(true);
-            ajouter_auteurs_button.setEnabled(true);
-            motscles_list.setEnabled(true);
-            editeur_textfield.setEnabled(true);
-            day_jspinner.setEnabled(true);
-            month_jspinner.setEnabled(true);
-            year_jspinner.setEnabled(true);
-            valider_button.setEnabled(true);
-        }
-        }
-    }//GEN-LAST:event_verifier_buttonMousePressed
-
-    private void ajouter_auteurs_buttonMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ajouter_auteurs_buttonMousePressed
-        // TODO add your handling code here:
-        CtrNouvAuteurOuvGUI ctr = new CtrNouvAuteurOuvGUI(parent_frame, true);
-        ctr.menuPrincipal(biblio, this);
-        ctr = null;   // suppression du controleur
-}//GEN-LAST:event_ajouter_auteurs_buttonMousePressed
+    }//GEN-LAST:event_valider_buttonActionPerformed
 
     /**
     * @param args the command line arguments

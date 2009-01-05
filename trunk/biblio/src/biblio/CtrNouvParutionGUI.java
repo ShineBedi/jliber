@@ -105,9 +105,9 @@ public class CtrNouvParutionGUI extends javax.swing.JDialog {
         ajouter_articles_button.setIcon(new javax.swing.ImageIcon(getClass().getResource("/biblio/plus_icon.gif"))); // NOI18N
         ajouter_articles_button.setText("Ajouter");
         ajouter_articles_button.setEnabled(false);
-        ajouter_articles_button.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                ajouter_articles_buttonMousePressed(evt);
+        ajouter_articles_button.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ajouter_articles_buttonActionPerformed(evt);
             }
         });
 
@@ -116,9 +116,9 @@ public class CtrNouvParutionGUI extends javax.swing.JDialog {
         rechercher_button.setIcon(new javax.swing.ImageIcon(getClass().getResource("/biblio/find.png"))); // NOI18N
         rechercher_button.setText("Rechercher / Créer");
         rechercher_button.setEnabled(false);
-        rechercher_button.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                rechercher_buttonMousePressed(evt);
+        rechercher_button.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                rechercher_buttonActionPerformed(evt);
             }
         });
 
@@ -155,7 +155,7 @@ public class CtrNouvParutionGUI extends javax.swing.JDialog {
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(228, 228, 228)
                                 .addComponent(terminer_button)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 289, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 294, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(paru_notif_label, javax.swing.GroupLayout.PREFERRED_SIZE, 594, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 17, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -272,20 +272,20 @@ public class CtrNouvParutionGUI extends javax.swing.JDialog {
          articles_list.setModel(dtmArticles);
     }
 
-    private void ajouter_articles_buttonMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ajouter_articles_buttonMousePressed
+    private void terminer_buttonMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_terminer_buttonMousePressed
         // TODO add your handling code here:
-        CtrNouvArticleGUI ctr = new CtrNouvArticleGUI(parent_frame, true);
+        // Vérification la non existence de l'ouvrage / ISBN
         if(parution_global != null) {
-            ctr.menuPrincipal(biblio, this, parution_global);
-         } else {
-            javax.swing.JOptionPane.showMessageDialog(null, "Opération interdite");
-         }
-        ctr = null;   // suppression du controleur
-}//GEN-LAST:event_ajouter_articles_buttonMousePressed
+            VuePeriodiqueGUI vPerGUI = new VuePeriodiqueGUI(parent_frame, true);
+             vPerGUI.menuPrincipal(periodique_global);
+             vPerGUI.elimineObserveur();
+             vPerGUI = null;
+        }
+        this.dispose();
+}//GEN-LAST:event_terminer_buttonMousePressed
 
-    private void rechercher_buttonMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_rechercher_buttonMousePressed
-        // TODO add your handling code here:
-            paru_notif_label.setText(" ");
+    private void rechercher_buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rechercher_buttonActionPerformed
+         paru_notif_label.setText(" ");
             String numpar = numpar_textfield.getText();
             Parution paru = periodique_global.uneParution(numpar);
             if (numpar.length()==0){
@@ -308,11 +308,9 @@ public class CtrNouvParutionGUI extends javax.swing.JDialog {
                 articles_list.setEnabled(true);
                 ajouter_articles_button.setEnabled(true);
           }
-}//GEN-LAST:event_rechercher_buttonMousePressed
+    }//GEN-LAST:event_rechercher_buttonActionPerformed
 
-    private void terminer_buttonMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_terminer_buttonMousePressed
-        // TODO add your handling code here:
-        // Vérification la non existence de l'ouvrage / ISBN
+    private void ajouter_articles_buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ajouter_articles_buttonActionPerformed
         if(parution_global != null) {
             VuePeriodiqueGUI vPerGUI = new VuePeriodiqueGUI(parent_frame, true);
              vPerGUI.menuPrincipal(periodique_global);
@@ -320,7 +318,7 @@ public class CtrNouvParutionGUI extends javax.swing.JDialog {
              vPerGUI = null;
         }
         this.dispose();
-}//GEN-LAST:event_terminer_buttonMousePressed
+    }//GEN-LAST:event_ajouter_articles_buttonActionPerformed
 
     /**
     * @param args the command line arguments

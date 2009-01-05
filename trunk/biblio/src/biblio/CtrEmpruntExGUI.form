@@ -61,7 +61,7 @@
                           <Component id="isbn_textfield" linkSize="6" alignment="0" min="-2" max="-2" attributes="0"/>
                           <Component id="numexemp_combobox" linkSize="6" alignment="0" min="-2" pref="145" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace pref="33" max="32767" attributes="0"/>
+                      <EmptySpace pref="35" max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="verifierNumLecteur_button" linkSize="4" alignment="0" min="-2" max="-2" attributes="1"/>
                           <Component id="rechercherISBN_button" linkSize="4" alignment="0" min="-2" max="-2" attributes="1"/>
@@ -115,7 +115,7 @@
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace min="-2" pref="164" max="-2" attributes="0"/>
                   <Component id="jSeparator2" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace pref="124" max="32767" attributes="0"/>
+                  <EmptySpace pref="134" max="32767" attributes="0"/>
               </Group>
           </Group>
       </Group>
@@ -161,7 +161,7 @@
         <Property name="enabled" type="boolean" value="false"/>
       </Properties>
       <Events>
-        <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="rechercherISBN_buttonMousePressed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="rechercherISBN_buttonActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="isbn_notif_jlabel">
@@ -209,7 +209,7 @@
         <Property name="enabled" type="boolean" value="false"/>
       </Properties>
       <Events>
-        <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="valider_buttonMousePressed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="valider_buttonActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JTextField" name="isbn_textfield">

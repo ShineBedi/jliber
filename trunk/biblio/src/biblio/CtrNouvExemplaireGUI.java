@@ -86,9 +86,9 @@ public class CtrNouvExemplaireGUI extends javax.swing.JDialog {
         valider_button.setIcon(new javax.swing.ImageIcon(getClass().getResource("/biblio/tick.png"))); // NOI18N
         valider_button.setText("Valider");
         valider_button.setEnabled(false);
-        valider_button.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                valider_buttonMousePressed(evt);
+        valider_button.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                valider_buttonActionPerformed(evt);
             }
         });
 
@@ -116,7 +116,7 @@ public class CtrNouvExemplaireGUI extends javax.swing.JDialog {
             .addComponent(jSeparator1, javax.swing.GroupLayout.DEFAULT_SIZE, 557, Short.MAX_VALUE)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(date_label, javax.swing.GroupLayout.DEFAULT_SIZE, 143, Short.MAX_VALUE)
+                .addComponent(date_label, javax.swing.GroupLayout.DEFAULT_SIZE, 144, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(date_notif_jlabel)
@@ -225,9 +225,7 @@ public class CtrNouvExemplaireGUI extends javax.swing.JDialog {
         this.dispose();
 }//GEN-LAST:event_annuler_buttonMousePressed
 
-    private void valider_buttonMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_valider_buttonMousePressed
-        // TODO add your handling code here:
-        // Vérification la non existence de l'ouvrage / ISBN
+    private void valider_buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_valider_buttonActionPerformed
         String isbn = isbn_textfield.getText();
         Ouvrage ouv = biblio.unOuvrage(isbn);
         if (ouv != null) {
@@ -250,7 +248,7 @@ public class CtrNouvExemplaireGUI extends javax.swing.JDialog {
                     date_notif_jlabel.setText("La date doit être postérieure à la date d'édition.");
                 }
             }
-}//GEN-LAST:event_valider_buttonMousePressed
+    }//GEN-LAST:event_valider_buttonActionPerformed
 
     /**
     * @param args the command line arguments

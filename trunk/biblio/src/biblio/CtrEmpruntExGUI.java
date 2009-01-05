@@ -84,9 +84,9 @@ public class CtrEmpruntExGUI extends javax.swing.JDialog {
         rechercherISBN_button.setIcon(new javax.swing.ImageIcon(getClass().getResource("/biblio/find.png"))); // NOI18N
         rechercherISBN_button.setText("Verifier");
         rechercherISBN_button.setEnabled(false);
-        rechercherISBN_button.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                rechercherISBN_buttonMousePressed(evt);
+        rechercherISBN_button.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                rechercherISBN_buttonActionPerformed(evt);
             }
         });
 
@@ -109,9 +109,9 @@ public class CtrEmpruntExGUI extends javax.swing.JDialog {
         valider_button.setIcon(new javax.swing.ImageIcon(getClass().getResource("/biblio/tick.png"))); // NOI18N
         valider_button.setText("Valider");
         valider_button.setEnabled(false);
-        valider_button.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                valider_buttonMousePressed(evt);
+        valider_button.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                valider_buttonActionPerformed(evt);
             }
         });
 
@@ -152,7 +152,7 @@ public class CtrEmpruntExGUI extends javax.swing.JDialog {
                             .addComponent(numero_lecteur_spin, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(isbn_textfield, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(numexemp_combobox, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 33, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 35, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(verifierNumLecteur_button)
                             .addComponent(rechercherISBN_button))
@@ -202,7 +202,7 @@ public class CtrEmpruntExGUI extends javax.swing.JDialog {
                 .addGroup(layout.createSequentialGroup()
                     .addGap(164, 164, 164)
                     .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(124, Short.MAX_VALUE)))
+                    .addContainerGap(134, Short.MAX_VALUE)))
         );
 
         layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {numero_lecteur_spin, numexemp_combobox});
@@ -235,8 +235,11 @@ public class CtrEmpruntExGUI extends javax.swing.JDialog {
         }
 }//GEN-LAST:event_verifierNumLecteur_buttonMousePressed
 
-    private void rechercherISBN_buttonMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_rechercherISBN_buttonMousePressed
-        // TODO add your handling code here:
+    private void annuler_buttonMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_annuler_buttonMousePressed
+        this.dispose();
+}//GEN-LAST:event_annuler_buttonMousePressed
+
+    private void rechercherISBN_buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rechercherISBN_buttonActionPerformed
         String isbn = isbn_textfield.getText();
         Ouvrage ouv = biblio.unOuvrage(isbn);
         if(ouv == null) {
@@ -275,13 +278,9 @@ public class CtrEmpruntExGUI extends javax.swing.JDialog {
                 isbn_notif_jlabel.setText("Cet ouvrage n'a pas d'exemplaires.");
             }
         }
-}//GEN-LAST:event_rechercherISBN_buttonMousePressed
+    }//GEN-LAST:event_rechercherISBN_buttonActionPerformed
 
-    private void annuler_buttonMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_annuler_buttonMousePressed
-        this.dispose();
-}//GEN-LAST:event_annuler_buttonMousePressed
-
-    private void valider_buttonMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_valider_buttonMousePressed
+    private void valider_buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_valider_buttonActionPerformed
         String numexp = String.valueOf(numexemp_combobox.getSelectedItem());
         Exemplaire exemp = ouvrage_global.unExemplaire(Integer.parseInt(numexp));
         if(exemp == null) {
@@ -305,7 +304,7 @@ public class CtrEmpruntExGUI extends javax.swing.JDialog {
             }
 
         }
-}//GEN-LAST:event_valider_buttonMousePressed
+    }//GEN-LAST:event_valider_buttonActionPerformed
 
     /**
     * @param args the command line arguments
