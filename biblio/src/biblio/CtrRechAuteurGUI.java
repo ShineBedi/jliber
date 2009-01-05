@@ -242,7 +242,7 @@ public class CtrRechAuteurGUI extends javax.swing.JDialog {
               Auteur aut = biblio.unAuteur(auteur);
               if(aut == null) {
                     auteur_notif_label.setForeground(Color.red);
-                   auteur_notif_label.setText("Ce mot clé n'existe pas.");
+                    auteur_notif_label.setText("Cet auteur n'existe pas.");
               } else {
                   // on remplit les ouvrages
                   Set<Object> mesOuvrages = aut.tesOuvrages();
