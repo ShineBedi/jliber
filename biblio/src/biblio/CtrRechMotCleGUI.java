@@ -236,12 +236,10 @@ public class CtrRechMotCleGUI extends javax.swing.JDialog {
         motcle_notif_label.setText(" ");
         // on récupère la liste des mots clés selectionnées
         String mot_cle = (String) motscles_list.getSelectedValue();
-        if (mot_cle.isEmpty()){
-            if (mot_cle.isEmpty()){
-                motcle_notif_label.setForeground(Color.red);
-                motcle_notif_label.setText("Vous devez saisir un mot cle.");
-            }
-        } else {
+        if(mot_cle == null){
+            motcle_notif_label.setForeground(Color.red);
+            motcle_notif_label.setText("Vous devez saisir un mot clé.");
+        }else {
               MotCle mc = biblio.unMotCle(mot_cle);
               if(mc == null) {
                     motcle_notif_label.setForeground(Color.red);
