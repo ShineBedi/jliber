@@ -38,17 +38,17 @@
                               <Component id="isbn_label" min="-2" max="-2" attributes="1"/>
                               <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
                               <Component id="isbn_textfield" min="-2" pref="185" max="-2" attributes="1"/>
-                              <EmptySpace pref="44" max="32767" attributes="0"/>
+                              <EmptySpace pref="51" max="32767" attributes="0"/>
                               <Component id="verifierISBN_button" min="-2" max="-2" attributes="1"/>
                           </Group>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
-                      <Component id="numexp_label" pref="154" max="32767" attributes="1"/>
+                      <Component id="numexp_label" pref="151" max="32767" attributes="1"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="exemplaires_combobox" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="247" max="-2" attributes="0"/>
+                      <Component id="exemplaires_combobox" min="-2" pref="57" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="234" max="-2" attributes="0"/>
                   </Group>
               </Group>
           </Group>
@@ -109,7 +109,7 @@
         <Property name="enabled" type="boolean" value="false"/>
       </Properties>
       <Events>
-        <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="valider_buttonMousePressed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="valider_buttonActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="isbn_label">

@@ -70,9 +70,9 @@ public class CtrRendreExEmpruntableGUI extends javax.swing.JDialog {
         valider_button.setIcon(new javax.swing.ImageIcon(getClass().getResource("/biblio/tick.png"))); // NOI18N
         valider_button.setText("Valider");
         valider_button.setEnabled(false);
-        valider_button.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                valider_buttonMouseClicked(evt);
+        valider_button.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                valider_buttonActionPerformed(evt);
             }
         });
 
@@ -109,14 +109,14 @@ public class CtrRendreExEmpruntableGUI extends javax.swing.JDialog {
                                 .addComponent(isbn_label)
                                 .addGap(34, 34, 34)
                                 .addComponent(isbn_textfield, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 59, Short.MAX_VALUE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 66, Short.MAX_VALUE)
                                 .addComponent(verifierISBN_button)))
                         .addContainerGap())
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(numexp_label, javax.swing.GroupLayout.DEFAULT_SIZE, 169, Short.MAX_VALUE)
+                        .addComponent(numexp_label, javax.swing.GroupLayout.DEFAULT_SIZE, 165, Short.MAX_VALUE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(exemplaires_combobox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(247, 247, 247))))
+                        .addComponent(exemplaires_combobox, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(220, 220, 220))))
             .addComponent(jSeparator1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 481, Short.MAX_VALUE)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
@@ -196,8 +196,7 @@ public class CtrRendreExEmpruntableGUI extends javax.swing.JDialog {
         }
 }//GEN-LAST:event_verifierISBN_buttonMousePressed
 
-    private void valider_buttonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_valider_buttonMouseClicked
-        // TODO add your handling code here:
+    private void valider_buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_valider_buttonActionPerformed
         try {
 
             String isbn = isbn_textfield.getText();
@@ -232,7 +231,7 @@ public class CtrRendreExEmpruntableGUI extends javax.swing.JDialog {
         } catch (java.lang.NumberFormatException e) {
             javax.swing.JOptionPane.showMessageDialog(null, "Erreur de saisie dans les champs obligatoires");
         }
-}//GEN-LAST:event_valider_buttonMouseClicked
+    }//GEN-LAST:event_valider_buttonActionPerformed
 
     /**
     * @param args the command line arguments

@@ -70,9 +70,9 @@ public class CtrRendreExNonDispoGUI extends javax.swing.JDialog {
         valider_button.setIcon(new javax.swing.ImageIcon(getClass().getResource("/biblio/tick.png"))); // NOI18N
         valider_button.setText("Valider");
         valider_button.setEnabled(false);
-        valider_button.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                valider_buttonMousePressed(evt);
+        valider_button.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                valider_buttonActionPerformed(evt);
             }
         });
 
@@ -109,14 +109,14 @@ public class CtrRendreExNonDispoGUI extends javax.swing.JDialog {
                                 .addComponent(isbn_label)
                                 .addGap(34, 34, 34)
                                 .addComponent(isbn_textfield, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 44, Short.MAX_VALUE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 51, Short.MAX_VALUE)
                                 .addComponent(verifierISBN_button)))
                         .addContainerGap())
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(numexp_label, javax.swing.GroupLayout.DEFAULT_SIZE, 154, Short.MAX_VALUE)
+                        .addComponent(numexp_label, javax.swing.GroupLayout.DEFAULT_SIZE, 151, Short.MAX_VALUE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(exemplaires_combobox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(247, 247, 247))))
+                        .addComponent(exemplaires_combobox, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(234, 234, 234))))
             .addComponent(jSeparator1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 466, Short.MAX_VALUE)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
@@ -152,41 +152,6 @@ public class CtrRendreExNonDispoGUI extends javax.swing.JDialog {
     private void annuler_buttonMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_annuler_buttonMousePressed
         this.dispose();
 }//GEN-LAST:event_annuler_buttonMousePressed
-
-    private void valider_buttonMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_valider_buttonMousePressed
-        // Vérification la non existence de l'ouvrage / ISBN
-        try {
-
-            String isbn = isbn_textfield.getText();
-
-            Ouvrage ouv = biblio.unOuvrage(isbn);
-            String numexp = String.valueOf(exemplaires_combobox.getSelectedItem());
-            if (ouv != null) {
-                Exemplaire exemp = ouv.unExemplaire(Integer.parseInt(numexp));
-                // Vérification la non existence de l'ouvrage / ISBN
-                if (exemp != null) {
-
-                   if (exemp.estNonDisponible() )
-                       javax.swing.JOptionPane.showMessageDialog(null, "L'exemplaire est déjà non disponible.");
-                   else {
-                       biblio.modifStatutExemplaire(exemp,exemp.nonDisponible);
-                        this.dispose();
-                        VueOuvrageGUI vOuvGUI = new VueOuvrageGUI(parent_frame, true);
-                        vOuvGUI.menuPrincipal(ouv);
-                        vOuvGUI.elimineObserveur();
-                        vOuvGUI = null;
-                   }
-                } else {
-                    javax.swing.JOptionPane.showMessageDialog(null, "Cet exemplaire n'existe pas dans la base");
-                }
-            } else {
-                javax.swing.JOptionPane.showMessageDialog(null, "Cet ouvrage n'existe pas dans la base");
-            }
-        } catch (java.lang.NumberFormatException e) {
-            javax.swing.JOptionPane.showMessageDialog(null, "Erreur de saisie dans les champs obligatoires");
-        }
-
-}//GEN-LAST:event_valider_buttonMousePressed
 
     private void verifierISBN_buttonMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_verifierISBN_buttonMousePressed
         String isbn = isbn_textfield.getText();
@@ -230,6 +195,39 @@ public class CtrRendreExNonDispoGUI extends javax.swing.JDialog {
 
         }
 }//GEN-LAST:event_verifierISBN_buttonMousePressed
+
+    private void valider_buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_valider_buttonActionPerformed
+        try {
+
+            String isbn = isbn_textfield.getText();
+
+            Ouvrage ouv = biblio.unOuvrage(isbn);
+            String numexp = String.valueOf(exemplaires_combobox.getSelectedItem());
+            if (ouv != null) {
+                Exemplaire exemp = ouv.unExemplaire(Integer.parseInt(numexp));
+                // Vérification la non existence de l'ouvrage / ISBN
+                if (exemp != null) {
+
+                   if (exemp.estNonDisponible() )
+                       javax.swing.JOptionPane.showMessageDialog(null, "L'exemplaire est déjà non disponible.");
+                   else {
+                       biblio.modifStatutExemplaire(exemp,exemp.nonDisponible);
+                        this.dispose();
+                        VueOuvrageGUI vOuvGUI = new VueOuvrageGUI(parent_frame, true);
+                        vOuvGUI.menuPrincipal(ouv);
+                        vOuvGUI.elimineObserveur();
+                        vOuvGUI = null;
+                   }
+                } else {
+                    javax.swing.JOptionPane.showMessageDialog(null, "Cet exemplaire n'existe pas dans la base");
+                }
+            } else {
+                javax.swing.JOptionPane.showMessageDialog(null, "Cet ouvrage n'existe pas dans la base");
+            }
+        } catch (java.lang.NumberFormatException e) {
+            javax.swing.JOptionPane.showMessageDialog(null, "Erreur de saisie dans les champs obligatoires");
+        }
+    }//GEN-LAST:event_valider_buttonActionPerformed
 
     /**
     * @param args the command line arguments

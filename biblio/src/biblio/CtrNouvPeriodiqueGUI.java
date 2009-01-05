@@ -73,9 +73,9 @@ public class CtrNouvPeriodiqueGUI extends javax.swing.JDialog {
         valider_button.setIcon(new javax.swing.ImageIcon(getClass().getResource("/biblio/tick.png"))); // NOI18N
         valider_button.setText("Valider");
         valider_button.setEnabled(false);
-        valider_button.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                valider_buttonMousePressed(evt);
+        valider_button.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                valider_buttonActionPerformed(evt);
             }
         });
 
@@ -168,25 +168,6 @@ public class CtrNouvPeriodiqueGUI extends javax.swing.JDialog {
         this.dispose();
 }//GEN-LAST:event_annuler_buttonMousePressed
 
-    private void valider_buttonMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_valider_buttonMousePressed
-        // TODO add your handling code here:
-        String issn =  issn_textfield.getText();
-        String nom =  nom_textfield.getText();
-        Periodique per = biblio.unPeriodique(issn);
-        if (nom.isEmpty()){
-           nom_notif_jlabel.setText("Veuillez saisir un nom valide.");
-           nom_notif_jlabel.setForeground(Color.red);
-        } else {
-            per = biblio.nouveauPeriodique(issn,nom );
-            this.dispose();
-            VuePeriodiqueGUI vPerGUI = new VuePeriodiqueGUI(parent_frame, true);
-            vPerGUI.menuPrincipal(per);
-            vPerGUI.elimineObserveur();
-            vPerGUI = null;
-        }
-
-}//GEN-LAST:event_valider_buttonMousePressed
-
     private void verifierISSN_buttonMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_verifierISSN_buttonMousePressed
         // TODO add your handling code here:
         String issn =  issn_textfield.getText();
@@ -209,6 +190,23 @@ public class CtrNouvPeriodiqueGUI extends javax.swing.JDialog {
            nom_textfield.setEnabled(true);
         }
 }//GEN-LAST:event_verifierISSN_buttonMousePressed
+
+    private void valider_buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_valider_buttonActionPerformed
+        String issn =  issn_textfield.getText();
+        String nom =  nom_textfield.getText();
+        Periodique per = biblio.unPeriodique(issn);
+        if (nom.isEmpty()){
+           nom_notif_jlabel.setText("Veuillez saisir un nom valide.");
+           nom_notif_jlabel.setForeground(Color.red);
+        } else {
+            per = biblio.nouveauPeriodique(issn,nom );
+            this.dispose();
+            VuePeriodiqueGUI vPerGUI = new VuePeriodiqueGUI(parent_frame, true);
+            vPerGUI.menuPrincipal(per);
+            vPerGUI.elimineObserveur();
+            vPerGUI = null;
+        }
+    }//GEN-LAST:event_valider_buttonActionPerformed
 
     /**
     * @param args the command line arguments
