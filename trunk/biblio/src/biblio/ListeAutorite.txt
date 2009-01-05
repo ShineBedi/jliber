@@ -55,7 +55,7 @@ journalisme
 langues
 linguistique
 littérature
-livres 
+livres
 logiciels
 loisirs
 manuels
