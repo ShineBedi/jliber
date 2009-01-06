@@ -48,4 +48,13 @@ Periodique 1 :
 	Misc
 	Parutions :
 		Janvier / Février 2009
+		Articles :
+			La cybercriminalité aujourd’hui - 18 - Jean-Raymond Abrial -Informatique
+			Extorsion par dénis de service - 34 - Pierre Bézier - Informatique
+			Blanchiment d’argent sur Internet - 52 - Dan Bricklin - Informatique
+		Novembre/Décembre 2008
+		Articles :
+			Conflit russo-géorgien et guerre de l’information - 4 - Bob Carr - Informatique
+			Le très haut débit – Un challenge pour la sécurité - 29 - Alain Colmerauer - Informatique
+			
 			
