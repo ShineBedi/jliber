@@ -311,13 +311,13 @@ public class CtrNouvParutionGUI extends javax.swing.JDialog {
     }//GEN-LAST:event_rechercher_buttonActionPerformed
 
     private void ajouter_articles_buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ajouter_articles_buttonActionPerformed
+        CtrNouvArticleGUI ctr = new CtrNouvArticleGUI(parent_frame, true);
         if(parution_global != null) {
-            VuePeriodiqueGUI vPerGUI = new VuePeriodiqueGUI(parent_frame, true);
-             vPerGUI.menuPrincipal(periodique_global);
-             vPerGUI.elimineObserveur();
-             vPerGUI = null;
-        }
-        this.dispose();
+            ctr.menuPrincipal(biblio, this, parution_global);
+         } else {
+            javax.swing.JOptionPane.showMessageDialog(null, "Opération interdite");
+         }
+        ctr = null;   // suppression du controleur
     }//GEN-LAST:event_ajouter_articles_buttonActionPerformed
 
     /**

@@ -56,9 +56,9 @@
                               <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Component id="titre_textfield" linkSize="9" alignment="0" min="-2" pref="266" max="-2" attributes="1"/>
-                                  <Component id="page_spin" alignment="0" min="-2" max="-2" attributes="0"/>
                                   <Component id="jScrollPane1" linkSize="9" alignment="0" min="-2" pref="300" max="-2" attributes="1"/>
                                   <Component id="jScrollPane2" linkSize="9" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="page_spin" alignment="0" min="-2" pref="84" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                       </Group>
@@ -82,8 +82,8 @@
               <Component id="titre_notif_jlabel" min="-2" pref="15" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="5" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="page_spin" min="-2" max="-2" attributes="0"/>
                   <Component id="page_label" min="-2" max="-2" attributes="0"/>
+                  <Component id="page_spin" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
