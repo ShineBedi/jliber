@@ -10,6 +10,12 @@ Lecteur 2 :
 	33 rue du suc St Julien 63320 Montaigut-le-blanc
 	20
 
+Lecteur 3 : ( à ajouter )
+	ARDAUD
+	Guillaume
+	3 rue Victor Hugo 38000 Grenoble
+	19
+
 Ouvrage 1 : 
 	978-2-7460-4617-7
 	Scripts Shell sous Linux
@@ -23,8 +29,8 @@ Ouvrage 1 :
 		1 - 01/01/2009 - non disponible - Emprunté par Lecteur 1
 		2 - 02/01/2009 - non disponible - Emprunté par Lecteur 1
 		3 - 03/01/2009 - non disponible - Emprunté par Lecteur 1
-		4 - 04/01/2009 - en consultation
-		5 - 05/01/2009 - non disponible
+		4 - 04/01/2009 - en consultation 
+		5 - 05/01/2009 - non disponible ( Changer statut )
 		
 		
 
@@ -38,10 +44,19 @@ Ouvrage 2 :
 	03/03/2005
 	Exemplaires :
 		1 - 01/01/2009 - non disponible - Emprunté par Lecteur 1
-		2 - 02/01/2009 - empruntable
-		3 - 03/01/2009 - empruntable
+		2 - 02/01/2009 - empruntable ( à emprunter par Lecteur 1 )
+		3 - 03/01/2009 - empruntable ( à emprunter par Lecteur 1 )
 		4 - 04/01/2009 - en consultation
 		5 - 05/01/2009 - non disponible
+
+Ouvrage 3 : ( à ajouter )
+	978-2-212-12326-5
+	Programmer en Java
+	Claude Delannoy
+	Eyrolles
+	informatique
+	sciences
+	03/04/2008
 
 Periodique 1 :
 	1244-4901
@@ -51,10 +66,10 @@ Periodique 1 :
 		Articles :
 			La cybercriminalité aujourd’hui - 18 - Jean-Raymond Abrial -Informatique
 			Extorsion par dénis de service - 34 - Pierre Bézier - Informatique
-			Blanchiment d’argent sur Internet - 52 - Dan Bricklin - Informatique
-		Novembre/Décembre 2008
+			Blanchiment d’argent sur Internet - 52 - Dan Bricklin - Informatique ( à ajouter )
+		Novembre/Décembre 2008 ( à ajouter ) 
 		Articles :
-			Conflit russo-géorgien et guerre de l’information - 4 - Bob Carr - Informatique
-			Le très haut débit – Un challenge pour la sécurité - 29 - Alain Colmerauer - Informatique
+			Conflit russo-géorgien et guerre de l’information - 4 - Bob Carr - Informatique ( à ajouter )
+			Le très haut débit – Un challenge pour la sécurité - 29 - Alain Colmerauer - Informatique ( à ajouter )
 			
 			
