@@ -1,4 +1,4 @@
-/*
+﻿/*
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
@@ -97,7 +97,6 @@ public class CtrNouvOuvrageGUI extends javax.swing.JDialog {
         jScrollPane1 = new javax.swing.JScrollPane();
         auteurs_list = new javax.swing.JList();
         jSeparator1 = new javax.swing.JSeparator();
-        supprimer_auteur_button = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Ajout d'un ouvrage");
@@ -182,15 +181,6 @@ public class CtrNouvOuvrageGUI extends javax.swing.JDialog {
         auteurs_list.setEnabled(false);
         jScrollPane1.setViewportView(auteurs_list);
 
-        supprimer_auteur_button.setIcon(new javax.swing.ImageIcon(getClass().getResource("/biblio/minus_icon.png"))); // NOI18N
-        supprimer_auteur_button.setText("Supprimer");
-        supprimer_auteur_button.setEnabled(false);
-        supprimer_auteur_button.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                supprimer_auteur_buttonActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -217,11 +207,10 @@ public class CtrNouvOuvrageGUI extends javax.swing.JDialog {
                                     .addComponent(auteur_notif_jlabel, javax.swing.GroupLayout.DEFAULT_SIZE, 312, Short.MAX_VALUE)
                                     .addComponent(jScrollPane1))))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(verifier_button, javax.swing.GroupLayout.DEFAULT_SIZE, 88, Short.MAX_VALUE)
-                            .addComponent(supprimer_auteur_button, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(ajouter_auteurs_button, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addGap(50, 50, 50))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(ajouter_auteurs_button)
+                            .addComponent(verifier_button, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addContainerGap())
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addComponent(annuler_button, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
@@ -239,7 +228,7 @@ public class CtrNouvOuvrageGUI extends javax.swing.JDialog {
                         .addComponent(sep_label3)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(year_jspinner, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(302, Short.MAX_VALUE))
+                        .addContainerGap(184, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(motscles_label, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -251,12 +240,14 @@ public class CtrNouvOuvrageGUI extends javax.swing.JDialog {
                             .addComponent(motscles_notif_jlabel, javax.swing.GroupLayout.PREFERRED_SIZE, 266, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(editeur_notif_jlabel, javax.swing.GroupLayout.PREFERRED_SIZE, 262, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(123, 123, 123))))
-            .addComponent(jSeparator1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 607, Short.MAX_VALUE)
+            .addComponent(jSeparator1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 596, Short.MAX_VALUE)
         );
 
         layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {auteur_notif_jlabel, editeur_notif_jlabel, editeur_textfield, isbn_notif_label, isbn_textfield, jScrollPane1, jScrollPane2, motscles_notif_jlabel, titre_notif_jlabel, titre_textfield});
 
         layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {auteur_label, date_label, editeur_label, isbn_label, motscles_label, titre_label});
+
+        layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {ajouter_auteurs_button, verifier_button});
 
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -281,9 +272,7 @@ public class CtrNouvOuvrageGUI extends javax.swing.JDialog {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(auteur_label)
                         .addGap(31, 31, 31)
-                        .addComponent(ajouter_auteurs_button)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(supprimer_auteur_button))
+                        .addComponent(ajouter_auteurs_button))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(6, 6, 6)
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -443,11 +432,6 @@ public class CtrNouvOuvrageGUI extends javax.swing.JDialog {
         }
     }//GEN-LAST:event_valider_buttonActionPerformed
 
-    private void supprimer_auteur_buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_supprimer_auteur_buttonActionPerformed
-        // TODO add your handling code here:
-        
-    }//GEN-LAST:event_supprimer_auteur_buttonActionPerformed
-
     /**
     * @param args the command line arguments
     */
@@ -488,7 +472,6 @@ public class CtrNouvOuvrageGUI extends javax.swing.JDialog {
     private javax.swing.JLabel motscles_notif_jlabel;
     private javax.swing.JLabel sep_label2;
     private javax.swing.JLabel sep_label3;
-    private javax.swing.JButton supprimer_auteur_button;
     private javax.swing.JLabel titre_label;
     private javax.swing.JLabel titre_notif_jlabel;
     private javax.swing.JTextField titre_textfield;
